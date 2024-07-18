@@ -6,11 +6,14 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class Cliente {
-    private String nombre;
-    private String apellido;
+
+    private int dni;
+    private String nombres;
+    private String apellidos;
     private String contacto;
     private String domicilio;
-    private int dni;
+
 
 }
