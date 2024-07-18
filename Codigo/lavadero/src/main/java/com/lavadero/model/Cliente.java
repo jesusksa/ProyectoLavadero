@@ -1,4 +1,4 @@
-package com.lavadero;
+package com.lavadero.model;
 import lombok.*;
 
 
@@ -6,9 +6,11 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Empleado {
+public class Cliente {
     private String nombre;
     private String apellido;
+    private String contacto;
+    private String domicilio;
     private int dni;
 
 }

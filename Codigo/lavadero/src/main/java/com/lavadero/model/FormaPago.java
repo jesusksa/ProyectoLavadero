@@ -1,4 +1,4 @@
-package com.lavadero;
+package com.lavadero.model;
 
 public enum FormaPago {
     TARJETA_DEBITO, TARJETA_CREDITO, BILLETERA_VIRTUAL, MERCADO_PAGO, MONEDA_EXTRANJERA, EFECTIVO;

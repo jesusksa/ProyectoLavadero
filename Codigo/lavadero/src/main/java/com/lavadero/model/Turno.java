@@ -1,4 +1,4 @@
-package com.lavadero;
+package com.lavadero.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
