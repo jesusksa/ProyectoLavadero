@@ -12,10 +12,13 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "turno")
+@Table(indexes = {
+        @Index(name = "idx_turno_hora_finalizado", columnList = "hora_finalizado")
+})
 public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_turno", nullable = false)
+    @Column(name = "id_turno", nullable = false, updatable = false)
     private Long idTurno;
 
     @Column(name = "fecha_turno", nullable = false)

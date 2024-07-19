@@ -9,10 +9,14 @@ import org.hibernate.annotations.NaturalId;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "vehiculo")
-public class Vehiculo{
+@Table(indexes = {
+        @Index(name = "idx_vehiculo_patente", columnList = "patente"),
+        @Index(name = "idx_vehiculo_modelo_vehiculo", columnList = "modelo_vehiculo")
+})
+public class Vehiculo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_vehiculo", nullable = false)
+    @Column(name = "id_vehiculo", nullable = false, updatable = false)
     private Long idVehiculo;
 
     @NaturalId

@@ -9,10 +9,14 @@ import org.hibernate.annotations.NaturalId;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "cliente")
+@Table(indexes = {
+        @Index(name = "idx_cliente_dni", columnList = "dni"),
+        @Index(name = "idx_cliente_apellidos", columnList = "apellidos")
+})
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_cliente", nullable = false)
+    @Column(name = "id_cliente", nullable = false, updatable = false)
     private Long idCliente;
 
     @NaturalId

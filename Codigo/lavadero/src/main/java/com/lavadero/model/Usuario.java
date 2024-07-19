@@ -7,10 +7,13 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "usuario")
+@Table(indexes = {
+        @Index(name = "idx_usuario_nombre_usuario", columnList = "nombre_usuario")
+})
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_usuario", nullable = false)
+    @Column(name = "id_usuario", nullable = false, updatable = false)
     private Long idUsuario;
 
     @Column(name = "nombre_usuario", nullable = false, unique = true)
