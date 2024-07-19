@@ -16,11 +16,18 @@ public class Cliente {
     private Long idCliente;
 
     @NaturalId
+    @Column(nullable = false, unique = true)
     private Integer dni;
+
+    @Column(nullable = false)
     private String nombres;
+
+    @Column(nullable = false)
     private String apellidos;
 
-    @Column(name = "numero_contacto")
+    @Column(name = "numero_contacto", nullable = false)
     private String numeroContacto;
+
+    @Column(nullable = false)
     private String domicilio;
 }

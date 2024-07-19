@@ -15,10 +15,14 @@ public class Empleado {
     @Column(name = "id_empleado", nullable = false)
     private Long idEmpleado;
 
+    @Column(nullable = false)
     private String nombres;
+
+    @Column(nullable = false)
     private String apellidos;
 
     @NaturalId
+
     private int dni;
 
 }
