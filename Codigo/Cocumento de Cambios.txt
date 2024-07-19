@@ -1,8 +1,0 @@
---------------------------Formato para escribir cambios realizados-------------------------------------
-
-<Fecha>
-	<Codigo || Diseño>
-	<Elemento especifico> : <Add || Update || Remove> : "Detalle"
-
--------------------------------------------------------------------------------------------------------
-
