@@ -3,6 +3,7 @@ module com.lavadero {
     requires javafx.fxml;
     requires static lombok;
     requires org.hibernate.orm.core;
+    requires jakarta.persistence;
 
     opens com.lavadero to javafx.fxml, lombok;
     exports com.lavadero;
