@@ -32,4 +32,9 @@ public class Vehiculo {
 
     @Column(name = "tamanio_vehiculo", nullable = false)
     private double tamanioAuto;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_cliente", nullable = false)
+    private Cliente cliente;
+
 }

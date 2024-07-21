@@ -3,6 +3,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -34,4 +37,9 @@ public class Cliente {
 
     @Column(nullable = false)
     private String domicilio;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OrderBy("patente")
+    private List<Vehiculo> vehiculos = new ArrayList<>();
+
 }

@@ -1,13 +1,11 @@
 package com.lavadero;
 
-import com.lavadero.util.HibernateUtil;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 
 import java.io.IOException;
@@ -37,6 +35,5 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
-
     }
 }
