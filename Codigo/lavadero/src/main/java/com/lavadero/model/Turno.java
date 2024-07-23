@@ -2,6 +2,8 @@ package com.lavadero.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -44,5 +46,14 @@ public class Turno {
     @Enumerated(EnumType.STRING)
     @Column(name = "estado_lavado", nullable = false)
     private EstadoLavado estado;
+
+    @ManyToOne(optional = false)
+    private Cliente cliente;
+
+    @ManyToMany(mappedBy = "turnos")
+    private List<Empleado> empleados = new ArrayList<>(2);
+
+    @ManyToOne(optional = false)
+    private Usuario usuario;
 
 }

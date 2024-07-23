@@ -42,4 +42,7 @@ public class Cliente {
     @OrderBy("patente")
     private List<Vehiculo> vehiculos = new ArrayList<>();
 
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Turno> turnos;
+
 }
