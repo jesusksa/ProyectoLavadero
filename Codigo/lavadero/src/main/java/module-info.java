@@ -8,7 +8,7 @@ module com.lavadero {
     opens com.lavadero to javafx.fxml, lombok;
     exports com.lavadero;
     exports com.lavadero.model;
-    opens com.lavadero.model to javafx.fxml, lombok;
+    opens com.lavadero.model to javafx.fxml, lombok, org.hibernate.orm.core;
     exports com.lavadero.controllers;
     opens com.lavadero.controllers to javafx.fxml, lombok;
 }
