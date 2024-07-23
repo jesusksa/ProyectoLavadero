@@ -3,6 +3,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
 
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -28,5 +30,8 @@ public class Empleado {
     @NaturalId
     @Column(nullable = false, unique = true)
     private int dni;
+
+    @ManyToMany(mappedBy = "empleados")
+    private List<Turno> turnos;
 
 }
