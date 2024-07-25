@@ -48,12 +48,19 @@ public class Turno {
     private EstadoLavado estado;
 
     @ManyToOne(optional = false)
+    @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente cliente;
 
-    @ManyToMany(mappedBy = "turnos")
+    @ManyToMany
+    @JoinTable(
+            name = "turno_empleado",
+            joinColumns = @JoinColumn(name = "id_turno"),
+            inverseJoinColumns = @JoinColumn(name = "id_empleado")
+    )
     private List<Empleado> empleados = new ArrayList<>(2);
 
     @ManyToOne(optional = false)
+    @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
 
 }
