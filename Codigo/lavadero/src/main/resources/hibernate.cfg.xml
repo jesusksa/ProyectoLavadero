@@ -33,5 +33,10 @@
 
         <!-- Names the annotated entity class -->
         <mapping class="com.lavadero.model.Turno"/>
+        <mapping class="com.lavadero.model.Cliente"/>
+        <mapping class="com.lavadero.model.Usuario"/>
+        <mapping class="com.lavadero.model.Vehiculo"/>
+        <mapping class="com.lavadero.model.Empleado"/>
+
     </session-factory>
 </hibernate-configuration>
