@@ -18,7 +18,7 @@ import java.util.List;
 })
 public class Cliente {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cliente", nullable = false, updatable = false)
     private Long idCliente;
 

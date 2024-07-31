@@ -19,7 +19,7 @@ import lombok.*;
 })
 public class Turno {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_turno", nullable = false, updatable = false)
     private Long idTurno;
 

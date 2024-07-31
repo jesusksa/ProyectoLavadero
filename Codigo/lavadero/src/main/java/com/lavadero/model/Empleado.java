@@ -17,7 +17,7 @@ import java.util.List;
 })
 public class Empleado {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_empleado", nullable = false, updatable = false)
     private Long idEmpleado;
 

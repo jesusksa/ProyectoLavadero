@@ -15,7 +15,7 @@ import org.hibernate.annotations.NaturalId;
 })
 public class Vehiculo {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_vehiculo", nullable = false, updatable = false)
     private Long idVehiculo;
 
