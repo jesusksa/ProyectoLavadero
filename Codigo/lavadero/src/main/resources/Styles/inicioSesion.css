@@ -1,3 +1,15 @@
 .colorFondo{
--fx-background-color: #5271ff;
+-fx-background-color: #4059AD;
+}
+
+.label{
+
+}
+
+.button{
+-fx-background-color: #EFF2F1;
+}
+
+.button:hover{
+-fx-background-color: #60AFFF;
 }
