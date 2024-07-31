@@ -43,13 +43,13 @@
                   <Font name="Javanese Text" size="18.0" />
                </font>
             </Label>
+            <TextField fx:id="txtnombreUsuario" layoutX="21.0" layoutY="393.0" prefHeight="40.0" prefWidth="154.0" promptText="Escriba aquí..." />
+            <PasswordField fx:id="txtContra" layoutX="204.0" layoutY="393.0" prefHeight="40.0" prefWidth="154.0" promptText="Escriba aquí..." />
             <Button fx:id="bttnIngresar" layoutX="99.0" layoutY="473.0" mnemonicParsing="false" onAction="#IniciarSesion" prefHeight="40.0" prefWidth="184.0" text="Ingresar">
                <font>
                   <Font name="Javanese Text" size="18.0" />
                </font>
             </Button>
-            <PasswordField fx:id="txtContra" layoutX="204.0" layoutY="393.0" prefHeight="40.0" prefWidth="154.0" promptText="Escriba aquí..." />
-            <TextField fx:id="txtnombreUsuario" layoutX="21.0" layoutY="393.0" prefHeight="40.0" prefWidth="154.0" promptText="Escriba aquí..." />
          </children>
       </AnchorPane>
    </children>
