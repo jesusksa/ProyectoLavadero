@@ -21,7 +21,7 @@ public class SesionController {
 
 
         if(usuario.equals("root") && cotrasenia.equals("12345")){
-            App.setRoot("VentanaBase");
+            App.setRoot("base");
         }else {
             System.out.println("NO NO");
         }

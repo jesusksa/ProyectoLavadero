@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.hibernate.SessionFactory;
 import javafx.scene.image.Image;
@@ -23,12 +24,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("VentanaIniciarSesion"));
+        scene = new Scene(loadFXML("inicio-sesion"));
         stage.setTitle("Lavadero");
         Image icono = new Image(getClass().getResourceAsStream("/images/icono-ventana.png"));
         stage.getIcons().add(icono);
         stage.setScene(scene);
-        stage.centerOnScreen();
         stage.show();
     }
 

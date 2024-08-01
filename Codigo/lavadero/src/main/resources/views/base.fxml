@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-border-color: black;" styleClass="colorFondo" stylesheets="@../Styles/inicioSesion.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.BaseController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-border-color: black;" styleClass="colorFondo" stylesheets="@../Styles/inicio-sesion.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.BaseController">
    <children>
-      <MenuBar prefHeight="57.0" prefWidth="599.0" style="-fx-border-color: black;" styleClass="colorFondo" stylesheets="@../Styles/inicioSesion.css" translateY="3.0" VBox.vgrow="NEVER">
+      <MenuBar prefHeight="57.0" prefWidth="599.0" style="-fx-border-color: black;" styleClass="colorFondo" stylesheets="@../Styles/inicio-sesion.css" translateY="3.0" VBox.vgrow="NEVER">
         <menus>
           <Menu mnemonicParsing="false" text="Turnos">
             <items>
