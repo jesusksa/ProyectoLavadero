@@ -20,3 +20,10 @@
     - Bocetos
     - Documentos extra
     - Diagrama UML
+
+## Tecnologías/herramientas utilizadas
+- Java
+- Java Persistance API (JPA)
+- Hibernate ORM (implementador de JPA)
+- JavaFX
+- Lenguaje Unificado de Modelado (UML)
