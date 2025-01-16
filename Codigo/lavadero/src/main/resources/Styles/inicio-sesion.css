@@ -1,15 +1,70 @@
-.colorFondo{
--fx-background-color: #4059AD;
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('Inconsolata-VariableFont_wdth,wght.ttf');
 }
 
-.label{
+
+.root {
+    -fx-background-image: url("../images/imagen-fondo-inicio-sesion.png");
+    -fx-background-size: cover;
+}
+
+#vbox-principal {
+    -fx-background-color: rgb(87, 196, 229, .8);
+    -fx-border-style: solid;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+#label-inicio-sesion {
+    -fx-font-family: "Inconsolata", serif;
+    -fx-font-optical-sizing: auto;
+    -fx-font-style: normal;
+    -fx-font-variation-settings: "wdth" 100;
+    -fx-font-size: 3em;
+}
+
+.label-form {
+    -fx-font-family: "Inconsolata", serif;
+    -fx-font-optical-sizing: auto;
+    -fx-font-style: normal;
+    -fx-font-variation-settings: "wdth" 100;
+    -fx-font-size: 2.5em;
+}
+
+.campo-form {
+    -fx-font-family: "Inconsolata", serif;
+    -fx-font-optical-sizing: auto;
+    -fx-font-style: normal;
+    -fx-font-variation-settings: "wdth" 100;
+    -fx-font-size: 1.75em;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-width: 0.5px;
+}
+
+#boton-aceptar {
+    -fx-background-color: #0A1045;
+    -fx-font-family: "Inconsolata", serif;
+    -fx-font-optical-sizing: auto;
+    -fx-font-style: normal;
+    -fx-font-variation-settings: "wdth" 100;
+    -fx-font-size: 2em;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+#boton-aceptar:hover {
+    -fx-background-color: rgb(10, 16, 69, 0.8);
 
 }
 
-.button{
--fx-background-color: #EFF2F1;
-}
-
-.button:hover{
--fx-background-color: #60AFFF;
+#boton-mostrar {
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-width: 0.5px;
+    -fx-background-color: white;
 }
