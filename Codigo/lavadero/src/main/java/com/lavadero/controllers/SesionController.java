@@ -1,30 +1,46 @@
 package com.lavadero.controllers;
 
 import com.lavadero.App;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
+import javafx.scene.control.ToggleButton;
 
 public class SesionController {
     @FXML
-    private PasswordField txtContra;
+    private ToggleButton botonMostrarContraseña;
     @FXML
-    private TextField txtnombreUsuario;
+    private TextField campoNombre;
+    @FXML
+    private TextField campoContraseniaDescubierta;
+    @FXML
+    private PasswordField campoContrasenia;
 
-    public void IniciarSesion(ActionEvent actionEvent) throws IOException {
-
-        String usuario = txtnombreUsuario.getText();
-        String cotrasenia = txtContra.getText();
-
-
-        if(usuario.equals("root") && cotrasenia.equals("12345")){
-            App.setRoot("Turnos");
-        }else {
-            System.out.println("NO NO");
+    @FXML
+    private void mostrarContrasenia(ActionEvent actionEvent) {
+        if(botonMostrarContraseña.isSelected()){
+            botonMostrarContraseña.setText("Ocultar");
+            campoContraseniaDescubierta.setText(campoContrasenia.getText());
+            campoContrasenia.setVisible(false);
+            campoContraseniaDescubierta.setVisible(true);
+        } else {
+            botonMostrarContraseña.setText("Mostrar");
+            campoContrasenia.setText(campoContraseniaDescubierta.getText());
+            campoContraseniaDescubierta.setVisible(false);
+            campoContrasenia.setVisible(true);
         }
+    }
+
+    @FXML
+    public void initialize() {
+        campoContraseniaDescubierta.setVisible(false);
+
 
     }
+
+
+
 }
