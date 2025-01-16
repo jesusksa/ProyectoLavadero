@@ -68,7 +68,7 @@
                         <ToggleButton id="boton-mostrar" fx:id="botonMostrarContraseña" mnemonicParsing="false" onAction="#mostrarContrasenia" text="Mostrar" />
                      </children>
                   </HBox>
-                  <Button id="boton-aceptar" mnemonicParsing="false" text="Aceptar" textFill="WHITE">
+                  <Button id="boton-aceptar" fx:id="botonAceptar" mnemonicParsing="false" onAction="#validarCredenciales" text="Aceptar" textFill="WHITE">
                      <font>
                         <Font name="Inconsolata Regular" size="18.0" />
                      </font>
