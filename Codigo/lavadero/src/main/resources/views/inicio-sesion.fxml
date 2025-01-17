@@ -1,56 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="colorFondo" stylesheets="@../Styles/inicio-sesion.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.SesionController">
+<AnchorPane id="anchor-principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0" stylesheets="@../Styles/inicio-sesion.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.SesionController">
    <children>
-      <AnchorPane prefHeight="200.0">
+      <VBox id="vbox-principal" alignment="CENTER" layoutX="617.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0" stylesheets="@../Styles/inicio-sesion.css" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="100.0">
          <children>
-            <ImageView fitHeight="322.0" fitWidth="520.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="199.0">
+            <ImageView id="logo-inicio-sesion" fitHeight="250.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/logo-lavadero.png" />
+                  <Image url="@../images/logo-nombre-resicap.png" />
                </image>
             </ImageView>
+            <Label id="label-inicio-sesion" text="Iniciar sesión" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin></Label>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label styleClass="label-form" text="Nombre de usuario" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="campoNombre" promptText="Ingresa tu nombre de usuario" styleClass="campo-form">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Inconsolata Regular" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label styleClass="label-form" text="Contraseña" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <StackPane prefHeight="19.0" prefWidth="398.0">
+                     <children>
+                        <PasswordField fx:id="campoContrasenia" promptText="Ingresa tu contraseña" styleClass="campo-form">
+                           <font>
+                              <Font name="Inconsolata Regular" size="18.0" />
+                           </font>
+                        </PasswordField>
+                        <TextField fx:id="campoContraseniaDescubierta" onAction="#mostrarContrasenia" styleClass="campo-form" />
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </StackPane>
+                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ToggleButton id="boton-mostrar" fx:id="botonMostrarContraseña" mnemonicParsing="false" onAction="#mostrarContrasenia" text="Mostrar" />
+                     </children>
+                  </HBox>
+                  <Button id="boton-aceptar" fx:id="botonAceptar" mnemonicParsing="false" onAction="#validarCredenciales" text="Aceptar" textFill="WHITE">
+                     <font>
+                        <Font name="Inconsolata Regular" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
          </children>
-      </AnchorPane>
-      <AnchorPane>
-         <children>
-            <ImageView fitHeight="197.0" fitWidth="211.0" layoutX="92.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/logo-usuario.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="56.0" layoutY="45.0" text="Iniciar sesión" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="45.0">
-               <font>
-                  <Font name="Tahoma Bold" size="40.0" />
-               </font>
-            </Label>
-            <Label layoutX="19.0" layoutY="357.0" text="Nombre de usuario:" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="204.0" layoutY="357.0" text="Contraseña:" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtnombreUsuario" layoutX="21.0" layoutY="393.0" prefHeight="40.0" prefWidth="154.0" promptText="Escriba aquí..." />
-            <PasswordField fx:id="txtContra" layoutX="204.0" layoutY="393.0" prefHeight="40.0" prefWidth="154.0" promptText="Escriba aquí..." />
-            <Button fx:id="bttnIngresar" layoutX="99.0" layoutY="473.0" mnemonicParsing="false" onAction="#IniciarSesion" prefHeight="40.0" prefWidth="184.0" text="Ingresar">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
+      </VBox>
    </children>
-</HBox>
+</AnchorPane>
