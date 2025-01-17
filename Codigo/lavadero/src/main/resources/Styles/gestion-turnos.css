@@ -1,0 +1,80 @@
+#apnPrincipal{
+-fx-background-color: #0A1045;
+}
+
+#pnFondo{
+-fx-background-color: #57C4E5;
+-fx-background-radius: 10px;
+}
+
+#btnCuenta{
+-fx-background-color: #F9E900;
+-fx-background-radius: 20px;
+}
+
+#btnCuenta:hover{
+-fx-background-color: #BFB302;
+}
+
+#hboxNav{
+-fx-background-color: #FFFFFF;
+-fx-background-radius: 20px;
+}
+
+#btnPrev{
+-fx-background-color: none;
+-fx-background-radius: 20px 0px 0px 20px;
+}
+
+#btnPrev:hover{
+-fx-background-color: #E4E4E4;
+}
+
+#btnHome{
+-fx-background-color: none;
+}
+
+#btnHome:hover{
+-fx-background-color: #E4E4E4;
+}
+
+#btnNext{
+-fx-background-color: none;
+-fx-background-radius: 0px 20px 20px 0px;
+}
+
+#btnNext:hover{
+-fx-background-color: #E4E4E4;
+}
+
+#btnFiltrar{
+-fx-background-color: #4D8B31;
+-fx-background-radius: 10px
+}
+
+#btnFiltrar:hover{
+-fx-background-color: #427929;
+}
+
+#btnRegTur{
+-fx-border-width: 3px;
+-fx-border-radius: 9px;
+-fx-border-color:#FFFFFF;
+-fx-background-color: #0A1045;
+-fx-background-radius: 10px
+}
+
+#btnRegTur:hover{
+-fx-background-color: #1F255A;
+}
+
+
+#hboxBusqueda{
+-fx-background-color: #FFFFFF;
+-fx-background-radius: 10px;
+}
+
+#txtBuscar{
+-fx-background-color: #FFFFFF;
+-fx-background-radius: 10px;
+}
