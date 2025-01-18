@@ -7,111 +7,137 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="apnPrincipal" prefHeight="700.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.GestionTurnosController">
+<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.GestionTurnosController">
    <children>
-      <Button fx:id="btnCuenta" alignment="CENTER" contentDisplay="RIGHT" layoutX="50.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="60.0" prefWidth="150.0" text="Oficinista">
-         <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/icono-usuario.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font name="Leelawadee" size="15.0" />
-         </font>
-      </Button>
-      <HBox fx:id="hboxNav" layoutX="209.0" layoutY="14.0" prefHeight="60.0" prefWidth="150.0">
+      <HBox prefHeight="80.0" prefWidth="340.0" spacing="20.0" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="1180.0" AnchorPane.topAnchor="20.0">
          <children>
-            <Button fx:id="btnPrev" mnemonicParsing="false" onAction="#AnteriorPag" prefHeight="60.0">
-               <graphic>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icono-anterior.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#Home" prefHeight="60.0">
+            <Button fx:id="btnCuenta" alignment="CENTER" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Oficinista">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/icono-home.png" />
+                        <Image url="@../images/icono-usuario.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="Leelawadee" size="15.0" />
+               </font>
             </Button>
-            <Button fx:id="btnNext" mnemonicParsing="false" onAction="#SiguientePag" prefHeight="60.0">
-               <graphic>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icono-siguiente.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <HBox fx:id="hboxNav" prefHeight="60.0" prefWidth="178.0">
+               <children>
+                  <Button fx:id="btnPrev" mnemonicParsing="false" onAction="#AnteriorPag" prefHeight="60.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icono-anterior.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnHome" mnemonicParsing="false" onAction="#Home" prefHeight="60.0">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icono-home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnNext" mnemonicParsing="false" onAction="#SiguientePag" prefHeight="60.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icono-siguiente.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </HBox>
-      <Pane fx:id="pnFondo" layoutX="50.0" layoutY="97.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="581.0" prefWidth="1260.0" />
-      <Button fx:id="btnRegTur" contentDisplay="RIGHT" layoutX="80.0" layoutY="120.0" mnemonicParsing="false" onAction="#RegistrarTurno" prefHeight="40.0" prefWidth="177.0" text="Registrar turno" textFill="WHITE">
-         <font>
-            <Font name="Leelawadee" size="15.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/icono-mas.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnFiltrar" contentDisplay="RIGHT" layoutX="899.0" layoutY="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Filtrar" textFill="WHITE">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/icono-filtro.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font name="Leelawadee" size="15.0" />
-         </font>
-      </Button>
-      <HBox fx:id="hboxBusqueda" alignment="CENTER" layoutX="1035.0" layoutY="120.0" prefHeight="40.0" prefWidth="246.0">
+      <VBox layoutX="413.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0">
          <children>
-            <TextField fx:id="txtBuscar" prefHeight="40.0" prefWidth="220.0" promptText="Búsqueda" />
-            <ImageView fx:id="imgBuscar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/icono-busqueda.png" />
-               </image>
-               <HBox.margin>
+            <BorderPane prefHeight="92.0" prefWidth="1506.0">
+               <left>
+                  <Button fx:id="btnRegTur" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#RegistrarTurno" text="Registrar turno" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Leelawadee" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icono-mas.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </left>
+               <right>
+                  <HBox prefHeight="92.0" prefWidth="361.0" spacing="20.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox fx:id="hboxBusqueda" alignment="CENTER" prefHeight="92.0" prefWidth="428.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="btnFiltrar" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="139.0" text="Filtrar" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icono-filtro.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Leelawadee" size="15.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="txtBuscar" prefHeight="40.0" prefWidth="220.0" promptText="Búsqueda" />
+                              <ImageView fx:id="imgBuscar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-busqueda.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </right>
+            </BorderPane>
+            <AnchorPane fx:id="pnFondo" VBox.vgrow="ALWAYS">
+               <children>
+                  <ScrollPane fx:id="scllTurnos" fitToHeight="true" fitToWidth="true" prefHeight="495.0" prefWidth="1440.0" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+                     <content>
+                        <GridPane fx:id="gridTurnos" prefWidth="1185.0">
+                          <columnConstraints>
+                             <ColumnConstraints prefWidth="395.0" />
+                             <ColumnConstraints prefWidth="395.0" />
+                             <ColumnConstraints prefWidth="395.0" />
+                              <ColumnConstraints minWidth="10.0" prefWidth="395.0" />
+                          </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints vgrow="ALWAYS" />
+                              <RowConstraints vgrow="ALWAYS" />
+                              <RowConstraints vgrow="ALWAYS" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <VBox.margin>
                   <Insets />
-               </HBox.margin>
-            </ImageView>
+               </VBox.margin>
+            </AnchorPane>
          </children>
-      </HBox>
-      <ScrollPane fx:id="scllTurnos" fitToHeight="false" fitToWidth="true" layoutX="80.0" layoutY="184.0" prefHeight="462.0" prefWidth="1202.0" vbarPolicy="AS_NEEDED">
-         <content>
-            <GridPane fx:id="gridTurnos" prefWidth="1185.0">
-              <columnConstraints>
-                 <ColumnConstraints prefWidth="395.0" />
-                 <ColumnConstraints prefWidth="395.0" />
-                 <ColumnConstraints prefWidth="395.0" />
-              </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints vgrow="ALWAYS" />
-                  <RowConstraints vgrow="ALWAYS" />
-                  <RowConstraints vgrow="ALWAYS" />
-               </rowConstraints>
-            </GridPane>
-         </content>
-      </ScrollPane>
+      </VBox>
    </children>
 </AnchorPane>
