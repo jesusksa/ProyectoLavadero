@@ -1,6 +1,7 @@
 package com.lavadero;
 
 
+import com.lavadero.controllers.SesionController;
 import com.lavadero.util.HibernateUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -30,13 +31,14 @@ public class App extends Application {
         stage.getIcons().add(icono);
         stage.setScene(scene);
         stage.show();
+        SesionController.setStage(stage);
     }
 
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 
-    private static Parent loadFXML(String fxml) throws IOException {
+    public static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/views/"+fxml + ".fxml"));
         return fxmlLoader.load();
     }

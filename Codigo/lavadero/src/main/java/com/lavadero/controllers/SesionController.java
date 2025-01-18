@@ -1,15 +1,22 @@
 package com.lavadero.controllers;
 
-import com.lavadero.App;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+import lombok.Setter;
 
+import java.io.IOException;
 import java.util.regex.Pattern;
 
+import static com.lavadero.App.loadFXML;
+
 public class SesionController {
+
+    @Setter
+    private static Stage stage;
+
     @FXML
     private ToggleButton botonMostrarContraseña;
     @FXML
@@ -41,8 +48,13 @@ public class SesionController {
         campoContraseniaDescubierta.setVisible(false);
     }
 
+    private boolean validarContrasenia(String contrasenia){
+        String regex = "^(?=.*\\d).{10,}$";
+        return Pattern.matches(regex, contrasenia);
+    }
+
     @FXML
-    private void validarCredenciales(ActionEvent actionEvent) {
+    private void validarCredenciales(ActionEvent actionEvent) throws IOException {
         String nombreUsuario = campoNombre.getText();
         String contrasenia = campoContrasenia.getText();
 
@@ -65,22 +77,21 @@ public class SesionController {
 
         //Nombre de usuario con caracteres especiales
         } else if (!nombreUsuario.chars().allMatch(Character::isLetter)){
-            Alert alert = new Alert(Alert.AlertType.ERROR, "No se permiten carácteres especiales en el nombre de usuario.");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "No se permiten caracteres especiales en el nombre de usuario.");
             alert.show();
 
         //Contraseña con formato incorrecto
         } else if (!validarContrasenia(contrasenia)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Formato de contraseña incorrecto. La contraseña " +
-                    "debe tener una longitud mínima de 10 carácteres e incluir al menos un número.");
+                    "debe tener una longitud mínima de 10 caracteres e incluir al menos un número.");
             alert.show();
+        }
+        else {
+            Scene scene = new Scene(loadFXML("gestion-turnos"));
+            stage.setScene(scene);
         }
 
 
-    }
-
-    private boolean validarContrasenia(String contrasenia){
-        String regex = "^(?=.*\\d).{10,}$";
-        return Pattern.matches(regex, contrasenia);
     }
 
 

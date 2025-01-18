@@ -11,7 +11,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-public class GestionTurnos {
+public class GestionTurnosController {
     public GridPane gridTurnos;
     private int currentRow = 0; // Para rastrear la fila actual en el GridPane
     private int currentColumn = 0; // Para rastrear la columna actual en la fila
