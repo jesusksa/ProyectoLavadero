@@ -1,35 +1,49 @@
 package com.lavadero.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import java.io.IOException;
 
 public class GestionTurnosController {
     public GridPane gridTurnos;
+    public MenuButton mbtnCuenta;
     private int currentRow = 0; // Para rastrear la fila actual en el GridPane
     private int currentColumn = 0; // Para rastrear la columna actual en la fila
 
-    public void RegistrarTurno(ActionEvent actionEvent) {
-        CargarTurnos();
+    @FXML
+    public void initialize(){
+        // Listener para detectar cuando el menú se despliega
+        mbtnCuenta.showingProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                mbtnCuenta.getStyleClass().add("pressed");
+            } else {
+                mbtnCuenta.getStyleClass().remove("pressed");
+            }
+        });
     }
 
-    public void AnteriorPag(ActionEvent actionEvent) {
+    public void registrarTurno(ActionEvent actionEvent) {
+        cargarTurnos();
     }
 
-    public void Home(ActionEvent actionEvent) {
+    public void anteriorPag(ActionEvent actionEvent) {
     }
 
-    public void SiguientePag(ActionEvent actionEvent) {
+    public void home(ActionEvent actionEvent) {
     }
 
-    public void CargarTurnos(){
+    public void siguientePag(ActionEvent actionEvent) {
+    }
+
+    public void cargarTurnos(){
         // Crear un nuevo Pane y configurar sus hijos
         Pane pnTurno = new Pane();
         pnTurno.setPrefSize(160.0, 160.0);
@@ -113,5 +127,20 @@ public class GestionTurnosController {
             currentColumn = 0;
             currentRow++;
         }
+    }
+
+    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.OK){
+            //conectar para cerrar Sesion
+
+        }else {
+            alert.close();
+        }
+    }
+
+    public void filtrar(ActionEvent actionEvent) {
     }
 }

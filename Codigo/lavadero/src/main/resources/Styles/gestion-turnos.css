@@ -7,12 +7,36 @@
 -fx-background-radius: 10px;
 }
 
-#btnCuenta{
+#mbtnCuenta{
 -fx-background-color: #F9E900;
 -fx-background-radius: 20px;
 }
 
-#btnCuenta:hover{
+#mbtnCuenta:hover{
+-fx-background-color: #BFB302;
+}
+
+#mbtnCuenta.pressed {
+    -fx-background-radius: 20px 20px 0px 0px;
+}
+
+#mbtnCuenta .arrow{
+-fx-background-color: transparent;
+-fx-padding: 0;
+}
+
+#mItemSesion {
+    -fx-background-color: transparent; /* Fondo normal */
+}
+
+.context-menu {
+-fx-background-color: #F9E900;
+-fx-pref-width: 150px;
+-fx-background-radius: 0px 0px 20px 20px;
+-fx-font-size: 15px;
+}
+
+.context-menu:hover{
 -fx-background-color: #BFB302;
 }
 
