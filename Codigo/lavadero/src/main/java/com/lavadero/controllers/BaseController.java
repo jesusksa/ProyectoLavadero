@@ -2,26 +2,49 @@ package com.lavadero.controllers;
 
 import com.lavadero.App;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.MenuItem;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.util.Optional;
 
 public class BaseController {
-    public Pane panePrincipal;
+    public MenuButton mbtnCuenta;
+    public ScrollPane scllTurnos;
+    private int currentRow = 0; // Para rastrear la fila actual en el GridPane
+    private int currentColumn = 0; // Para rastrear la columna actual en la fila
 
-    public void RegistrarTurno(ActionEvent actionEvent) {
+    @FXML
+    public void initialize() {
+        // Listener para detectar cuando el menú se despliega
+        mbtnCuenta.showingProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                mbtnCuenta.getStyleClass().add("pressed");
+            } else {
+                mbtnCuenta.getStyleClass().remove("pressed");
+            }
+        });
     }
 
-    public void PagTurnos(ActionEvent actionEvent) {
+    public void anteriorPag(ActionEvent actionEvent) {
     }
 
-    public void PagEmpleados(ActionEvent actionEvent) {
+    public void home(ActionEvent actionEvent) {
     }
 
-    public void PagCuenta(ActionEvent actionEvent) {
+    public void siguientePag(ActionEvent actionEvent) {
+    }
+
+    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.OK){
+            //conectar para cerrar Sesion
+
+        }else {
+            alert.close();
+        }
     }
 }
