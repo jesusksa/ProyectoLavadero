@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('Inconsolata-VariableFont_wdth,wght.ttf');
+}
+
+.root {
+    -fx-background-color: #0A1045; /* color azul claro */
+    -fx-text-fill: black; /* Color del texto */
+}
+
+.panel {
+    -fx-background-color: #57C4E5; /* color azul claro */
+    -fx-text-fill: black; /* Color del texto */
+    -fx-border-style: solid;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+.buttonOficinista {
+    -fx-background-color: F9E900;
+    -fx-text-fill: black; /* Color del texto */
+    -fx-pref-width: 185px; /* Ancho del botón */
+    -fx-pref-height: 75px; /* Alto del botón */
+    -fx-background-radius: 20px; /* Radio del borde */
+    -fx-font-size: 2em;
+    -fx-font-family: "Inconsolata", serif;
+    -fx-padding-left: 20px
+}
+
+.titulo {
+    -fx-font-family: "Inconsolata", serif;
+    -fx-font-size: 4em;
+    -fx-padding: 30px 0 0 0; /* Separado 30px del borde superior */
+}
+
+.boxButtons {
+    -fx-alignment: center; /* Centrar los elementos horizontalmente */
+}
+
+.buttonG {
+    -fx-background-color: #F9E900;
+    -fx-text-fill: black; /* Color del texto */
+    -fx-pref-width: 400px; /* Ancho del botón */
+    -fx-pref-height: 500px; /* Alto del botón */
+    -fx-background-radius: 20px; /* Radio del borde */
+    -fx-border-color: black; /* Color del borde */
+    -fx-border-width: 2px; /* Ancho del borde */
+    -fx-border-radius: 20px; /* Radio del borde para coincidir con el fondo */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 15, 0, 8, 8);
+    -fx-font-size: 2.9em;
+    -fx-font-family: "Inconsolata", serif;
+
+}
+
+.buttonCyM {
+    -fx-background-color: #4D8B31;
+    -fx-text-fill: black; /* Color del texto */
+    -fx-pref-width: 400px; /* Ancho del botón */
+    -fx-pref-height: 500px; /* Alto del botón */
+    -fx-background-radius: 20px; /* Radio del borde */
+    -fx-border-color: black; /* Color del borde */
+    -fx-border-width: 2px; /* Ancho del borde */
+    -fx-border-radius: 20px; /* Radio del borde para coincidir con el fondo */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 15, 0, 8, 8);
+    -fx-font-size: 2.9em;
+    -fx-font-family: "Inconsolata", serif;
+
+
+}

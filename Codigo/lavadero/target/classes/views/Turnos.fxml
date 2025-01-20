@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-border-color: black;" styleClass="colorFondo" stylesheets="@../Styles/inicio-sesion.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.BaseController">
+   <children>
+      <MenuBar prefHeight="57.0" prefWidth="599.0" style="-fx-border-color: black;" styleClass="colorFondo" stylesheets="@../Styles/inicio-sesion.css" translateY="3.0" VBox.vgrow="NEVER">
+        <menus>
+          <Menu fx:id="mbTurnos" mnemonicParsing="false" onAction="#PagTurnos" text="Turnos" />
+          <Menu fx:id="mbEmpleados" mnemonicParsing="false" onAction="#PagEmpleados" text="Empleados" />
+            <Menu fx:id="mbCuenta" mnemonicParsing="false" onAction="#PagCuenta" text="Cuenta" />
+        </menus>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </MenuBar>
+      <AnchorPane prefHeight="709.0" prefWidth="898.0">
+         <children>
+            <Pane fx:id="panePrincipal" prefHeight="710.0" prefWidth="1023.0">
+               <children>
+                  <Label layoutX="198.0" layoutY="38.0" prefHeight="27.0" prefWidth="44.0" text="Titulo" />
+                  <ImageView fitHeight="150.0" fitWidth="145.0" layoutX="14.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo-admin.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="bttnRegistrar" layoutX="14.0" layoutY="208.0" mnemonicParsing="false" onAction="#RegistrarTurno" prefHeight="48.0" prefWidth="145.0" text="Registrar Turno" />
+                  <Button layoutX="14.0" layoutY="282.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="145.0" text="Iniciar Turno" />
+                  <TableView fx:id="tbTurnos" layoutX="201.0" layoutY="108.0" prefHeight="232.0" prefWidth="494.0">
+                    <columns>
+                      <TableColumn fx:id="colServicio" prefWidth="116.00007629394531" text="Servicio" />
+                      <TableColumn fx:id="colVehiculo" prefWidth="98.4000244140625" text="Vehículo" />
+                        <TableColumn fx:id="colCliente" prefWidth="112.80001831054688" text="Cliente" />
+                        <TableColumn fx:id="colEstado" prefWidth="110.39996337890625" text="Estado" />
+                        <TableColumn fx:id="colInformacion" prefWidth="53.199951171875" />
+                    </columns>
+                  </TableView>
+                  <Pagination layoutX="201.0" layoutY="216.0" prefHeight="200.0" prefWidth="494.0" />
+                  <Label layoutX="725.0" layoutY="43.0" text="Filtros" />
+                  <Label layoutX="772.0" layoutY="99.0" text="Fecha" />
+                  <DatePicker fx:id="dpFecha" layoutX="834.0" layoutY="95.0" />
+                  <Label layoutX="770.0" layoutY="148.0" text="Estado" />
+                  <ComboBox fx:id="cbEstado" layoutX="834.0" layoutY="144.0" prefHeight="26.0" prefWidth="175.0" />
+                  <Label layoutX="770.0" layoutY="199.0" text="Vehiculo" />
+                  <ComboBox fx:id="cbVehiculo" layoutX="834.0" layoutY="195.0" prefHeight="26.0" prefWidth="175.0" />
+                  <Label layoutX="774.0" layoutY="248.0" text="Lavado" />
+                  <ComboBox fx:id="cbLavado" layoutX="834.0" layoutY="243.0" prefHeight="26.0" prefWidth="175.0" />
+               </children></Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

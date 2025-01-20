@@ -53,6 +53,7 @@ public class SesionController {
         return Pattern.matches(regex, contrasenia);
     }
 
+
     @FXML
     private void validarCredenciales(ActionEvent actionEvent) throws IOException {
         String nombreUsuario = campoNombre.getText();
@@ -87,7 +88,7 @@ public class SesionController {
             alert.show();
         }
         else {
-            Scene scene = new Scene(loadFXML("gestion-turnos"));
+            Scene scene = new Scene(loadFXML("principal-oficinista"));
             stage.setScene(scene);
         }
 
