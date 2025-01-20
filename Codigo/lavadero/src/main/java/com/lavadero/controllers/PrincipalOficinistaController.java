@@ -10,12 +10,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import lombok.Setter;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+
 
 import java.io.IOException;
 
@@ -63,4 +59,6 @@ public class PrincipalOficinistaController {
     public void botonConsultaModificaionDatos(ActionEvent actionEvent) {
     }
 
+    public void buttonOficinista(ActionEvent actionEvent) {
+    }
 }
