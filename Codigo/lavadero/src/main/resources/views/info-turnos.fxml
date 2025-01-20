@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1600.0" stylesheets="@../Styles/global.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.InfoTurnoController">
+   <children>
+      <MenuButton fx:id="mbtnCuenta" alignment="CENTER" contentDisplay="RIGHT" layoutX="52.0" layoutY="26.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Oficinista">
+         <items>
+            <MenuItem fx:id="mItemSesion" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+         </items>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icono-usuario.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Leelawadee" size="15.0" />
+         </font>
+      </MenuButton>
+      <HBox fx:id="hboxNav" layoutX="213.0" layoutY="26.0">
+         <children>
+            <Button fx:id="btnPrev" mnemonicParsing="false" onAction="#anteriorPag" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-anterior.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#home" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnNext" mnemonicParsing="false" onAction="#siguientePag" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-siguiente.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <Button fx:id="btnNotificacion" contentDisplay="RIGHT" layoutX="1294.0" layoutY="26.0" mnemonicParsing="false" onAction="#notificarRetiro" prefHeight="60.0" text="Notificar Retiro de Vehículo" AnchorPane.rightAnchor="48.0">
+         <font>
+            <Font name="Leelawadee" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icono-mensaje.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnEstado" contentDisplay="RIGHT" layoutX="1094.0" layoutY="26.0" mnemonicParsing="false" onAction="#cambiarEstado" prefHeight="60.0" text="Cambiar Estado" AnchorPane.rightAnchor="328.0">
+         <font>
+            <Font name="Leelawadee" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icono-estado.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <AnchorPane fx:id="pnFondo" layoutX="116.0" layoutY="106.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="650.0" prefWidth="1287.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="106.0">
+         <children>
+            <Label layoutX="520.0" layoutY="20.0" text="Información de Turno">
+               <font>
+                  <Font name="Leelawadee" size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbNumTurno" layoutX="623.0" layoutY="78.0" text="Número de turno:">
+               <font>
+                  <Font name="Leelawadee" size="32.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="258.0" layoutY="149.0" prefHeight="475.0" prefWidth="932.0">
+               <children>
+                  <Pane fx:id="pnInfoCliente" prefHeight="475.0" prefWidth="460.0" style="-fx-background-color: #00DB4A;" />
+                  <Pane fx:id="pnInfoTurno" layoutX="524.0" prefHeight="475.0" prefWidth="460.0" style="-fx-background-color: #00DB4A;" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
