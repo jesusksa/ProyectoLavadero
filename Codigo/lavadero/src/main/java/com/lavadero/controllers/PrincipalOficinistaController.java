@@ -1,4 +1,5 @@
 package com.lavadero.controllers;
+import com.lavadero.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -42,23 +43,8 @@ public class PrincipalOficinistaController {
     private Button buttonOficinista;
 
     public void botonGestionDeTurnos(ActionEvent actionEvent) throws IOException {
-//        try {
-//            // Cargar el archivo FXML de la nueva ventana
-//            Parent newWindowRoot = FXMLLoader.load(getClass().getResource("/views/gestion-turnos.fxml"));
-//
-//            // Crear un nuevo Stage para la nueva ventana
-//            Stage newWindowStage = new Stage();
-//            newWindowStage.setTitle("gestion-turnos");
-//            newWindowStage.setScene(new Scene(newWindowRoot));
-//
-//            // Mostrar la nueva ventana
-//            newWindowStage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         Scene scene = new Scene(loadFXML("gestion-turnos"));
-        stage.setScene(scene);
-
+        App.getMainStage().setScene(scene);
     }
 
     public void botonConsultaModificaionDatos(ActionEvent actionEvent) {

@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import lombok.Getter;
 import org.hibernate.SessionFactory;
 import javafx.scene.image.Image;
 
@@ -23,8 +24,12 @@ public class App extends Application {
 
     private static Scene scene;
 
+    @Getter
+    private static Stage mainStage;
+
     @Override
     public void start(Stage stage) throws IOException {
+        mainStage = stage;
         scene = new Scene(loadFXML("inicio-sesion"));
         stage.setTitle("Lavadero");
         stage.setMinWidth(750);
@@ -33,7 +38,6 @@ public class App extends Application {
         stage.getIcons().add(icono);
         stage.setScene(scene);
         stage.show();
-        SesionController.setStage(stage);
     }
 
     public static void setRoot(String fxml) throws IOException {
