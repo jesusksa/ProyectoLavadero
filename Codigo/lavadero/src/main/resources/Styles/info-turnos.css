@@ -1,0 +1,22 @@
+#pnInfoCliente,#pnInfoTurno{
+-fx-background-color: #00DB4A;
+-fx-background-radius: 20px;
+}
+
+#btnEstado{
+-fx-background-color: #FFFFFF;
+-fx-background-radius: 20px;
+}
+
+#btnEstado:hover{
+-fx-background-color: #E4E4E4;
+}
+
+#btnNotificacion{
+-fx-background-color: #F9E900;
+-fx-background-radius: 20px;
+}
+
+#btnNotificacion:hover{
+-fx-background-color: #BFB302;
+}
