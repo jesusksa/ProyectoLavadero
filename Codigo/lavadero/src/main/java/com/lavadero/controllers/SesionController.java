@@ -1,5 +1,6 @@
 package com.lavadero.controllers;
 
+import com.lavadero.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -13,9 +14,6 @@ import java.util.regex.Pattern;
 import static com.lavadero.App.loadFXML;
 
 public class SesionController {
-
-    @Setter
-    private static Stage stage;
 
     @FXML
     private ToggleButton botonMostrarContraseña;
@@ -89,11 +87,8 @@ public class SesionController {
         }
         else {
             Scene scene = new Scene(loadFXML("principal-oficinista"));
-            stage.setScene(scene);
-            PrincipalOficinistaController.setStage(stage);
+            App.getMainStage().setScene(scene);
         }
-
-
     }
 
 
