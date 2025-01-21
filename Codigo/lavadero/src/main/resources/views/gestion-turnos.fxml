@@ -30,7 +30,7 @@
             </ImageView>
          </graphic>
          <font>
-            <Font name="Leelawadee" size="15.0" />
+            <Font size="15.0" />
          </font>
       </MenuButton>
       <HBox fx:id="hboxNav" layoutX="213.0" layoutY="26.0" AnchorPane.leftAnchor="213.0">

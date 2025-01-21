@@ -3,8 +3,7 @@ import com.lavadero.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -32,6 +31,7 @@ public class PrincipalOficinistaController {
     public HBox boxButtons;
     public ImageView imageG;
     public ImageView imageCyM;
+    public MenuButton mbtnCuenta;
 
     @FXML
     private AnchorPane AnchorPrincipal;
@@ -40,7 +40,16 @@ public class PrincipalOficinistaController {
     private VBox panel;
 
     @FXML
-    private Button buttonOficinista;
+    public void initialize() {
+        // Listener para detectar cuando el menú se despliega
+        mbtnCuenta.showingProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                mbtnCuenta.getStyleClass().add("pressed");
+            } else {
+                mbtnCuenta.getStyleClass().remove("pressed");
+            }
+        });
+    }
 
     public void botonGestionDeTurnos(ActionEvent actionEvent) throws IOException {
         Scene scene = new Scene(loadFXML("gestion-turnos"));
@@ -51,5 +60,18 @@ public class PrincipalOficinistaController {
     }
 
     public void buttonOficinista(ActionEvent actionEvent) {
+    }
+
+    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cerrar sesión");
+        alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.OK){
+            Scene scene = new Scene(loadFXML("inicio-sesion"));
+            App.getMainStage().setScene(scene);
+        }else {
+            alert.close();
+        }
     }
 }

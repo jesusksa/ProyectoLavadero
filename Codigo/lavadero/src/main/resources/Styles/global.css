@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('Inconsolata-VariableFont_wdth,wght.ttf');
+}
+
 #apnPrincipal{
 -fx-background-color: #0A1045;
 }
@@ -10,6 +15,7 @@
 #mbtnCuenta{
 -fx-background-color: #F9E900;
 -fx-background-radius: 20px;
+-fx-font-family: "Inconsolata", serif;
 }
 
 #mbtnCuenta:hover{
@@ -26,7 +32,7 @@
 }
 
 #mItemSesion {
-    -fx-background-color: transparent; /* Fondo normal */
+    -fx-background-color: transparent;
 }
 
 .context-menu {
