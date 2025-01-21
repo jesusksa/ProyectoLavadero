@@ -90,6 +90,7 @@ public class SesionController {
         else {
             Scene scene = new Scene(loadFXML("principal-oficinista"));
             stage.setScene(scene);
+            PrincipalOficinistaController.setStage(stage);
         }
 
 

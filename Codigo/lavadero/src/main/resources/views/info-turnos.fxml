@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.InfoTurnoController">
+   <children>
+      <MenuButton fx:id="mbtnCuenta" alignment="CENTER" contentDisplay="RIGHT" layoutX="52.0" layoutY="26.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Oficinista">
+         <items>
+            <MenuItem fx:id="mItemSesion" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+         </items>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icono-usuario.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Leelawadee" size="15.0" />
+         </font>
+      </MenuButton>
+      <HBox fx:id="hboxNav" layoutX="213.0" layoutY="26.0">
+         <children>
+            <Button fx:id="btnPrev" mnemonicParsing="false" onAction="#anteriorPag" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-anterior.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#home" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnNext" mnemonicParsing="false" onAction="#siguientePag" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-siguiente.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <Button fx:id="btnNotificacion" contentDisplay="RIGHT" layoutX="1294.0" layoutY="26.0" mnemonicParsing="false" onAction="#notificarRetiro" prefHeight="60.0" text="Notificar Retiro de Vehículo" AnchorPane.rightAnchor="48.0">
+         <font>
+            <Font name="Leelawadee" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icono-mensaje.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnEstado" contentDisplay="RIGHT" layoutX="1094.0" layoutY="26.0" mnemonicParsing="false" onAction="#cambiarEstado" prefHeight="60.0" text="Cambiar Estado" AnchorPane.rightAnchor="328.0">
+         <font>
+            <Font name="Leelawadee" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icono-estado.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <AnchorPane fx:id="pnFondo" layoutX="50.0" layoutY="101.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="650.0" prefWidth="1287.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="101.0">
+         <children>
+            <Label layoutX="520.0" layoutY="20.0" text="Información de Turno">
+               <font>
+                  <Font name="Leelawadee" size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbNumTurno" layoutX="621.0" layoutY="72.0" prefHeight="58.0" prefWidth="258.0" text="Número de turno:">
+               <font>
+                  <Font name="Leelawadee" size="32.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="51.0" layoutY="149.0" prefHeight="475.0" prefWidth="1352.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+               <children>
+                  <Pane fx:id="pnInfoCliente" prefHeight="475.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="801.0">
+                     <children>
+                        <Label contentDisplay="RIGHT" layoutX="144.0" layoutY="14.0" text="Datos Cliente" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="40.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-cliente1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbCliente" layoutX="50.0" layoutY="100.0" text="Cliente:" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="30.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-cliente.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbVehiculo" layoutX="50.0" layoutY="170.0" text="Vehículo:" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="30.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-auto.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbTelefono" layoutX="50.0" layoutY="240.0" text="Telefono:" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="30.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-telefono.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbDirreccion" layoutX="50.0" layoutY="310.0" text="Dirección:" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="30.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-ubicacion.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbMatricula" layoutX="50.0" layoutY="380.0" text="Matricula:" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="30.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-matricula.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </children></Pane>
+                  <Pane fx:id="pnInfoTurno" layoutX="801.0" prefHeight="475.0" prefWidth="600.0" AnchorPane.leftAnchor="801.0" AnchorPane.rightAnchor="-1.0">
+                     <children>
+                        <Label contentDisplay="RIGHT" layoutX="155.0" layoutY="14.0" text="Datos Turno" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="40.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-libro.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbFecha" layoutX="50.0" layoutY="100.0" text="Fecha:" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="30.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-calendario.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbEstado" layoutX="50.0" layoutY="170.0" text="Estado:" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="30.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-estado2.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbResponsable" layoutX="50.0" layoutY="240.0" text="Responsables:" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="30.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-personal.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbLavado" layoutX="50.0" layoutY="310.0" text="Tipo de lavado:" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="30.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-lavado.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbFormaPago" layoutX="50.0" layoutY="380.0" text="Forma de pago:" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee" size="30.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icono-billete.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </children></Pane>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../Styles/global.css" />
+      <URL value="@../Styles/info-turnos.css" />
+   </stylesheets>
+</AnchorPane>

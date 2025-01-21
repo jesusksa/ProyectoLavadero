@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
+import lombok.Setter;
 
 
 import java.io.IOException;
@@ -21,6 +22,8 @@ import static com.lavadero.App.loadFXML;
 
 
 public class PrincipalOficinistaController {
+    @Setter
+    private static Stage stage;
     public ImageView imgeUsuario;
     public Label titulo;
     public Button buttonG;
@@ -38,21 +41,23 @@ public class PrincipalOficinistaController {
     @FXML
     private Button buttonOficinista;
 
-    public void botonGestionDeTurnos(ActionEvent actionEvent) {
-        try {
-            // Cargar el archivo FXML de la nueva ventana
-            Parent newWindowRoot = FXMLLoader.load(getClass().getResource("/views/gestion-turnos.fxml"));
-
-            // Crear un nuevo Stage para la nueva ventana
-            Stage newWindowStage = new Stage();
-            newWindowStage.setTitle("gestion-turnos");
-            newWindowStage.setScene(new Scene(newWindowRoot));
-
-            // Mostrar la nueva ventana
-            newWindowStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void botonGestionDeTurnos(ActionEvent actionEvent) throws IOException {
+//        try {
+//            // Cargar el archivo FXML de la nueva ventana
+//            Parent newWindowRoot = FXMLLoader.load(getClass().getResource("/views/gestion-turnos.fxml"));
+//
+//            // Crear un nuevo Stage para la nueva ventana
+//            Stage newWindowStage = new Stage();
+//            newWindowStage.setTitle("gestion-turnos");
+//            newWindowStage.setScene(new Scene(newWindowRoot));
+//
+//            // Mostrar la nueva ventana
+//            newWindowStage.show();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        Scene scene = new Scene(loadFXML("gestion-turnos"));
+        stage.setScene(scene);
 
     }
 

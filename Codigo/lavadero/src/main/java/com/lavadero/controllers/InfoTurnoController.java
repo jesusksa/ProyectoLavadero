@@ -1,19 +1,15 @@
 package com.lavadero.controllers;
 
-import com.lavadero.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.MenuButton;
 
 import java.io.IOException;
-import java.util.Optional;
 
-public class BaseController {
+public class InfoTurnoController {
     public MenuButton mbtnCuenta;
-    public ScrollPane scllTurnos;
-    private int currentRow = 0; // Para rastrear la fila actual en el GridPane
-    private int currentColumn = 0; // Para rastrear la columna actual en la fila
 
     @FXML
     public void initialize() {
@@ -46,5 +42,11 @@ public class BaseController {
         }else {
             alert.close();
         }
+    }
+
+    public void notificarRetiro(ActionEvent actionEvent) {
+    }
+
+    public void cambiarEstado(ActionEvent actionEvent) {
     }
 }

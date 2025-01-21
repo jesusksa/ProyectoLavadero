@@ -15,11 +15,12 @@ import java.io.IOException;
 public class GestionTurnosController {
     public GridPane gridTurnos;
     public MenuButton mbtnCuenta;
+    public ScrollPane scllTurnos;
     private int currentRow = 0; // Para rastrear la fila actual en el GridPane
     private int currentColumn = 0; // Para rastrear la columna actual en la fila
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         // Listener para detectar cuando el menú se despliega
         mbtnCuenta.showingProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
@@ -46,7 +47,7 @@ public class GestionTurnosController {
     public void cargarTurnos(){
         // Crear un nuevo Pane y configurar sus hijos
         Pane pnTurno = new Pane();
-        pnTurno.setPrefSize(160.0, 160.0);
+        pnTurno.setPrefSize(100.0, 160.0);
         pnTurno.setStyle("-fx-background-color: white;");
 
         //Label de Cliente
@@ -84,7 +85,7 @@ public class GestionTurnosController {
 
         //Boton de Mas info
         Button btnInfo = new Button();
-        btnInfo.setLayoutX(280);
+        btnInfo.setLayoutX(250);
         btnInfo.setLayoutY(50);
         btnInfo.setPrefSize(40.0, 40.0);
         btnInfo.setStyle(
@@ -123,7 +124,7 @@ public class GestionTurnosController {
 
         // Calcular la siguiente posición (columnas: 0, 1, 2)
         currentColumn++;
-        if (currentColumn >= 3) {
+        if (currentColumn >= 4) {
             currentColumn = 0;
             currentRow++;
         }
