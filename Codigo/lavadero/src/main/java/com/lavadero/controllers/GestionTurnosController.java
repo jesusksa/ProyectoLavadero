@@ -1,8 +1,10 @@
 package com.lavadero.controllers;
 
+import com.lavadero.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -11,6 +13,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import java.io.IOException;
+
+import static com.lavadero.App.loadFXML;
 
 public class GestionTurnosController {
     public GridPane gridTurnos;
@@ -135,8 +139,8 @@ public class GestionTurnosController {
         alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
         alert.showAndWait();
         if (alert.getResult() == ButtonType.OK){
-            //conectar para cerrar Sesion
-
+            Scene scene = new Scene(loadFXML("inicio-sesion"));
+            App.getMainStage().setScene(scene);
         }else {
             alert.close();
         }

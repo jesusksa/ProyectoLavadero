@@ -30,10 +30,9 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         mainStage = stage;
+        stage.setMaximized(true);
         scene = new Scene(loadFXML("inicio-sesion"));
         stage.setTitle("Lavadero");
-        stage.setMinWidth(750);
-        stage.setMinHeight(600);
         Image icono = new Image(getClass().getResourceAsStream("/images/icono-ventana.png"));
         stage.getIcons().add(icono);
         stage.setScene(scene);

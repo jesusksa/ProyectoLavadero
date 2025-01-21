@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPrincipal" fx:id="AnchorPrincipal" prefHeight="800.0" prefWidth="1600.0" styleClass="root" stylesheets="@../Styles/principal-oficinista.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.PrincipalOficinistaController">
+<AnchorPane id="AnchorPrincipal" fx:id="AnchorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0" styleClass="root" stylesheets="@../Styles/principal-oficinista.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.PrincipalOficinistaController">
    <children>
       <VBox id="panel" fx:id="panel" alignment="TOP_CENTER" layoutX="269.0" layoutY="37.0" prefHeight="700.0" prefWidth="1110.0" styleClass="panel" stylesheets="@../Styles/principal-oficinista.css">
          <children>
