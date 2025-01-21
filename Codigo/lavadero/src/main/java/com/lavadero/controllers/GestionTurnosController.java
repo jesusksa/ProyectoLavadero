@@ -136,6 +136,7 @@ public class GestionTurnosController {
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cerrar sesión");
         alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
         alert.showAndWait();
         if (alert.getResult() == ButtonType.OK){

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('Inconsolata-VariableFont_wdth,wght.ttf');
+}
+
 #apnPrincipal{
 -fx-background-color: #0A1045;
 }
