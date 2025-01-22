@@ -13,6 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import java.io.IOException;
+import java.util.Random;
 
 import static com.lavadero.App.loadFXML;
 
@@ -33,10 +34,16 @@ public class GestionTurnosController {
                 mbtnCuenta.getStyleClass().remove("pressed");
             }
         });
+
+        // Generar un número aleatorio de turnos y agregarlos
+        Random random = new Random();
+        int numeroTurnos = random.nextInt(10) + 1; // Generar entre 1 y 10 turnos
+        for (int i = 0; i < numeroTurnos; i++) {
+            cargarTurnos();
+        }
     }
 
     public void registrarTurno(ActionEvent actionEvent) {
-        cargarTurnos();
     }
 
     public void anteriorPag(ActionEvent actionEvent) {

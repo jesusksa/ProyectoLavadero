@@ -51,6 +51,10 @@
     -fx-font-family: "Inconsolata", serif;
 }
 
+.buttonG:hover{
+-fx-background-color: #BFB302;
+}
+
 .buttonCyM {
     -fx-background-color: #4D8B31;
     -fx-text-fill: black;
@@ -63,4 +67,8 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 15, 0, 8, 8);
     -fx-font-size: 2.9em;
     -fx-font-family: "Inconsolata", serif;
+}
+
+.buttonCyM:hover{
+-fx-background-color: #427929;
 }
