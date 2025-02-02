@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('Inconsolata-VariableFont_wdth,wght.ttf');
+}
+
+.root{
+    -fx-background-color: #0A1045;
+}
+
+#buttonTurnos{
+    -fx-background-color: #F9E900;
+    -fx-text-fill: black;
+    -fx-pref-height: 400px;
+    -fx-background-radius: 20px;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 15, 0, 8, 8);
+    -fx-font-size: 2.9em;
+    -fx-font-family: "Inconsolata", serif;
+}
+
+.button-card:hover {
+    -fx-opacity: 80%;
+}
+
+#buttonVehiculos{
+    -fx-background-color: #4D8B31;
+    -fx-text-fill: black;
+    -fx-pref-height: 400px;
+    -fx-background-radius: 20px;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 15, 0, 8, 8);
+    -fx-font-size: 2.9em;
+    -fx-font-family: "Inconsolata", serif;
+
+}
+
+#buttonClientes{
+        -fx-background-color: #D2434B;
+        -fx-text-fill: black;
+        -fx-pref-height: 400px;
+        -fx-background-radius: 20px;
+        -fx-border-color: black;
+        -fx-border-width: 2px;
+        -fx-border-radius: 20px;
+        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 15, 0, 8, 8);
+        -fx-font-size: 2.9em;
+        -fx-font-family: "Inconsolata", serif;
+}
+
+#buttonEmpleados{
+            -fx-background-color: #F9E900;
+            -fx-text-fill: black;
+            -fx-pref-height: 400px;
+            -fx-background-radius: 20px;
+            -fx-border-color: black;
+            -fx-border-width: 2px;
+            -fx-border-radius: 20px;
+            -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 15, 0, 8, 8);
+            -fx-font-size: 2.9em;
+            -fx-font-family: "Inconsolata", serif;
+}
+
