@@ -56,22 +56,15 @@ public class PrincipalOficinistaController {
         App.getMainStage().setScene(scene);
     }
 
-    public void botonConsultaModificaionDatos(ActionEvent actionEvent) {
+    public void botonConsultaModificaionDatos(ActionEvent actionEvent) throws IOException {
+        Scene scene = new Scene(loadFXML("consulta-modificacion"));
+        App.getMainStage().setScene(scene);
     }
 
     public void buttonOficinista(ActionEvent actionEvent) {
     }
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Cerrar sesión");
-        alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
-        alert.showAndWait();
-        if (alert.getResult() == ButtonType.OK){
-            Scene scene = new Scene(loadFXML("inicio-sesion"));
-            App.getMainStage().setScene(scene);
-        }else {
-            alert.close();
-        }
+        BaseController.cerrarSesion(actionEvent);
     }
 }

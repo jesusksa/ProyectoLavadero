@@ -7,13 +7,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.ScrollPane;
 
 import java.io.IOException;
 
 import static com.lavadero.App.loadFXML;
 
-public class InfoTurnoController {
+public class ConsultaModificacionController {
     public MenuButton mbtnCuenta;
+    public ScrollPane scllTurnos;
+    private int currentRow = 0; // Para rastrear la fila actual en el GridPane
+    private int currentColumn = 0; // Para rastrear la columna actual en la fila
 
     @FXML
     public void initialize() {
@@ -38,11 +42,5 @@ public class InfoTurnoController {
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
         BaseController.cerrarSesion(actionEvent);
-    }
-
-    public void notificarRetiro(ActionEvent actionEvent) {
-    }
-
-    public void cambiarEstado(ActionEvent actionEvent) {
     }
 }

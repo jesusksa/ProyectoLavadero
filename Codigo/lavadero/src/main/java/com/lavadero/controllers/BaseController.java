@@ -39,7 +39,7 @@ public class BaseController {
     public void siguientePag(ActionEvent actionEvent) {
     }
 
-    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
+    public static void cerrarSesion(ActionEvent actionEvent) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Cerrar sesión");
         alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.ConsultaModificacionController">
+   <children>
+      <MenuButton fx:id="mbtnCuenta" alignment="CENTER" contentDisplay="RIGHT" layoutX="52.0" layoutY="26.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Oficinista">
+         <items>
+            <MenuItem fx:id="mItemSesion" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+         </items>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icono-usuario.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Leelawadee" size="15.0" />
+         </font>
+      </MenuButton>
+      <HBox fx:id="hboxNav" layoutX="213.0" layoutY="26.0">
+         <children>
+            <Button fx:id="btnPrev" mnemonicParsing="false" onAction="#anteriorPag" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-anterior.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#home" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnNext" mnemonicParsing="false" onAction="#siguientePag" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-siguiente.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <HBox fx:id="pnFondo" alignment="CENTER" fillHeight="false" layoutX="404.0" layoutY="250.0" prefHeight="237.0" prefWidth="793.0" spacing="25.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Button id="buttonTurnos" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" styleClass="button-card" text="Turnos">
+               <graphic>
+                  <ImageView fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-turno.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button id="buttonVehiculos" contentDisplay="TOP" mnemonicParsing="false" styleClass="button-card" text="Vehículos">
+               <graphic>
+                  <ImageView fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-vehiculo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button id="buttonClientes" contentDisplay="TOP" mnemonicParsing="false" styleClass="button-card" text="Clientes">
+               <graphic>
+                  <ImageView fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-cliente-card.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button id="buttonEmpleados" contentDisplay="TOP" mnemonicParsing="false" styleClass="button-card" text="Empleados">
+               <graphic>
+                  <ImageView fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-empleado.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Styles/global.css" />
+      <URL value="@../Styles/consulta-modificacion.css" />
+   </stylesheets>
+</AnchorPane>
