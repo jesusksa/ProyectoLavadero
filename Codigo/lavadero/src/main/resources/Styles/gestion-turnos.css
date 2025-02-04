@@ -5,7 +5,7 @@
 
 #btnFiltrar{
 -fx-background-color: #4D8B31;
--fx-background-radius: 10px
+-fx-background-radius: 10px;
 -fx-font-family: "Inconsolata", serif;
 }
 
