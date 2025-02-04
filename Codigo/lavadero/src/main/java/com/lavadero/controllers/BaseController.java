@@ -33,7 +33,9 @@ public class BaseController {
     public void anteriorPag(ActionEvent actionEvent) {
     }
 
-    public void home(ActionEvent actionEvent) {
+    public static void home(ActionEvent actionEvent) throws IOException {
+        Scene scene = new Scene(loadFXML("principal-oficinista"));
+        App.getMainStage().setScene(scene);
     }
 
     public void siguientePag(ActionEvent actionEvent) {
@@ -51,4 +53,6 @@ public class BaseController {
             alert.close();
         }
     }
+
+
 }

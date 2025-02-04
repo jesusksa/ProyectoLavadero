@@ -30,7 +30,8 @@ public class InfoTurnoController {
     public void anteriorPag(ActionEvent actionEvent) {
     }
 
-    public void home(ActionEvent actionEvent) {
+    public void home(ActionEvent actionEvent) throws IOException {
+        BaseController.home(actionEvent);
     }
 
     public void siguientePag(ActionEvent actionEvent) {
