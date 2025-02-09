@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuButton;
 
@@ -14,6 +15,10 @@ import static com.lavadero.App.loadFXML;
 
 public class InfoTurnoController {
     public MenuButton mbtnCuenta;
+    @FXML
+    private Button btnPrev;
+    @FXML
+    private Button btnNext;
 
     @FXML
     public void initialize() {
@@ -25,9 +30,13 @@ public class InfoTurnoController {
                 mbtnCuenta.getStyleClass().remove("pressed");
             }
         });
+
+        BaseController.setEscenaActual("info-turnos");
+        BaseController.controlarVisibilidad(btnPrev, btnNext);
     }
 
-    public void anteriorPag(ActionEvent actionEvent) {
+    public void anteriorPag(ActionEvent actionEvent) throws IOException {
+        BaseController.anteriorPag(actionEvent);
     }
 
     public void home(ActionEvent actionEvent) throws IOException {

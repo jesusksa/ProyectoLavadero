@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 import static com.lavadero.App.loadFXML;
 
-public class SesionController {
+public class SesionController implements Avanzable {
 
     @FXML
     private ToggleButton botonMostrarContraseña;
@@ -86,10 +86,13 @@ public class SesionController {
             alert.show();
         }
         else {
-            Scene scene = new Scene(loadFXML("principal-oficinista"));
-            App.getMainStage().setScene(scene);
+            avanzar("","");
         }
     }
 
-
+    @Override
+    public void avanzar(String viewActual, String viewNueva) throws IOException {
+        Scene scene = new Scene(loadFXML("principal-oficinista"));
+        App.getMainStage().setScene(scene);
+    }
 }
