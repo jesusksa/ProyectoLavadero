@@ -4,20 +4,21 @@ import com.lavadero.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 
 import static com.lavadero.App.loadFXML;
 
-public class ConsultaModificacionController {
+public class ConsultaModificacionController implements Avanzable{
     public MenuButton mbtnCuenta;
     public ScrollPane scllTurnos;
     private int currentRow = 0; // Para rastrear la fila actual en el GridPane
     private int currentColumn = 0; // Para rastrear la columna actual en la fila
+    @FXML
+    private Button btnPrev;
+    @FXML
+    private Button btnNext;
 
     @FXML
     public void initialize() {
@@ -29,9 +30,12 @@ public class ConsultaModificacionController {
                 mbtnCuenta.getStyleClass().remove("pressed");
             }
         });
+
+        BaseController.controlarVisibilidad(btnPrev, btnNext);
     }
 
-    public void anteriorPag(ActionEvent actionEvent) {
+    public void anteriorPag(ActionEvent actionEvent) throws IOException {
+        BaseController.anteriorPag(actionEvent);
     }
 
     public void home(ActionEvent actionEvent) throws IOException {
@@ -43,5 +47,11 @@ public class ConsultaModificacionController {
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
         BaseController.cerrarSesion(actionEvent);
+    }
+
+
+    @Override
+    public void avanzar(String viewActual, String viewNueva) throws IOException {
+        BaseController.avanzar("","");
     }
 }
