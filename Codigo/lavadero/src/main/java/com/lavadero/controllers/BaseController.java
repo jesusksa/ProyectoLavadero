@@ -43,6 +43,12 @@ public class BaseController {
         });
     }
 
+    /**
+     * Posible implementación para el método con el mismo nombre de la interfaz Navegable.
+     * @param actionEvent
+     * @throws IOException
+     * @throws EmptyStackException
+     */
     public static void anteriorPag(ActionEvent actionEvent) throws IOException, EmptyStackException {
 
         //Controla que la pila para retroceder no está vacía
@@ -58,6 +64,12 @@ public class BaseController {
         }
     }
 
+    /**
+     * Posible implementación para el método con el mismo nombre de la interfaz Navegable.
+     * @param actionEvent
+     * @throws IOException
+     * @throws EmptyStackException
+     */
     public static void home(ActionEvent actionEvent) throws IOException {
         pilaRetroceso.removeAllElements();
         pilaAvance.removeAllElements();
@@ -66,7 +78,25 @@ public class BaseController {
         App.getMainStage().setScene(scene);
     }
 
-    public static void siguientePag(ActionEvent actionEvent, String nuevaScene) throws IOException, EmptyStackException {
+    /**
+     * Posible implementación para el método con el mismo nombre de la interfaz Navegable.
+     * @param actionEvent
+     * @throws IOException
+     * @throws EmptyStackException
+     */
+    public static void siguientePag(ActionEvent actionEvent) throws IOException, EmptyStackException {
+
+        //Controla que la pila para retroceder no está vacía
+        if(!pilaAvance.isEmpty()){
+
+            //Se añade la escena actual a la pila de retroceso
+            pilaRetroceso.add(escenaActual);
+
+            //Se retira la última escena de la pila de avance
+            escenaActual = pilaAvance.pop();
+            Scene scene = new Scene(loadFXML(escenaActual));
+            App.getMainStage().setScene(scene);
+        }
     }
 
     public static void cerrarSesion(ActionEvent actionEvent) throws IOException {
@@ -87,6 +117,12 @@ public class BaseController {
         button2.setDisable(pilaAvance.isEmpty());
     }
 
+    /**
+     * Posible implementación para el método con el mismo nombre de la interfaz Avanzable.
+     * @param viewActual viewActual - Nombre de la view desde la cual se invoca este método.
+     * @param viewNueva viewNueva - Nombre de la view a la cual se avanzará.
+     * @throws IOException
+     */
     public static void avanzar(String viewActual, String viewNueva) throws IOException{
         //Estas sentencias permiten que se utilice la botonera de navegación de forma correcta.
         BaseController.getPilaRetroceso().add(viewActual);

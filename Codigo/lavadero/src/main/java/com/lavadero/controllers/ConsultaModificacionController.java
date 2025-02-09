@@ -42,7 +42,8 @@ public class ConsultaModificacionController implements Avanzable{
         BaseController.home(actionEvent);
     }
 
-    public void siguientePag(ActionEvent actionEvent) {
+    public void siguientePag(ActionEvent actionEvent) throws IOException {
+        BaseController.siguientePag(actionEvent);
     }
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
