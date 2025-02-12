@@ -27,9 +27,6 @@ public class BaseController {
 
 
     public MenuButton mbtnCuenta;
-    public ScrollPane scllTurnos;
-    private int currentRow = 0; // Para rastrear la fila actual en el GridPane
-    private int currentColumn = 0; // Para rastrear la columna actual en la fila
 
     @FXML
     public void initialize() {

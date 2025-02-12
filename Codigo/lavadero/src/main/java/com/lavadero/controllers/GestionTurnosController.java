@@ -17,6 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import java.io.IOException;
+import java.util.Random;
 
 import static com.lavadero.App.loadFXML;
 
@@ -42,12 +43,19 @@ public class GestionTurnosController implements Navegable, Avanzable{
             }
         });
 
+        // Generar un número aleatorio de turnos y agregarlos
+        Random random = new Random();
+        int numeroTurnos = random.nextInt(10) + 1; // Generar entre 1 y 10 turnos
+        for (int i = 0; i < numeroTurnos; i++) {
+            cargarTurnos();
+        }
+
         //Se controla que las pilas de avanzar y retroceder no estén vacías y se deshabilita el botón en dicho caso
         BaseController.controlarVisibilidad(btnPrev, btnNext);
     }
 
     public void registrarTurno(ActionEvent actionEvent) {
-        cargarTurnos();
+
     }
 
     public void anteriorPag(ActionEvent actionEvent) throws IOException {

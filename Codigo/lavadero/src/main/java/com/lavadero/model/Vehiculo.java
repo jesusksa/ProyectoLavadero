@@ -30,8 +30,9 @@ public class Vehiculo {
     @Column(name = "modelo_vehiculo", nullable = false)
     private String modeloAuto;
 
-    @Column(name = "tamanio_vehiculo", nullable = false)
-    private double tamanioAuto;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_relacion", nullable = false)
+    private TipoRelacion tipoRelacion;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_cliente", nullable = false)
