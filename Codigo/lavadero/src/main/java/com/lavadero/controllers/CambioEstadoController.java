@@ -4,20 +4,29 @@ import com.lavadero.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.MenuButton;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
+import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.IOException;
+import java.util.EmptyStackException;
+import java.util.Optional;
+import java.util.Stack;
 
 import static com.lavadero.App.loadFXML;
 
-public class InfoTurnoController {
+public class CambioEstadoController {
+
+    @Setter
+    private static String escenaActual;
+    @Getter
+    private static Stack<String> pilaRetroceso = new Stack<>();
+    @Getter
+    private static Stack<String> pilaAvance = new Stack<>();
+
+
     public MenuButton mbtnCuenta;
-    private static Stage stageEstado;
     @FXML
     private Button btnPrev;
     @FXML
@@ -34,8 +43,12 @@ public class InfoTurnoController {
             }
         });
 
-        BaseController.setEscenaActual("info-turnos");
+        BaseController.setEscenaActual("cambio-estado");
         BaseController.controlarVisibilidad(btnPrev, btnNext);
+    }
+
+    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
+        BaseController.cerrarSesion(actionEvent);
     }
 
     public void anteriorPag(ActionEvent actionEvent) throws IOException {
@@ -50,20 +63,15 @@ public class InfoTurnoController {
         BaseController.siguientePag(actionEvent);
     }
 
-    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
-        BaseController.cerrarSesion(actionEvent);
+    public void CambioEstadoEspera(ActionEvent actionEvent) {
     }
 
-    public void notificarRetiro(ActionEvent actionEvent) {
+    public void CambioEstadoProceso(ActionEvent actionEvent) {
     }
 
-    public void cambiarEstado(ActionEvent actionEvent) throws IOException {
-        stageEstado = new Stage();
-        Scene sceneEstado = new Scene(loadFXML("cambio-estado"));
-        stageEstado.setTitle("Lavadero");
-        Image icono = new Image(getClass().getResourceAsStream("/images/icono-ventana.png"));
-        stageEstado.getIcons().add(icono);
-        stageEstado.setScene(sceneEstado);
-        stageEstado.show();
+    public void CambioEstadoFinalizado(ActionEvent actionEvent) {
+    }
+
+    public void CambioEstadoCancelado(ActionEvent actionEvent) {
     }
 }
