@@ -47,6 +47,9 @@ public class Turno {
     @Column(name = "estado_lavado", nullable = false)
     private EstadoLavado estado;
 
+    @Column(name = "motivo_cancelado", nullable = false)
+    private String motivo;
+
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente cliente;
