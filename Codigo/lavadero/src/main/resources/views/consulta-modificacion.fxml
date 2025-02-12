@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.ConsultaModificacionController">
+<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.ConsultaModificacionController">
    <children>
       <MenuButton fx:id="mbtnCuenta" alignment="CENTER" contentDisplay="RIGHT" layoutX="52.0" layoutY="26.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Oficinista">
          <items>
@@ -62,7 +62,7 @@
       </HBox>
       <HBox fx:id="pnFondo" alignment="CENTER" fillHeight="false" layoutX="404.0" layoutY="250.0" prefHeight="237.0" prefWidth="793.0" spacing="25.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="100.0">
          <children>
-            <Button id="buttonTurnos" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" styleClass="button-card" text="Turnos">
+            <Button id="buttonTurnos" fx:id="turnosCard" alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#cargarTurnos" styleClass="button-card" text="Turnos">
                <graphic>
                   <ImageView fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                      <image>
