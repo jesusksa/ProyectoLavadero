@@ -2,7 +2,6 @@ package com.lavadero.controllers;
 
 import com.lavadero.model.EstadoLavado;
 import com.lavadero.model.Turno;
-import javafx.beans.property.BooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,6 +19,10 @@ public class ConsultaModificacionTurnosController implements Navegable, Avanzabl
     private TableView<RegistroTabla> tablaTurnos;
     @FXML
     private Button btnMasInformacion;
+    @FXML
+    private Button btnPrev;
+    @FXML
+    private Button btnNext;
 
     public class RegistroTabla {
 
@@ -76,6 +79,8 @@ public class ConsultaModificacionTurnosController implements Navegable, Avanzabl
 
         //Se deshabilita el botón si no hay ningún registro de la tabla seleccionado
         btnMasInformacion.disableProperty().bind(tablaTurnos.getSelectionModel().selectedItemProperty().isNull());
+
+        BaseController.controlarVisibilidad(btnPrev, btnNext);
     }
 
     @Override

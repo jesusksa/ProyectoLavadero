@@ -5,13 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.Pane;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.IOException;
 import java.util.EmptyStackException;
-import java.util.Optional;
 import java.util.Stack;
 
 import static com.lavadero.App.loadFXML;
