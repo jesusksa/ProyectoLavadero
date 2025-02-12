@@ -1,12 +1,16 @@
 package com.lavadero.controllers;
 
+import com.lavadero.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuButton;
 
 import java.io.IOException;
+
+import static com.lavadero.App.loadFXML;
 
 public class InfoTurnoController {
     public MenuButton mbtnCuenta;
@@ -34,11 +38,12 @@ public class InfoTurnoController {
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cerrar sesión");
         alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
         alert.showAndWait();
         if (alert.getResult() == ButtonType.OK){
-            //conectar para cerrar Sesion
-
+            Scene scene = new Scene(loadFXML("inicio-sesion"));
+            App.getMainStage().setScene(scene);
         }else {
             alert.close();
         }

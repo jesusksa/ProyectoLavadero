@@ -55,6 +55,22 @@ public class GestionTurnosController {
     public void siguientePag(ActionEvent actionEvent) {
     }
 
+    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cerrar sesión");
+        alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.OK){
+            Scene scene = new Scene(loadFXML("inicio-sesion"));
+            App.getMainStage().setScene(scene);
+        }else {
+            alert.close();
+        }
+    }
+
+    public void filtrar(ActionEvent actionEvent) {
+    }
+
     public void cargarTurnos(){
         // Crear un nuevo Pane y configurar sus hijos
         Pane pnTurno = new Pane();
@@ -120,6 +136,15 @@ public class GestionTurnosController {
                             "-fx-text-fill: white; "                  // Mantener el color del texto
             );
         });
+        btnInfo.setOnAction(actionEvent -> {
+
+            try {
+                Scene scene = new Scene(loadFXML("info-turnos"));
+                App.getMainStage().setScene(scene);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
         ImageView icon = new ImageView(new Image(getClass().getResource("/images/icono-interrogante2.png").toExternalForm()));
         icon.setFitHeight(30.0);
         icon.setFitWidth(30.0);
@@ -139,21 +164,5 @@ public class GestionTurnosController {
             currentColumn = 0;
             currentRow++;
         }
-    }
-
-    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Cerrar sesión");
-        alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
-        alert.showAndWait();
-        if (alert.getResult() == ButtonType.OK){
-            Scene scene = new Scene(loadFXML("inicio-sesion"));
-            App.getMainStage().setScene(scene);
-        }else {
-            alert.close();
-        }
-    }
-
-    public void filtrar(ActionEvent actionEvent) {
     }
 }

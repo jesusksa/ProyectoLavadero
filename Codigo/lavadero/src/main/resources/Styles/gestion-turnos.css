@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('Inconsolata-VariableFont_wdth,wght.ttf');
+}
+
 #btnFiltrar{
 -fx-background-color: #4D8B31;
 -fx-background-radius: 10px
+-fx-font-family: "Inconsolata", serif;
 }
 
 #btnFiltrar:hover{
@@ -28,4 +34,5 @@
 #txtBuscar{
 -fx-background-color: #FFFFFF;
 -fx-background-radius: 10px;
+-fx-font-family: "Inconsolata", serif;
 }
