@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1600.0" stylesheets="@../Styles/global.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.ConsultaModificacionTurnosController">
+   <children>
+      <MenuButton fx:id="mbtnCuenta" alignment="CENTER" contentDisplay="RIGHT" layoutX="52.0" layoutY="26.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Oficinista">
+         <items>
+            <MenuItem fx:id="mItemSesion" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+         </items>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icono-usuario.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Leelawadee" size="15.0" />
+         </font>
+      </MenuButton>
+      <HBox fx:id="hboxNav" layoutX="213.0" layoutY="26.0">
+         <children>
+            <Button fx:id="btnPrev" mnemonicParsing="false" onAction="#anteriorPag" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-anterior.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#home" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnNext" mnemonicParsing="false" onAction="#siguientePag" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-siguiente.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="pnFondo" layoutX="52.0" layoutY="106.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="930.0" prefWidth="1820.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="106.0">
+         <children>
+            <TableView fx:id="tablaTurnos" layoutX="25.0" layoutY="14.0" prefHeight="597.0" prefWidth="1450.0" styleClass="tablaTurnos" stylesheets="@../Styles/consulta-modificacion.css" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="20.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy></TableView>
+            <GridPane layoutX="700.0" layoutY="615.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="650.0" AnchorPane.rightAnchor="650.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btnMasInformacion" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="botonInfo" stylesheets="@../Styles/consulta-modificacion.css" text="Ver más información" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+               </children>
+            </GridPane>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

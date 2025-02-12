@@ -64,3 +64,28 @@
             -fx-font-family: "Inconsolata", serif;
 }
 
+.tablaTurnos{
+    -fx-background-color: #CFF4FF;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+}
+
+.tablaTurnos .column-header{
+    -fx-background-color: #0A1045;
+}
+
+.tablaTurnos .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.botonInfo{
+    -fx-background-color: #F9E900;
+    -fx-background-radius: 20px;
+    -fx-font-family: "Inconsolata", serif;
+}
+
+.botonInfo:hover{
+    -fx-opacity: 90%;
+}
+
