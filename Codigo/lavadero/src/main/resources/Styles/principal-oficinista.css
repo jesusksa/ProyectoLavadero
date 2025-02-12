@@ -51,10 +51,6 @@
     -fx-font-family: "Inconsolata", serif;
 }
 
-.buttonG:hover{
--fx-background-color: #BFB302;
-}
-
 .buttonCyM {
     -fx-background-color: #4D8B31;
     -fx-text-fill: black;
@@ -69,6 +65,10 @@
     -fx-font-family: "Inconsolata", serif;
 }
 
-.buttonCyM:hover{
--fx-background-color: #427929;
+.buttonCyM:hover {
+    -fx-opacity: 80%;
+}
+
+.buttonG:hover {
+    -fx-opacity: 80%;
 }

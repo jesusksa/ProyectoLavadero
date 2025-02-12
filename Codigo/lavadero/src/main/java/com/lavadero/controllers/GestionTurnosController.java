@@ -1,6 +1,10 @@
 package com.lavadero.controllers;
 
 import com.lavadero.App;
+import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -13,19 +17,22 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import java.io.IOException;
-import java.util.Random;
 
 import static com.lavadero.App.loadFXML;
 
-public class GestionTurnosController {
+public class GestionTurnosController implements Navegable, Avanzable{
     public GridPane gridTurnos;
     public MenuButton mbtnCuenta;
     public ScrollPane scllTurnos;
     private int currentRow = 0; // Para rastrear la fila actual en el GridPane
     private int currentColumn = 0; // Para rastrear la columna actual en la fila
+    @FXML
+    private Button btnPrev;
+    @FXML
+    private Button btnNext;
 
     @FXML
-    public void initialize() {
+    private void initialize() {
         // Listener para detectar cuando el menú se despliega
         mbtnCuenta.showingProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
@@ -35,37 +42,28 @@ public class GestionTurnosController {
             }
         });
 
-        // Generar un número aleatorio de turnos y agregarlos
-        Random random = new Random();
-        int numeroTurnos = random.nextInt(10) + 1; // Generar entre 1 y 10 turnos
-        for (int i = 0; i < numeroTurnos; i++) {
-            cargarTurnos();
-        }
+        //Se controla que las pilas de avanzar y retroceder no estén vacías y se deshabilita el botón en dicho caso
+        BaseController.controlarVisibilidad(btnPrev, btnNext);
     }
 
     public void registrarTurno(ActionEvent actionEvent) {
+        cargarTurnos();
     }
 
-    public void anteriorPag(ActionEvent actionEvent) {
+    public void anteriorPag(ActionEvent actionEvent) throws IOException {
+        BaseController.anteriorPag(actionEvent);
     }
 
-    public void home(ActionEvent actionEvent) {
+    public void home(ActionEvent actionEvent) throws IOException {
+        BaseController.home(actionEvent);
     }
 
-    public void siguientePag(ActionEvent actionEvent) {
+    public void siguientePag(ActionEvent actionEvent) throws IOException {
+        BaseController.siguientePag(actionEvent);
     }
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Cerrar sesión");
-        alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
-        alert.showAndWait();
-        if (alert.getResult() == ButtonType.OK){
-            Scene scene = new Scene(loadFXML("inicio-sesion"));
-            App.getMainStage().setScene(scene);
-        }else {
-            alert.close();
-        }
+        BaseController.cerrarSesion(actionEvent);
     }
 
     public void filtrar(ActionEvent actionEvent) {
@@ -139,8 +137,7 @@ public class GestionTurnosController {
         btnInfo.setOnAction(actionEvent -> {
 
             try {
-                Scene scene = new Scene(loadFXML("info-turnos"));
-                App.getMainStage().setScene(scene);
+                avanzar("gestion-turnos", "info-turnos");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -164,5 +161,11 @@ public class GestionTurnosController {
             currentColumn = 0;
             currentRow++;
         }
+    }
+
+
+    @Override
+    public void avanzar(String viewActual, String viewNueva) throws IOException {
+        BaseController.avanzar(viewActual, viewNueva);
     }
 }

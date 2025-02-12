@@ -4,17 +4,17 @@ import com.lavadero.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 
 import static com.lavadero.App.loadFXML;
 
-public class InfoTurnoController {
+public class ConsultaModificacionController implements Avanzable{
     public MenuButton mbtnCuenta;
+    public ScrollPane scllTurnos;
+    private int currentRow = 0; // Para rastrear la fila actual en el GridPane
+    private int currentColumn = 0; // Para rastrear la columna actual en la fila
     @FXML
     private Button btnPrev;
     @FXML
@@ -31,7 +31,6 @@ public class InfoTurnoController {
             }
         });
 
-        BaseController.setEscenaActual("info-turnos");
         BaseController.controlarVisibilidad(btnPrev, btnNext);
     }
 
@@ -51,9 +50,9 @@ public class InfoTurnoController {
         BaseController.cerrarSesion(actionEvent);
     }
 
-    public void notificarRetiro(ActionEvent actionEvent) {
-    }
 
-    public void cambiarEstado(ActionEvent actionEvent) {
+    @Override
+    public void avanzar(String viewActual, String viewNueva) throws IOException {
+        BaseController.avanzar("","");
     }
 }
