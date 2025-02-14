@@ -56,6 +56,11 @@ public class InfoTurnoController {
 
     public void cambiarEstado(ActionEvent actionEvent) throws IOException {
         stageEstado = new Stage();
+        stageEstado.setMinWidth(800);
+        stageEstado.setMinHeight(400);
+        stageEstado.setMaxWidth(800);
+        stageEstado.setMaxHeight(400);
+        stageEstado.setMaximized(false);
         Scene sceneEstado = new Scene(loadFXML("cambio-estado"));
         stageEstado.setTitle("Lavadero");
         Image icono = new Image(getClass().getResourceAsStream("/images/icono-ventana.png"));
