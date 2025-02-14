@@ -1,12 +1,9 @@
 package com.lavadero.controllers;
 
-import com.lavadero.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuButton;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -59,6 +56,11 @@ public class InfoTurnoController {
 
     public void cambiarEstado(ActionEvent actionEvent) throws IOException {
         stageEstado = new Stage();
+        stageEstado.setMinWidth(800);
+        stageEstado.setMinHeight(400);
+        stageEstado.setMaxWidth(800);
+        stageEstado.setMaxHeight(400);
+        stageEstado.setMaximized(false);
         Scene sceneEstado = new Scene(loadFXML("cambio-estado"));
         stageEstado.setTitle("Lavadero");
         Image icono = new Image(getClass().getResourceAsStream("/images/icono-ventana.png"));

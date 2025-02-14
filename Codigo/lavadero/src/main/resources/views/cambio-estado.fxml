@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -12,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="757.0" prefHeight="400.0" prefWidth="800.0" stylesheets="@../Styles/global.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.CambioEstadoController">
+<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.CambioEstadoController">
    <children>
-      <MenuButton fx:id="mbtnCuenta" alignment="CENTER" contentDisplay="RIGHT" layoutX="52.0" layoutY="26.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Oficinista">
+      <MenuButton fx:id="mbtnCuenta" alignment="CENTER" contentDisplay="RIGHT" disable="true" layoutX="52.0" layoutY="26.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Oficinista">
          <items>
             <MenuItem fx:id="mItemSesion" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
          </items>
@@ -40,7 +41,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#home" prefHeight="60.0">
+            <Button fx:id="btnHome" disable="true" mnemonicParsing="false" onAction="#home" prefHeight="60.0">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -60,21 +61,21 @@
             </Button>
          </children>
       </HBox>
-      <AnchorPane fx:id="pnFondo" layoutX="52.0" layoutY="106.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="106.0">
+      <AnchorPane fx:id="pnFondo" layoutX="50.0" layoutY="113.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="113.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="250.0" prefWidth="700.0">
+            <VBox alignment="CENTER" prefHeight="250.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <Label alignment="CENTER" prefHeight="80.0" prefWidth="486.0" text="Cambio del estado del servicio">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <HBox alignment="CENTER" prefHeight="80.0" prefWidth="700.0" spacing="10.0">
+                  <HBox alignment="CENTER" prefHeight="80.0" prefWidth="600.0" spacing="10.0">
                      <children>
-                        <Button fx:id="btnEspera" mnemonicParsing="false" onAction="#CambioEstadoEspera" prefHeight="40.0" prefWidth="150.0" text="En Espera" />
-                        <Button fx:id="btnProceso" mnemonicParsing="false" onAction="#CambioEstadoProceso" prefHeight="40.0" prefWidth="150.0" text="En Proceso" />
-                        <Button fx:id="btnFinalizado" mnemonicParsing="false" onAction="#CambioEstadoFinalizado" prefHeight="40.0" prefWidth="150.0" text="Finalizado" />
-                        <Button fx:id="btnCancelado" mnemonicParsing="false" onAction="#CambioEstadoCancelado" prefHeight="40.0" prefWidth="150.0" text="Cancelado">
+                        <Button fx:id="btnEspera" mnemonicParsing="false" onAction="#CambioEstadoEspera" prefHeight="40.0" prefWidth="150.0" text="En Espera" textFill="WHITE" />
+                        <Button fx:id="btnProceso" mnemonicParsing="false" onAction="#CambioEstadoProceso" prefHeight="40.0" prefWidth="150.0" text="En Proceso" textFill="WHITE" />
+                        <Button fx:id="btnFinalizado" mnemonicParsing="false" onAction="#CambioEstadoFinalizado" prefHeight="40.0" prefWidth="150.0" text="Finalizado" textFill="WHITE" />
+                        <Button fx:id="btnCancelado" mnemonicParsing="false" onAction="#CambioEstadoCancelado" prefHeight="40.0" prefWidth="150.0" text="Cancelado" textFill="WHITE">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -85,4 +86,8 @@
             </VBox>
          </children></AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@../Styles/global.css" />
+      <URL value="@../Styles/cambio-estado.css" />
+   </stylesheets>
 </AnchorPane>

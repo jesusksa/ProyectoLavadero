@@ -18,15 +18,16 @@ import static com.lavadero.App.loadFXML;
 
 public class CambioEstadoController {
 
-    @Setter
-    private static String escenaActual;
-    @Getter
-    private static Stack<String> pilaRetroceso = new Stack<>();
-    @Getter
-    private static Stack<String> pilaAvance = new Stack<>();
+//    @Setter
+//    private static String escenaActual;
+//    @Getter
+//    private static Stack<String> pilaRetrocesoEstado = new Stack<>();
+//    @Getter
+//    private static Stack<String> pilaAvanceEstado = new Stack<>();
 
 
     public MenuButton mbtnCuenta;
+    public Button btnHome;
     @FXML
     private Button btnPrev;
     @FXML
@@ -42,9 +43,8 @@ public class CambioEstadoController {
                 mbtnCuenta.getStyleClass().remove("pressed");
             }
         });
-
-        BaseController.setEscenaActual("cambio-estado");
-        BaseController.controlarVisibilidad(btnPrev, btnNext);
+//        BaseController.setEscenaActual("cambio-estado");
+//        BaseController.controlarVisibilidad(btnPrev, btnNext);
     }
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
@@ -52,7 +52,7 @@ public class CambioEstadoController {
     }
 
     public void anteriorPag(ActionEvent actionEvent) throws IOException {
-        BaseController.anteriorPag(actionEvent);
+//        BaseController.anteriorPag(actionEvent);
     }
 
     public void home(ActionEvent actionEvent) throws IOException {
@@ -60,7 +60,7 @@ public class CambioEstadoController {
     }
 
     public void siguientePag(ActionEvent actionEvent) throws IOException {
-        BaseController.siguientePag(actionEvent);
+//        BaseController.siguientePag(actionEvent);
     }
 
     public void CambioEstadoEspera(ActionEvent actionEvent) {

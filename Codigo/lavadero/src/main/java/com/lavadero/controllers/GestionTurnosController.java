@@ -1,14 +1,8 @@
 package com.lavadero.controllers;
 
-import com.lavadero.App;
-import javafx.beans.binding.Bindings;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -18,8 +12,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import java.io.IOException;
 import java.util.Random;
-
-import static com.lavadero.App.loadFXML;
 
 public class GestionTurnosController implements Navegable, Avanzable{
     public GridPane gridTurnos;
