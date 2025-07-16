@@ -118,13 +118,14 @@ public class BaseController {
      * @param viewNueva viewNueva - Nombre de la view a la cual se avanzará.
      * @throws IOException
      */
-    public static void avanzar(String viewActual, String viewNueva) throws IOException{
+    public static void avanzar(String viewActual, String viewNueva, boolean addPila) throws IOException{
         //Estas sentencias permiten que se utilice la botonera de navegación de forma correcta.
-        BaseController.getPilaRetroceso().add(viewActual);
+        if(addPila){
+            BaseController.getPilaRetroceso().add(viewActual);
+        }
         BaseController.setEscenaActual(viewNueva);
 
         Scene scene = new Scene(loadFXML(viewNueva));
         App.getMainStage().setScene(scene);
     }
-
 }
