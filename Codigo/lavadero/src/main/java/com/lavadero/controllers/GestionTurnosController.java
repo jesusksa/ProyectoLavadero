@@ -3,6 +3,7 @@ package com.lavadero.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,10 +11,15 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.util.Random;
 
+import static com.lavadero.App.loadFXML;
+
 public class GestionTurnosController implements Navegable, Avanzable{
+    public static Stage stageRegistro;
     public GridPane gridTurnos;
     public MenuButton mbtnCuenta;
     public ScrollPane scllTurnos;
@@ -46,8 +52,14 @@ public class GestionTurnosController implements Navegable, Avanzable{
         BaseController.controlarVisibilidad(btnPrev, btnNext);
     }
 
-    public void registrarTurno(ActionEvent actionEvent) {
-
+    public void registrarTurno(ActionEvent actionEvent) throws IOException {
+        stageRegistro = new Stage();
+        Scene sceneRegistro = new Scene(loadFXML("registro-turno-datos-turno"));
+        stageRegistro.setTitle("Lavadero");
+        Image icono = new Image(getClass().getResourceAsStream("/images/icono-ventana.png"));
+        stageRegistro.getIcons().add(icono);
+        stageRegistro.setScene(sceneRegistro);
+        stageRegistro.show();
     }
 
     public void anteriorPag(ActionEvent actionEvent) throws IOException {
@@ -166,6 +178,6 @@ public class GestionTurnosController implements Navegable, Avanzable{
 
     @Override
     public void avanzar(String viewActual, String viewNueva) throws IOException {
-        BaseController.avanzar(viewActual, viewNueva);
+        BaseController.avanzar(viewActual, viewNueva,true);
     }
 }

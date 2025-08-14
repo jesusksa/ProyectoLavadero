@@ -5,6 +5,7 @@ import com.lavadero.model.Turno;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -15,6 +16,7 @@ import java.util.Date;
 
 public class ConsultaModificacionTurnosController implements Navegable, Avanzable{
 
+    public MenuButton mbtnCuenta;
     @FXML
     private TableView<RegistroTabla> tablaTurnos;
     @FXML
@@ -80,6 +82,15 @@ public class ConsultaModificacionTurnosController implements Navegable, Avanzabl
         //Se deshabilita el botón si no hay ningún registro de la tabla seleccionado
         btnMasInformacion.disableProperty().bind(tablaTurnos.getSelectionModel().selectedItemProperty().isNull());
 
+        // Listener para detectar cuando el menú se despliega
+        mbtnCuenta.showingProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                mbtnCuenta.getStyleClass().add("pressed");
+            } else {
+                mbtnCuenta.getStyleClass().remove("pressed");
+            }
+        });
+        
         BaseController.controlarVisibilidad(btnPrev, btnNext);
     }
 

@@ -51,7 +51,7 @@ public class ConsultaModificacionController implements Avanzable, Navegable{
 
     @Override
     public void avanzar(String viewActual, String viewNueva) throws IOException {
-        BaseController.avanzar(viewActual, viewNueva);
+        BaseController.avanzar(viewActual, viewNueva,true);
     }
 
     @FXML

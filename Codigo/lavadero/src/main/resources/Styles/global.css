@@ -35,14 +35,14 @@
     -fx-background-color: transparent;
 }
 
-.context-menu {
+#mbtnCuenta .context-menu {
 -fx-background-color: #F9E900;
 -fx-pref-width: 150px;
 -fx-background-radius: 0px 0px 20px 20px;
 -fx-font-size: 15px;
 }
 
-.context-menu:hover{
+#mbtnCuenta .context-menu:hover{
 -fx-background-color: #BFB302;
 }
 
