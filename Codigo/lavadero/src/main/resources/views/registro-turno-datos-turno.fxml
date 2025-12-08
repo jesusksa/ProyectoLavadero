@@ -109,8 +109,8 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="98.0" prefWidth="1500.0" spacing="40.0">
                      <children>
-                        <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#Cancelar" prefHeight="60.0" prefWidth="150.0" text="Cancelar" />
-                        <Button fx:id="btnContinuar" mnemonicParsing="false" onAction="#Continuar" prefHeight="60.0" prefWidth="150.0" text="Continuar" />
+                        <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="60.0" prefWidth="150.0" text="Cancelar" />
+                        <Button fx:id="btnContinuar" mnemonicParsing="false" onAction="#continuar" prefHeight="60.0" prefWidth="150.0" text="Continuar" />
                      </children>
                   </HBox>
                </children>

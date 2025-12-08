@@ -62,17 +62,17 @@ public class RegistroTurnoController {
         BaseController.siguientePag(actionEvent);
     }
 
-    public void Cancelar(ActionEvent actionEvent) throws IOException {
+    public void cancelar(ActionEvent actionEvent) throws IOException {
         GestionTurnosController.stageRegistro.close();
     }
 
-    public void Continuar(ActionEvent actionEvent) throws IOException {
+    public void continuar(ActionEvent actionEvent) throws IOException {
 
         /*
         * crear losprimeros datos del turno
         * verificar fecha y hora cada momento
         * */
-        BaseController.avanzar("registro-turno-datos-turno","registro-turno-datos-cliente",false);
+        BaseController.avanzar("registro-turno-datos-turno","registro-turno-datos-cliente-vehiculo",false);
     }
 
     public List temporada(){
