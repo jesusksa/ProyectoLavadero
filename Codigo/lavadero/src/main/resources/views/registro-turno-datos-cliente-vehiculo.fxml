@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1600.0" stylesheets="@../Styles/global.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.RegistroTurnoClienteVehiculoController">
+   <children>
+      <MenuButton fx:id="mbtnCuenta" alignment="CENTER" contentDisplay="RIGHT" layoutX="52.0" layoutY="26.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Oficinista">
+         <items>
+            <MenuItem fx:id="mItemSesion" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+         </items>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icono-usuario.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Leelawadee" size="15.0" />
+         </font>
+      </MenuButton>
+      <HBox fx:id="hboxNav" layoutX="213.0" layoutY="26.0">
+         <children>
+            <Button fx:id="btnPrev" mnemonicParsing="false" onAction="#anteriorPag" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-anterior.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#home" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnNext" mnemonicParsing="false" onAction="#siguientePag" prefHeight="60.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icono-siguiente.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="pnFondo" layoutX="52.0" layoutY="106.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="930.0" prefWidth="1820.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="106.0">
+         <children>
+            <Button fx:id="btnCancelar" layoutX="15.0" layoutY="17.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="60.0" prefWidth="150.0" text="Cancelar" />
+            <Label alignment="CENTER" layoutX="550.0" layoutY="46.0" text="Datos Clientes - Vehiculo">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <VBox layoutX="320.0" layoutY="129.0" prefHeight="71.0" prefWidth="334.0">
+               <children>
+                  <Label text="DNI Cliente:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="57.0" prefWidth="334.0" spacing="30.0">
+                     <children>
+                        <TextField fx:id="txtDNI" prefHeight="35.0" prefWidth="220.0" promptText="Escriba aqui..." />
+                        <Button fx:id="btnBuscarDni" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Buscar" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="320.0" layoutY="214.0" prefHeight="306.0" prefWidth="334.0" spacing="15.0">
+               <children>
+                  <Label fx:id="lbNombre" text="Nombre:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbApellido" text="Apellido:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbDni" text="DNI:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbNumContacto" text="Numero de contacto:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbDomicilio" text="Domicilio:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnAltaCliente" mnemonicParsing="false" onAction="#altaCliente" prefWidth="100.0" text="Alta Cliente" />
+                  <Button fx:id="btnEditarCliente" mnemonicParsing="false" onAction="#editarCliente" prefWidth="100.0" text="Editar Cliente" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <VBox layoutX="921.0" layoutY="129.0" prefHeight="71.0" prefWidth="334.0">
+               <children>
+                  <Label text="Vehiculos:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="cboxVehiculos" prefHeight="35.0" prefWidth="220.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="921.0" layoutY="214.0" prefHeight="306.0" prefWidth="334.0" spacing="15.0">
+               <children>
+                  <Label fx:id="lbTipoVeh" text="Tipo de vehiculo:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbModelo" text="Modelo:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbMatricula" text="Matricula:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbRelacion" text="Tipo de relacion:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbDomicilio1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnAltaVeh" mnemonicParsing="false" onAction="#altaCliente" prefWidth="100.0" text="Alta Vehiculo" />
+                  <Button fx:id="btnEditarVeh" mnemonicParsing="false" onAction="#editarCliente" prefWidth="100.0" text="Editar vehiculo" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <HBox layoutX="578.0" layoutY="556.0" prefHeight="71.0" prefWidth="342.0" spacing="40.0">
+               <children>
+                  <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#volver" prefHeight="60.0" prefWidth="150.0" text="Volver" />
+                  <Button fx:id="btnContinuar" mnemonicParsing="false" onAction="#continuar" prefHeight="60.0" prefWidth="150.0" text="Continuar" />
+               </children>
+            </HBox>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

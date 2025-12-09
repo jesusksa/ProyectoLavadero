@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1600.0" stylesheets="@../Styles/global.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.RegistroTurnoController">
+<AnchorPane fx:id="apnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1600.0" stylesheets="@../Styles/global.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.RegistroTurnoController">
    <children>
       <MenuButton fx:id="mbtnCuenta" alignment="CENTER" contentDisplay="RIGHT" layoutX="52.0" layoutY="26.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Oficinista">
          <items>
@@ -64,6 +64,7 @@
       </HBox>
       <AnchorPane fx:id="pnFondo" layoutX="52.0" layoutY="106.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="1200.0" prefHeight="930.0" prefWidth="1820.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="106.0">
          <children>
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="60.0" prefWidth="150.0" text="Cancelar" />
             <VBox alignment="CENTER" layoutY="1.0" prefHeight="650.0" prefWidth="1500.0">
                <children>
                   <Label text="Datos del Turno">
@@ -109,8 +110,8 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="98.0" prefWidth="1500.0" spacing="40.0">
                      <children>
-                        <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#Cancelar" prefHeight="60.0" prefWidth="150.0" text="Cancelar" />
-                        <Button fx:id="btnContinuar" mnemonicParsing="false" onAction="#Continuar" prefHeight="60.0" prefWidth="150.0" text="Continuar" />
+                        <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#voler" prefHeight="60.0" prefWidth="150.0" text="Volver" />
+                        <Button fx:id="btnContinuar" mnemonicParsing="false" onAction="#continuar" prefHeight="60.0" prefWidth="150.0" text="Continuar" />
                      </children>
                   </HBox>
                </children>
