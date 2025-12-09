@@ -69,7 +69,7 @@ public class RegistroTurnoController {
     public void continuar(ActionEvent actionEvent) throws IOException {
 
         /*
-        * crear losprimeros datos del turno
+        * crear los primeros datos del turno
         * verificar fecha y hora cada momento
         * */
         BaseController.avanzar("registro-turno-datos-turno","registro-turno-datos-cliente-vehiculo",false);
@@ -81,5 +81,9 @@ public class RegistroTurnoController {
         }else{
             return horarioVerano;
         }
+    }
+
+    public void voler(ActionEvent actionEvent) {
+        GestionTurnosController.stageRegistro.close();
     }
 }
