@@ -71,47 +71,47 @@
                <children>
                   <VBox prefHeight="200.0" prefWidth="400.0" spacing="10.0">
                      <children>
-                        <Label text="Fecha:">
+                        <Label fx:id="txtFecha" text="Fecha:">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text="Hora:">
+                        <Label fx:id="txtHora" text="Hora:">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text="Tipo de servicio:">
+                        <Label fx:id="txtServicio" text="Tipo de servicio:">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text="Forma de pago:">
+                        <Label fx:id="txtFormPago" text="Forma de pago:">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text="Cliente:">
+                        <Label fx:id="txtCliente" text="Cliente:">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text="Dni cliente:">
+                        <Label fx:id="txtDni" text="Dni cliente:">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text="Tipo de vehículo:">
+                        <Label fx:id="txtVehiculo" text="Tipo de vehículo:">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text="Modelo:">
+                        <Label fx:id="txtModelo" text="Modelo:">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text="Matricula:">
+                        <Label fx:id="txtMatricula" text="Matricula:">
                            <font>
                               <Font size="24.0" />
                            </font>
