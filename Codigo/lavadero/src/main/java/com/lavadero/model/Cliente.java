@@ -45,4 +45,11 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Turno> turnos;
 
+    public Cliente(Integer dni, String nombres, String apellidos, String numeroContacto, String domicilio) {
+        this.dni = dni;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.numeroContacto = numeroContacto;
+        this.domicilio = domicilio;
+    }
 }

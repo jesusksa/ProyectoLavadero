@@ -26,7 +26,7 @@ public class Turno {
     @Column(name = "fecha_turno", nullable = false)
     private LocalDate fechaTurno;
 
-    @Column(name = "hora_ingreso", nullable = false)
+    @Column(name = "hora_ingreso") //nullable = false luego
     private LocalTime horaIngreso;
 
     @Column(name = "hora_finalizado")
@@ -40,14 +40,14 @@ public class Turno {
     private TipoServicio tipoServicio;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "forma_pago")
+    @Column(name = "forma_pago", nullable = false)
     private FormaPago formaPago;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "estado_lavado", nullable = false)
+    @Column(name = "estado_lavado") //nullable = false luego
     private EstadoLavado estado;
 
-    @Column(name = "motivo_cancelado", nullable = false)
+    @Column(name = "motivo_cancelado")
     private String motivo;
 
     @ManyToOne(optional = false)
@@ -62,8 +62,14 @@ public class Turno {
     )
     private List<Empleado> empleados = new ArrayList<>(2);
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id_usuario", nullable = false)
+    @ManyToOne //optional = flase luego
+    @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
+    public Turno(LocalDate fechaTurno, TipoServicio tipoServicio, FormaPago formaPago, Cliente cliente) {
+        this.fechaTurno = fechaTurno;
+        this.tipoServicio = tipoServicio;
+        this.formaPago = formaPago;
+        this.cliente = cliente;
+    }
 }

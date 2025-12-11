@@ -1,6 +1,7 @@
 package com.lavadero;
 
 
+import com.lavadero.util.HibernateUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +11,7 @@ import javafx.stage.Stage;
 import lombok.Getter;
 
 import javafx.scene.image.Image;
+import org.hibernate.SessionFactory;
 
 
 import java.io.IOException;
@@ -47,7 +49,8 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        //launch();
         //SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+        CargaDatos.cargar();
     }
 }

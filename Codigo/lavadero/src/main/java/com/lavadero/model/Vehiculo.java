@@ -38,4 +38,20 @@ public class Vehiculo {
     @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente cliente;
 
+    public Vehiculo(String patente, TipoAuto tipoAuto, String modeloAuto, TipoRelacion tipoRelacion) {
+        this.patente = patente;
+        this.tipoAuto = tipoAuto;
+        this.modeloAuto = modeloAuto;
+        this.tipoRelacion = tipoRelacion;
+    }
+
+    public Vehiculo(String patente, TipoAuto tipoAuto, String modeloAuto, TipoRelacion tipoRelacion, Cliente cliente) {
+        this.patente = patente;
+        this.tipoAuto = tipoAuto;
+        this.modeloAuto = modeloAuto;
+        this.tipoRelacion = tipoRelacion;
+        this.cliente = cliente;
+    }
+
+
 }
