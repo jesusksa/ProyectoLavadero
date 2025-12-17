@@ -1,5 +1,7 @@
 package com.lavadero.controllers;
 
+import com.lavadero.DAOS.DAOTurno;
+import com.lavadero.model.Turno;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -14,6 +16,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Random;
 
 import static com.lavadero.App.loadFXML;
@@ -41,11 +44,13 @@ public class GestionTurnosController implements Navegable, Avanzable{
             }
         });
 
-        // Generar un número aleatorio de turnos y agregarlos
-        Random random = new Random();
-        int numeroTurnos = random.nextInt(10) + 1; // Generar entre 1 y 10 turnos
-        for (int i = 0; i < numeroTurnos; i++) {
-            cargarTurnos();
+
+        //Se cargan los turnos (que esten en Espera, o Pendientes implementar luego)
+        DAOTurno daoTurno = new DAOTurno();
+        List<Turno> turnos = daoTurno.obtenerTodos();
+
+        for(Turno turno: turnos){
+            cargaDeTurnos(turno);
         }
 
         //Se controla que las pilas de avanzar y retroceder no estén vacías y se deshabilita el botón en dicho caso
@@ -81,34 +86,36 @@ public class GestionTurnosController implements Navegable, Avanzable{
     public void filtrar(ActionEvent actionEvent) {
     }
 
-    public void cargarTurnos(){
+    public void cargaDeTurnos(Turno turnoCargar){
+
+
         // Crear un nuevo Pane y configurar sus hijos
         Pane pnTurno = new Pane();
         pnTurno.setPrefSize(100.0, 160.0);
         pnTurno.setStyle("-fx-background-color: white;");
 
         //Label de Cliente
-        Label lbCliente = new Label("Cliente: Trafalgar D Water Law");
+        Label lbCliente = new Label("Cliente: "+turnoCargar.getCliente().getNombres()+" "+turnoCargar.getCliente().getApellidos());
         lbCliente.setLayoutX(15);
         lbCliente.setLayoutY(15);
 
         //Label de Matricula
-        Label lbMatricula = new Label("Matrícula: 11MDL");
+        Label lbMatricula = new Label("Matrícula: "+turnoCargar.getVehiculo().getPatente());
         lbMatricula.setLayoutX(15);
         lbMatricula.setLayoutY(35);
 
         //label de Vehiculo
-        Label lbVehiculo = new Label("Tipo de vehículo: utilitario");
+        Label lbVehiculo = new Label("Tipo de vehículo: "+turnoCargar.getVehiculo().getTipoAuto());
         lbVehiculo.setLayoutX(15);
         lbVehiculo.setLayoutY(55);
 
         //Label de Lavado
-        Label lbLavado = new Label("Tipo de lavado: completo");
+        Label lbLavado = new Label("Tipo de lavado: "+turnoCargar.getTipoServicio());
         lbLavado.setLayoutX(15);
         lbLavado.setLayoutY(75);
 
         //Label de Estado
-        Label lbEstado = new Label("Estado: en espera");
+        Label lbEstado = new Label("Estado: "+turnoCargar.getEstado());
         lbEstado.setLayoutX(15);
         lbEstado.setLayoutY(95);
 
@@ -174,7 +181,6 @@ public class GestionTurnosController implements Navegable, Avanzable{
             currentRow++;
         }
     }
-
 
     @Override
     public void avanzar(String viewActual, String viewNueva) throws IOException {

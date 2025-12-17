@@ -44,7 +44,7 @@ public class Turno {
     private FormaPago formaPago;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "estado_lavado") //nullable = false luego
+    @Column(name = "estado_lavado", nullable = false)
     private EstadoLavado estado;
 
     @Column(name = "motivo_cancelado")
@@ -62,14 +62,31 @@ public class Turno {
     )
     private List<Empleado> empleados = new ArrayList<>(2);
 
-    @ManyToOne //optional = flase luego
+    @ManyToOne(optional = false)
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    public Turno(LocalDate fechaTurno, TipoServicio tipoServicio, FormaPago formaPago, Cliente cliente) {
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_vehiculo",nullable = false)
+    private Vehiculo vehiculo;
+
+    public Turno(LocalDate fechaTurno, TipoServicio tipoServicio, FormaPago formaPago, Cliente cliente, Vehiculo vehiculo) {
         this.fechaTurno = fechaTurno;
         this.tipoServicio = tipoServicio;
         this.formaPago = formaPago;
+        this.estado = EstadoLavado.ESPERA;
         this.cliente = cliente;
+        this.vehiculo = vehiculo;
     }
+
+    public Turno(LocalDate fechaTurno, TipoServicio tipoServicio, FormaPago formaPago, Cliente cliente, Usuario usuario, Vehiculo vehiculo) {
+        this.fechaTurno = fechaTurno;
+        this.tipoServicio = tipoServicio;
+        this.formaPago = formaPago;
+        this.estado = EstadoLavado.ESPERA;
+        this.cliente = cliente;
+        this.usuario = usuario;
+        this.vehiculo = vehiculo;
+    }
+
 }

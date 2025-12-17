@@ -3,6 +3,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -37,6 +40,9 @@ public class Vehiculo {
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente cliente;
+
+    @OneToMany(mappedBy = "vehiculo", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Turno> turnos = new ArrayList<>();
 
     public Vehiculo(String patente, TipoAuto tipoAuto, String modeloAuto, TipoRelacion tipoRelacion) {
         this.patente = patente;

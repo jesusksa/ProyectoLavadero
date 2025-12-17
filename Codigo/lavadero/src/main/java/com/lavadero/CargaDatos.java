@@ -1,17 +1,9 @@
 package com.lavadero;
 
-import com.lavadero.DAOS.DAOCliente;
-import com.lavadero.DAOS.DAOEmpelado;
-import com.lavadero.DAOS.DAOTurno;
-import com.lavadero.DAOS.DAOVehiculo;
+import com.lavadero.DAOS.*;
 import com.lavadero.model.*;
-import com.lavadero.util.HibernateUtil;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CargaDatos {
@@ -64,20 +56,33 @@ public class CargaDatos {
         Empleado empelado3 = new Empleado("Gaston","Pralong",3);
         Empleado empelado4 = new Empleado("Marcos","barbozza",4);
 
+        //Persistencia
         DAOEmpelado daoEmpelado = new DAOEmpelado();
         daoEmpelado.agregar(empelado1);
         daoEmpelado.agregar(empelado2);
         daoEmpelado.agregar(empelado3);
         daoEmpelado.agregar(empelado4);
 
+        //Usuarios
+        Usuario usuario1 = new Usuario("office","365kk",TipoRol.OFICINISTA);
+        Usuario usuario2 = new Usuario("offic2","365kk",TipoRol.OFICINISTA);
+        Usuario usuario3 = new Usuario("marcos15","jesus15",TipoRol.ADMINISTRATIVO);
+        Usuario usuario4 = new Usuario("admin","admin",TipoRol.ADMINISTRADOR);
+
+        //Persistencia
+        DAOUsuario daoUsuario = new DAOUsuario();
+        daoUsuario.agregar(usuario1);
+        daoUsuario.agregar(usuario2);
+        daoUsuario.agregar(usuario3);
+        daoUsuario.agregar(usuario4);
 
 
         //Turnos
-        Turno turno1 = new Turno(LocalDate.of(2025,12,15),TipoServicio.LAVADO_COMUN,FormaPago.EFECTIVO,cliente1);
-        Turno turno2 = new Turno(LocalDate.of(2025,12,15),TipoServicio.LAVADO_COMPLETO,FormaPago.MERCADO_PAGO,cliente2);
-        Turno turno3 = new Turno(LocalDate.of(2025,12,15),TipoServicio.LAVADO_COMPLETO_MOTOR,FormaPago.BILLETERA_VIRTUAL,cliente3);
-        Turno turno4 = new Turno(LocalDate.of(2025,12,18),TipoServicio.LAVADO_COMUN,FormaPago.TARJETA_CREDITO,cliente1);
-        Turno turno5 = new Turno(LocalDate.of(2025,12,20),TipoServicio.LAVADO_COMUN,FormaPago.TARJETA_DEBITO,cliente4);
+        Turno turno1 = new Turno(LocalDate.of(2025,12,15),TipoServicio.LAVADO_COMUN,FormaPago.EFECTIVO,cliente1,usuario1,vehiculo1);
+        Turno turno2 = new Turno(LocalDate.of(2025,12,15),TipoServicio.LAVADO_COMPLETO,FormaPago.MERCADO_PAGO,cliente2,usuario2,vehiculo2);
+        Turno turno3 = new Turno(LocalDate.of(2025,12,15),TipoServicio.LAVADO_COMPLETO_MOTOR,FormaPago.BILLETERA_VIRTUAL,cliente3,usuario1,vehiculo3);
+        Turno turno4 = new Turno(LocalDate.of(2025,12,18),TipoServicio.LAVADO_COMUN,FormaPago.TARJETA_CREDITO,cliente1,usuario2,vehiculo4);
+        Turno turno5 = new Turno(LocalDate.of(2025,12,20),TipoServicio.LAVADO_COMUN,FormaPago.TARJETA_DEBITO,cliente4,usuario3,vehiculo5);
 
         //Persistencia
         DAOTurno daoTurno = new DAOTurno();
