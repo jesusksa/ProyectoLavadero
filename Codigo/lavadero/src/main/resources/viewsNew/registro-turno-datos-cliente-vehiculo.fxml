@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pnContenido" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.RegistroTurnoController2">
+   <children>
+      <VBox alignment="CENTER" layoutX="70.0" prefHeight="495.0" prefWidth="543.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Datos del Cliente - Vehículo">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="234.0" prefWidth="634.0" spacing="50.0">
+               <children>
+                  <VBox prefHeight="284.0" prefWidth="250.0" spacing="20.0">
+                     <children>
+                        <Label text="DNI Cliente:" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="40.0" prefWidth="320.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <TextArea fx:id="txtCliente" prefHeight="200.0" prefWidth="200.0" />
+                              <Button fx:id="btnBuscarCliente" mnemonicParsing="false" onAction="#buscarCliente" prefHeight="39.0" prefWidth="100.0" text="Buscar" />
+                           </children>
+                        </HBox>
+                        <AnchorPane fx:id="pnTarjeta" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox layoutX="93.0" layoutY="-50.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <children>
+                                    <Label fx:id="lbNombreCliente" text="Cliente:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbDniCliente" text="DNI:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbContactoCliente" text="Contacto:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbDomicilioCliente" text="Domicilio:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnAltaCliente" mnemonicParsing="false" onAction="#registrarCliente" prefWidth="100.0" text="Alta Cliente" />
+                                    <Button fx:id="btnCliente" mnemonicParsing="false" onAction="#editarCliente" prefWidth="100.0" text="Editar Cliente" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="284.0" prefWidth="250.0" spacing="20.0">
+                     <children>
+                        <Label text="Vehículos:">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="cboxVehiculosCliente" prefHeight="39.0" prefWidth="250.0" VBox.vgrow="ALWAYS" />
+                        <AnchorPane fx:id="pnTarjeta" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox layoutX="72.0" layoutY="4.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <children>
+                                    <Label fx:id="lbVehiculo" text="Tipo de vehículo:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbModelo" text="Modelo:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbMatricula" text="Matricula:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnAltaVehiculo" mnemonicParsing="false" onAction="#registrarVehiculo" prefWidth="100.0" text="Alta Vehículo" />
+                                    <Button fx:id="btnEditarVehiculo" mnemonicParsing="false" onAction="#editarVehiculo" prefWidth="100.0" text="Editar Vehiculo" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="40.0" prefWidth="100.0" text="Cancelar" />
+                  <Button fx:id="btnContinuar2" mnemonicParsing="false" onAction="#continuar2" prefHeight="40.0" prefWidth="100.0" text="Continuar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

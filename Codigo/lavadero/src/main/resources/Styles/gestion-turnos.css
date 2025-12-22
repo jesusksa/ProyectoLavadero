@@ -25,6 +25,9 @@
 -fx-background-color: #1F255A;
 }
 
+#scrollTurnos{
+    -fx-background-radius: 10px;
+}
 
 #hboxBusqueda{
 -fx-background-color: #FFFFFF;
