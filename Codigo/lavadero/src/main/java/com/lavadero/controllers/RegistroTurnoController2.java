@@ -33,7 +33,7 @@ public class RegistroTurnoController2 {
     }
 
     public void continuar(ActionEvent actionEvent) throws IOException {
-        PrimaryController.getInstance().cargarContenido(App.loadFXML("registro-turno-datos-cliente-vehiculo"));
+        PrimaryController.avanzar("registro-turno-datos-turno","registro-turno-datos-cliente-vehiculo",true);
     }
 
     public void buscarCliente(ActionEvent actionEvent) {
@@ -55,7 +55,7 @@ public class RegistroTurnoController2 {
     }
 
     public void continuar2(ActionEvent actionEvent) throws IOException {
-        PrimaryController.getInstance().cargarContenido(App.loadFXML("registro-turno-confirmacion"));
+        PrimaryController.avanzar("registro-turno-datos-cliente-vehiculo","registro-turno-confirmacion",true);
     }
 
     public void confirmarTurno(ActionEvent actionEvent) {

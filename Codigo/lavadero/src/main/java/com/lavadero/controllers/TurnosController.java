@@ -57,7 +57,7 @@ public class TurnosController {
 
         // Calcular la siguiente posición (columnas: 0, 1, 2)
         col++;
-        if (col >= 3) {
+        if (col >= 4) {
             col = 0;
             row++;
         }
@@ -65,7 +65,7 @@ public class TurnosController {
     }
 
     public void registrarTurno(ActionEvent actionEvent) throws IOException {
-        PrimaryController.getInstance().cargarContenido(App.loadFXML("registro-turno-datos-turno"));
+        PrimaryController.avanzar("turnos","registro-turno-datos-turno",true);
     }
 
     public void filtrar(ActionEvent actionEvent) {
@@ -73,36 +73,5 @@ public class TurnosController {
 
     public void buscarTurno(ActionEvent actionEvent) {
     }
-//    private void cargarTurnos() {
-//
-//        gridTurnos.getChildren().clear();
-//        int col = 0;
-//        int row = 0;
-//
-//        for (Turno turno : listaTurnos) {
-//            try {
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/lavadero/view/turno-card.fxml"));
-//                AnchorPane card = loader.load();
-//
-//                TurnoTarjetaController controller = loader.getController();
-//                controller.setData(turno);
-//
-//
-//                // Agregar card al grid
-//                gridTurnos.add(card, col, row);
-//
-//                // Espaciado dinámico
-//                GridPane.setMargin(card, new Insets(10));
-//
-//                col++;
-//                if (col == 3) {  // 3 tarjetas por fila (lo ajustás a gusto)
-//                    col = 0;
-//                    row++;
-//                }
-//
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+
 }
