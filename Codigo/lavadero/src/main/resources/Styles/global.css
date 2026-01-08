@@ -7,7 +7,7 @@
 -fx-background-color: #0A1045;
 }
 
-#pnFondo, #apnContenido{
+#pnFondo, #apnContenido, #apnContenidoAjusteEstado{
 -fx-background-color: #57C4E5;
 -fx-background-radius: 10px;
 }
