@@ -31,11 +31,15 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         mainStage = stage;
-        scene = new Scene(loadFXML("inicio-sesion"));
+        scene = new Scene(loadFXML("sesion"));
         stage.setTitle("Lavadero");
         Image icono = new Image(getClass().getResourceAsStream("/images/icono-ventana.png"));
         stage.getIcons().add(icono);
         stage.setScene(scene);
+        stage.setWidth(600);
+        stage.setHeight(500);
+        stage.setMinWidth(600);
+        stage.setMinHeight(500);
         stage.show();
     }
 
@@ -44,7 +48,7 @@ public class App extends Application {
     }
 
     public static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/views/"+fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/viewsNew/"+fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
