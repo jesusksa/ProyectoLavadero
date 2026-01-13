@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -17,11 +18,14 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 import lombok.Getter;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Random;
+
+import static com.lavadero.App.loadFXML;
 
 public class TurnosController {
 
@@ -68,7 +72,19 @@ public class TurnosController {
         PrimaryController.avanzar("turnos","registro-turno-datos-turno",true);
     }
 
-    public void filtrar(ActionEvent actionEvent) {
+    public void filtrar(ActionEvent actionEvent) throws IOException {
+        Stage stageEstado = new Stage();
+        stageEstado.setMinWidth(600);
+        stageEstado.setMinHeight(420);
+        stageEstado.setMaxWidth(600);
+        stageEstado.setMaxHeight(420);
+        stageEstado.setMaximized(false);
+        Scene sceneEstado = new Scene(loadFXML("filtros"));
+        stageEstado.setTitle("Lavadero");
+        Image icono = new Image(getClass().getResourceAsStream("/images/icono-ventana.png"));
+        stageEstado.getIcons().add(icono);
+        stageEstado.setScene(sceneEstado);
+        stageEstado.show();
     }
 
     public void buscarTurno(ActionEvent actionEvent) {
