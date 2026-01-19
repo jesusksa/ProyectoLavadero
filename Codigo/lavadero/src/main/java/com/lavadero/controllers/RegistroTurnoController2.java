@@ -75,7 +75,7 @@ public class RegistroTurnoController2 {
     }
 
     public void editarTurno(ActionEvent actionEvent) throws IOException {
-        PrimaryController.avanzar(PrimaryController.getPilaRetroceso().firstElement(), "editar-turno",true);
+        PrimaryController.avanzar("registro-turno-confirmacion", "editar-turno",true);
     }
 
     public void continuar2(ActionEvent actionEvent) throws IOException {
