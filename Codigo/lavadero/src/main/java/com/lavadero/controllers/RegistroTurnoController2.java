@@ -51,23 +51,31 @@ public class RegistroTurnoController2 {
     }
 
     public void registrarCliente(ActionEvent actionEvent) throws IOException {
-        PrimaryController.avanzar(PrimaryController.getPilaRetroceso().firstElement(), "alta-cliente",false);
+        PrimaryController.avanzar("registro-turno-datos-cliente-vehiculo", "alta-cliente",true);
     }
 
     public void editarCliente(ActionEvent actionEvent) throws IOException {
-        PrimaryController.avanzar(PrimaryController.getPilaRetroceso().firstElement(), "editar-cliente",false);
+        PrimaryController.avanzar("registro-turno-datos-cliente-vehiculo", "editar-cliente",true);
+    }
+
+    public void editarCliente2(ActionEvent actionEvent) throws IOException {
+        PrimaryController.avanzar("registro-turno-confirmacion", "editar-cliente",true);
     }
 
     public void registrarVehiculo(ActionEvent actionEvent) throws IOException {
-        PrimaryController.avanzar(PrimaryController.getPilaRetroceso().firstElement(), "alta-vehiculo",false);
+        PrimaryController.avanzar("registro-turno-datos-cliente-vehiculo", "alta-vehiculo",true);
     }
 
     public void editarVehiculo(ActionEvent actionEvent) throws IOException {
-        PrimaryController.avanzar(PrimaryController.getPilaRetroceso().firstElement(), "editar-vehiculo",false);
+        PrimaryController.avanzar("registro-turno-datos-cliente-vehiculo", "editar-vehiculo",true);
+    }
+
+    public void editarVehiculo2(ActionEvent actionEvent) throws IOException {
+        PrimaryController.avanzar("registro-turno-confirmacion", "editar-vehiculo",true);
     }
 
     public void editarTurno(ActionEvent actionEvent) throws IOException {
-        PrimaryController.avanzar(PrimaryController.getPilaRetroceso().firstElement(), "editar-turno",false);
+        PrimaryController.avanzar(PrimaryController.getPilaRetroceso().firstElement(), "editar-turno",true);
     }
 
     public void continuar2(ActionEvent actionEvent) throws IOException {

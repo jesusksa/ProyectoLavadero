@@ -72,8 +72,8 @@
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="20.0">
                            <children>
                               <Button fx:id="btnEditarTurno" mnemonicParsing="false" onAction="#editarTurno" prefHeight="40.0" prefWidth="100.0" text="Editar Turno" />
-                              <Button fx:id="btnEditarCliente" mnemonicParsing="false" onAction="#editarCliente" prefHeight="40.0" prefWidth="100.0" text="Editar Cliente" />
-                              <Button fx:id="btnEditarVehiculo" mnemonicParsing="false" onAction="#editarVehiculo" prefHeight="40.0" prefWidth="100.0" text="Editar Vehiculo" />
+                              <Button fx:id="btnEditarCliente" mnemonicParsing="false" onAction="#editarCliente2" prefHeight="40.0" prefWidth="100.0" text="Editar Cliente" />
+                              <Button fx:id="btnEditarVehiculo" mnemonicParsing="false" onAction="#editarVehiculo2" prefHeight="40.0" prefWidth="100.0" text="Editar Vehiculo" />
                            </children>
                         </VBox>
                      </children>

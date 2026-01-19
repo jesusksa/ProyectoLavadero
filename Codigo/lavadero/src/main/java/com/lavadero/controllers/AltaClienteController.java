@@ -13,7 +13,7 @@ public class AltaClienteController {
     private TextField txtDireccion;
 
     public void altaVehiculo(ActionEvent actionEvent) throws IOException {
-        PrimaryController.avanzar(PrimaryController.getPilaRetroceso().firstElement(), "alta-vehiculo",false);
+        PrimaryController.avanzar("alta-cliente", "alta-vehiculo",true);
     }
 
     public void cancelar(ActionEvent actionEvent){
