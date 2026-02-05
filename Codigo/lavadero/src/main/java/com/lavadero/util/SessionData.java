@@ -1,21 +1,19 @@
 package com.lavadero.util;
 
+import com.lavadero.model.Cliente;
 import com.lavadero.model.Turno;
 import com.lavadero.model.Usuario;
+import com.lavadero.model.Vehiculo;
+import javafx.scene.control.Label;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
 public class SessionData {
 
-    /* =======================
-       DATOS DE SESIÓN
-       =======================
 
-    // Usuario que inició sesión
-    private static Usuario usuarioLogueado;
 
-    // Fecha seleccionada en vistas de turnos
-    private static LocalDate fechaSeleccionada;
 
     // Rol / permisos
     private static boolean esAdmin;
@@ -39,24 +37,38 @@ public class SessionData {
     */
 
     /* =======================
+       DATOS DE SESIÓN
+       ======================= */
+
+    // Usuario que inició sesión
+    @Setter
+    @Getter
+    private static Usuario usuarioLogueado;
+
+    /* =======================
        TURNO
        ======================= */
 
     // Turno actualmente seleccionado
-    private static Turno turnoActual;
-
-    public static Turno getTurnoActual() {
-        return turnoActual;
-    }
-
-    public static void setTurnoActual(Turno turno) {
-        turnoActual = turno;
-    }
+    @Setter
+    @Getter
+    private static Turno turno;
 
     public static void limpiarTurno() {
-        turnoActual = null;
+        turno = null;
     }
 
+    @Setter
+    @Getter
+    private static Cliente cliente;
+
+    public static void limpiarCliente(){cliente = null;}
+
+    @Setter
+    @Getter
+    private static Vehiculo vehiculo;
+
+    public static void limpiarVehiculo(){vehiculo = null;}
 
     /* =======================
        FECHA / FILTROS
