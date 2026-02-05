@@ -1,9 +1,10 @@
-package com.lavadero;
+package com.lavadero.util;
 
 import com.lavadero.DAOS.*;
 import com.lavadero.model.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 public class CargaDatos {
@@ -78,11 +79,11 @@ public class CargaDatos {
 
 
         //Turnos
-        Turno turno1 = new Turno(LocalDate.of(2025,12,15),TipoServicio.LAVADO_COMUN,FormaPago.EFECTIVO,cliente1,usuario1,vehiculo1);
-        Turno turno2 = new Turno(LocalDate.of(2025,12,15),TipoServicio.LAVADO_COMPLETO,FormaPago.MERCADO_PAGO,cliente2,usuario2,vehiculo2);
-        Turno turno3 = new Turno(LocalDate.of(2025,12,15),TipoServicio.LAVADO_COMPLETO_MOTOR,FormaPago.BILLETERA_VIRTUAL,cliente3,usuario1,vehiculo3);
-        Turno turno4 = new Turno(LocalDate.of(2025,12,18),TipoServicio.LAVADO_COMUN,FormaPago.TARJETA_CREDITO,cliente1,usuario2,vehiculo4);
-        Turno turno5 = new Turno(LocalDate.of(2025,12,20),TipoServicio.LAVADO_COMUN,FormaPago.TARJETA_DEBITO,cliente4,usuario3,vehiculo5);
+        Turno turno1 = new Turno(LocalDate.now(),TipoServicio.LAVADO_COMUN,FormaPago.EFECTIVO,cliente1,usuario1,vehiculo1, LocalTime.of(9,0));
+        Turno turno2 = new Turno(LocalDate.now(),TipoServicio.LAVADO_COMPLETO,FormaPago.MERCADO_PAGO,cliente2,usuario2,vehiculo2,LocalTime.of(9,0));
+        Turno turno3 = new Turno(LocalDate.now(),TipoServicio.LAVADO_COMPLETO_MOTOR,FormaPago.BILLETERA_VIRTUAL,cliente3,usuario1,vehiculo3,LocalTime.of(10,0));
+        Turno turno4 = new Turno(LocalDate.now().plusDays(1),TipoServicio.LAVADO_COMUN,FormaPago.TARJETA_CREDITO,cliente1,usuario2,vehiculo4,LocalTime.of(18,0));
+        Turno turno5 = new Turno(LocalDate.now().plusDays(2),TipoServicio.LAVADO_COMUN,FormaPago.TARJETA_DEBITO,cliente4,usuario3,vehiculo5,LocalTime.of(18,0));
 
         //Persistencia
         DAOTurno daoTurno = new DAOTurno();
