@@ -52,4 +52,12 @@ public class Cliente {
         this.numeroContacto = numeroContacto;
         this.domicilio = domicilio;
     }
+
+    public String formatearDni(){
+        return String.format("%,d", this.dni).replace(',', '.');
+    }
+
+    public String formatearNombre(){
+        return this.nombres + " " + this.apellidos;
+    }
 }

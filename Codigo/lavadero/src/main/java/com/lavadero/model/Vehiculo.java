@@ -1,5 +1,7 @@
 package com.lavadero.model;
+import com.lavadero.util.SystemTools;
 import jakarta.persistence.*;
+import javafx.scene.control.Alert;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
 
@@ -59,5 +61,31 @@ public class Vehiculo {
         this.cliente = cliente;
     }
 
+    public String formatearTipoVehiculo(){
+        switch (this.tipoAuto){
+            case UTILITARIO:
+                return "Utilitario";
+            case CAMIONETA:
+                return "Camioneta";
+            case CAMION:
+                return "Camion";
+            case AUTOMOVIL:
+                return "Automovil";
+            default:
+                SystemTools.createAlert(Alert.AlertType.ERROR, "Error de formato", "Formato de dato invalido", "Por favor revise las datos ingresados");
+                return "";
+        }
+    }
 
+    public String formatearRelacion(){
+        switch (this.tipoRelacion){
+            case DUEÑO:
+                return "Dueño";
+            case CONDUCTOR:
+                return "Conductor";
+            default:
+                SystemTools.createAlert(Alert.AlertType.ERROR, "Error de formato", "Formato de dato invalido", "Por favor revise las datos ingresados");
+                return "";
+        }
+    }
 }

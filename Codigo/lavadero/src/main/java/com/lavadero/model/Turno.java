@@ -5,13 +5,14 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lavadero.util.SystemTools;
 import jakarta.persistence.*;
+import javafx.scene.control.Alert;
 import lombok.*;
 
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "turno")
 @Table(indexes = {
@@ -26,8 +27,11 @@ public class Turno {
     @Column(name = "fecha_turno", nullable = false)
     private LocalDate fechaTurno;
 
-    @Column(name = "hora_ingreso") //nullable = false luego
-    private LocalTime horaIngreso;
+    @Column(name = "hora_turno")
+    private LocalTime horaTurno;
+
+    @Column(name = "hora_inicio") //nullable = false luego
+    private LocalTime horaInicio;
 
     @Column(name = "hora_finalizado")
     private LocalTime horaFinalizado;
@@ -70,16 +74,21 @@ public class Turno {
     @JoinColumn(name = "id_vehiculo",nullable = false)
     private Vehiculo vehiculo;
 
-    public Turno(LocalDate fechaTurno, TipoServicio tipoServicio, FormaPago formaPago, Cliente cliente, Vehiculo vehiculo) {
+    public Turno(){
+        this.estado = EstadoLavado.ESPERA;
+    }
+
+    public Turno(LocalDate fechaTurno, TipoServicio tipoServicio, FormaPago formaPago, Cliente cliente, Vehiculo vehiculo, LocalTime hora) {
         this.fechaTurno = fechaTurno;
         this.tipoServicio = tipoServicio;
         this.formaPago = formaPago;
         this.estado = EstadoLavado.ESPERA;
         this.cliente = cliente;
         this.vehiculo = vehiculo;
+        this.horaTurno = hora;
     }
 
-    public Turno(LocalDate fechaTurno, TipoServicio tipoServicio, FormaPago formaPago, Cliente cliente, Usuario usuario, Vehiculo vehiculo) {
+    public Turno(LocalDate fechaTurno, TipoServicio tipoServicio, FormaPago formaPago, Cliente cliente, Usuario usuario, Vehiculo vehiculo, LocalTime hora) {
         this.fechaTurno = fechaTurno;
         this.tipoServicio = tipoServicio;
         this.formaPago = formaPago;
@@ -87,6 +96,57 @@ public class Turno {
         this.cliente = cliente;
         this.usuario = usuario;
         this.vehiculo = vehiculo;
+        this.horaTurno = hora;
+    }
+
+    public String formatearServicio(){
+        switch (this.tipoServicio){
+            case LAVADO_COMUN:
+                return "Lavado Comun";
+            case LAVADO_COMPLETO:
+                return "Lavado Completo";
+            case LAVADO_COMPLETO_MOTOR:
+                return "Lavado Completo más Motor";
+            default:
+                SystemTools.createAlert(Alert.AlertType.ERROR, "Error de formato", "Formato de dato invalido", "Por favor revise las datos ingresados");
+                return "";
+        }
+    }
+
+    public String formatearPago(){
+        switch (this.formaPago){
+            case TARJETA_DEBITO:
+                return "Tarjeta de Debito";
+            case TARJETA_CREDITO:
+                return "Tarjeta de Credito";
+            case BILLETERA_VIRTUAL:
+                return "Billetera Virtual";
+            case MONEDA_EXTRANJERA:
+                return "Moneda Extranjera";
+            case MERCADO_PAGO:
+                return "Mercado Pago";
+            case EFECTIVO:
+                return "Efectivo";
+            default:
+                SystemTools.createAlert(Alert.AlertType.ERROR, "Error de formato", "Formato de dato invalido", "Por favor revise las datos ingresados");
+                return "";
+        }
+    }
+
+    public String formatearEstado(){
+        switch (this.estado){
+            case ESPERA:
+                return "En Espera";
+            case CANCELADO:
+                return "Cancelado";
+            case PROCESO:
+                return "En Proceso";
+            case FINALIZADO:
+                return "Finalizado";
+            default:
+                SystemTools.createAlert(Alert.AlertType.ERROR, "Error de formato", "Formato de dato invalido", "Por favor revise las datos ingresados");
+                return "";
+        }
     }
 
 }
