@@ -1,5 +1,8 @@
 package com.lavadero.controllers;
 
+import com.lavadero.App;
+import com.lavadero.DAOS.DAOUsuario;
+import com.lavadero.util.SessionData;
 import javafx.event.ActionEvent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -13,6 +16,8 @@ public class LoginController {
     public PasswordField txtPassword;
 
     public void login(ActionEvent actionEvent) throws IOException {
-        BaseController.avanzar("sesion","base",true);
+        App.setRoot("base");
+        DAOUsuario daoUsuario = new DAOUsuario();
+        SessionData.setUsuarioLogueado(daoUsuario.obtenerUsuario("office"));
     }
 }

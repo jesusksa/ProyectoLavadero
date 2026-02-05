@@ -1,6 +1,9 @@
 package com.lavadero.controllers;
 
 import com.lavadero.App;
+import com.lavadero.util.SessionData;
+import com.lavadero.util.SystemNavigation;
+import com.lavadero.util.SystemTools;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,31 +20,22 @@ import java.util.Stack;
 
 import static com.lavadero.App.loadFXML;
 
-@Getter
 public class PrimaryController {
     public AnchorPane pnFondo;
     public MenuButton mbtnCuenta;
     public AnchorPane apnContenido;
 
     @Setter
-    private static String contenidoActual;
     @Getter
-    private static Stack<String> pilaRetroceso = new Stack<>();
-    @Getter
-    private static Stack<String> pilaAvance = new Stack<>();
-
     private static PrimaryController instance;
     public Button btnPrev;
     public Button btnNext;
-
-    public static PrimaryController getInstance() {
-        return instance;
-    }
 
 
 
     public void initialize() throws IOException {
         instance = this;
+        SystemNavigation.setPrimaryController(this);
         mbtnCuenta.showingProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
                 mbtnCuenta.getStyleClass().add("pressed");
@@ -52,57 +46,35 @@ public class PrimaryController {
 
         cargarContenido(App.loadFXML("turnos"));
 
-        controlarVisibilidad(btnPrev,btnNext);
+        controlarVisibilidad();
+
 
     }
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Cerrar sesión");
-        alert.setHeaderText("¿Seguro que desea abandonar la sesion iniciada?");
-        alert.showAndWait();
-        if (alert.getResult() == ButtonType.OK){
+
+        if (SystemTools.createAlertConfirm("Cerrar sesión","¿Seguro que desea abandonar la sesion iniciada?","")){
             Scene scene = new Scene(loadFXML("sesion"));
             App.getMainStage().setScene(scene);
-        }else {
-            alert.close();
         }
     }
 
     public void anteriorPag(ActionEvent actionEvent) throws IOException {
-        //Controla que la pila para retroceder no está vacía
-        if(!pilaRetroceso.isEmpty()){
-
-            //Se añade la escena actual a la pila de avance
-            pilaAvance.add(contenidoActual);
-
-            //Se retira la última escena de la pila de retroceso
-            contenidoActual = pilaRetroceso.pop();
-            cargarContenido(App.loadFXML(contenidoActual));
-            controlarVisibilidad(btnPrev,btnNext);
-        }
+        SystemNavigation.anteriorPag(true);
+        controlarVisibilidad();
     }
 
     public void home(ActionEvent actionEvent) throws IOException {
-        pilaRetroceso.removeAllElements();
-        pilaAvance.removeAllElements();
-
-        cargarContenido(App.loadFXML("turnos"));
-        controlarVisibilidad(btnPrev,btnNext);
+        SessionData.limpiarTurno();
+        SessionData.limpiarVehiculo();
+        SessionData.limpiarCliente();
+        SystemNavigation.inicio();
+        controlarVisibilidad();
     }
 
     public void siguientePag(ActionEvent actionEvent) throws IOException {
-        //Controla que la pila para retroceder no está vacía
-        if(!pilaAvance.isEmpty()){
-
-            //Se añade la escena actual a la pila de retroceso
-            pilaRetroceso.add(contenidoActual);
-
-            //Se retira la última escena de la pila de avance
-            contenidoActual = pilaAvance.pop();
-            cargarContenido(App.loadFXML(contenidoActual));
-            controlarVisibilidad(btnPrev,btnNext);
-        }
+        SystemNavigation.siguientePag(true);
+        controlarVisibilidad();
     }
 
     public void cargarContenido(Parent p){
@@ -114,20 +86,14 @@ public class PrimaryController {
         AnchorPane.setRightAnchor(p, 0.0);
     }
 
-    public static void avanzar(String viewActual, String viewNueva, boolean addPila) throws IOException{
-        //Estas sentencias permiten que se utilice la botonera de navegación de forma correcta.
-        if(addPila){
-            PrimaryController.getPilaRetroceso().add(viewActual);
-        }
-        PrimaryController.setContenidoActual(viewNueva);
-
+    public void avanzar(String viewActual, String viewNueva, boolean addPila) throws IOException{
+        SystemNavigation.avanzar(viewActual,viewNueva,addPila);
         PrimaryController.getInstance().cargarContenido(App.loadFXML(viewNueva));
-
-        controlarVisibilidad(PrimaryController.getInstance().btnPrev, PrimaryController.instance.btnNext);
+        controlarVisibilidad();
     }
 
-    public static void controlarVisibilidad(Button button1, Button button2){
-        button1.setDisable(pilaRetroceso.isEmpty());
-        button2.setDisable(pilaAvance.isEmpty());
+    public void controlarVisibilidad(){
+        btnPrev.setDisable(SystemNavigation.getPilaRetroceso().isEmpty());
+        btnNext.setDisable(SystemNavigation.getPilaAvance().isEmpty());
     }
 }

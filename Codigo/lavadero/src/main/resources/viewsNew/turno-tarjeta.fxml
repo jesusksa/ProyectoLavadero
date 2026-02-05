@@ -16,27 +16,27 @@
          <HBox alignment="CENTER" prefHeight="148.0" prefWidth="245.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
            <VBox prefHeight="148.0" prefWidth="300.0" spacing="5">
    
-               <Label fx:id="lblCliente" text="Cliente:">
+               <Label fx:id="lblCliente" text="CLIENTE:">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-               <Label fx:id="lblMatricula" text="Matricula:">
+               <Label fx:id="lblMatricula" text="MATRICULA:">
+               <font>
+                   <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblVehiculo" text="TIPO DE VEHICULO:">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lblVehiculo" text="Tipo de vehiculo:">
+               <Label fx:id="lblServicio" text="SERVICIO:">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-               <Label fx:id="lblServicio" text="Servicio:">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-               <Label fx:id="lblEstado" text="Estado:">
+               <Label fx:id="lblEstado" text="ESTADO:">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

@@ -4,6 +4,7 @@ import com.lavadero.App;
 import com.lavadero.DAOS.DAOTurno;
 import com.lavadero.model.Turno;
 import com.lavadero.util.SessionData;
+import com.lavadero.util.SystemNavigation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -41,7 +42,7 @@ public class TurnosController {
     }
 
     public  void cargarTurno(Turno turno) throws IOException {
-        SessionData.setTurnoActual(turno);
+        SessionData.setTurno(turno);
 
         Parent view = App.loadFXML("turno-tarjeta");
 
@@ -63,7 +64,7 @@ public class TurnosController {
     }
 
     public void registrarTurno(ActionEvent actionEvent) throws IOException {
-        PrimaryController.avanzar("turnos","registro-turno-datos-turno",true);
+        SystemNavigation.avanzar("turnos","registro-turno-datos-turno",true);
     }
 
     public void filtrar(ActionEvent actionEvent) throws IOException {

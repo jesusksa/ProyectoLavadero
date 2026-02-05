@@ -3,6 +3,8 @@ package com.lavadero.controllers;
 import com.lavadero.App;
 import com.lavadero.model.Turno;
 import com.lavadero.util.SessionData;
+import com.lavadero.util.SystemNavigation;
+import com.lavadero.util.SystemTools;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import lombok.Getter;
@@ -19,19 +21,19 @@ public class TurnoTarjetaController {
 
     @Setter
     @Getter
-    private Turno turno = SessionData.getTurnoActual();
+    private Turno turno = SessionData.getTurno();
 
     public void initialize(){
-        lblCliente.setText(lblCliente.getText().concat(turno.getCliente().getNombres()+" "+turno.getCliente().getApellidos()));
-        lblMatricula.setText(lblMatricula.getText().concat(turno.getVehiculo().getPatente()));
-        lblVehiculo.setText(lblVehiculo.getText().concat(turno.getVehiculo().getTipoAuto().toString()));
-        lblServicio.setText(lblServicio.getText().concat(turno.getTipoServicio().toString()));
-        lblEstado.setText(lblEstado.getText().concat(turno.getEstado().toString()));
+        SystemTools.setearLabel(lblCliente,lblCliente.getText().concat(" "+turno.getCliente().formatearNombre()));
+        SystemTools.setearLabel(lblMatricula,lblMatricula.getText().concat(" "+turno.getVehiculo().getPatente()));
+        SystemTools.setearLabel(lblVehiculo,lblVehiculo.getText().concat(" "+turno.getVehiculo().getTipoAuto()));
+        SystemTools.setearLabel(lblServicio,lblServicio.getText().concat(" "+turno.formatearServicio()));
+        SystemTools.setearLabel(lblEstado,lblEstado.getText().concat(" "+turno.formatearEstado()));
     }
 
     public void masInformacion(ActionEvent actionEvent) throws IOException {
-        SessionData.setTurnoActual(turno);
-        PrimaryController.avanzar("turnos","info-turnos",true);
+        SessionData.setTurno(turno);
+        SystemNavigation.avanzar("turnos","info-turnos",true);
     }
 
 }
