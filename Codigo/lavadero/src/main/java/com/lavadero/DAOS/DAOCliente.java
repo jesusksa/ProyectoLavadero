@@ -13,5 +13,11 @@ public class DAOCliente implements DAO<Cliente> {
         this.sessionFactory = HibernateUtil.getSessionFactory();
     }
 
-
+    public Cliente obtenerClientePorDni(Integer dni){
+        Session session = sessionFactory.openSession();
+        String query = "SELECT c FROM cliente c WHERE c.dni = :dni";
+        Cliente cliente = session.createQuery(query, Cliente.class).setParameter("dni",dni).getSingleResultOrNull();
+        session.close();
+        return cliente;
+    }
 }

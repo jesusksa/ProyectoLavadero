@@ -13,9 +13,19 @@ public interface DAO<T> {
         try (Session session = sessionFactory.openSession()) {
             Transaction tx = session.beginTransaction();
 
-            session.saveOrUpdate(entity);
+            session.save(entity);
 
             tx.commit();
+        }
+    }
+
+    default void actualizar(T entity){
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+        try(Session session = sessionFactory.openSession()){
+            Transaction transaction = session.beginTransaction();
+            session.saveOrUpdate(entity);
+            transaction.commit();
+            session.close();
         }
     }
 
