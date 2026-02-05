@@ -4,13 +4,12 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.RegistroTurnoController2">
+<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.RegistroTurnoDatosTurnoController">
    <children>
       <VBox alignment="CENTER" layoutX="234.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -38,7 +37,7 @@
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Spinner fx:id="spHora" prefHeight="40.0" prefWidth="200.0" />
+                        <ChoiceBox fx:id="cboxHora" prefHeight="40.0" prefWidth="200.0" />
                         <Label text="Tipo de Lavado:">
                            <font>
                               <Font name="System Bold" size="24.0" />

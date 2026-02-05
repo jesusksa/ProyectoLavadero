@@ -1,43 +1,37 @@
 package com.lavadero.controllers;
 
-
 import com.lavadero.DAOS.DAOTurno;
-import com.lavadero.model.FormaPago;
-import com.lavadero.model.TipoServicio;
+import com.lavadero.model.*;
 import com.lavadero.util.CalendarioSistema;
 import com.lavadero.util.SessionData;
 import com.lavadero.util.SystemNavigation;
 import com.lavadero.util.SystemTools;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DateCell;
-import javafx.scene.control.DatePicker;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 
-public class EditarTurnoController {
+public class RegistroTurnoDatosTurnoController {
 
-    @FXML
-    private DatePicker dateFecha;
-    @FXML
-    private ChoiceBox cboxHora;
-    @FXML
-    private ChoiceBox cboxLavado;
-    @FXML
-    private ChoiceBox cboxPago;
+    //Pantalla de Turno
+    public DatePicker dateFecha;
+    public ChoiceBox cboxHora;
+    public ChoiceBox cboxLavado;
+    public ChoiceBox cboxPago;
+    
+
+    //Variables para la creacion
+    private Turno turnoNew = new Turno();
+
 
     public void initialize(){
-        dateFecha.setValue(SessionData.getTurno().getFechaTurno());
-        cboxHora.setValue(SessionData.getTurno().getHoraTurno());
-        cboxLavado.setValue(SessionData.getTurno().getTipoServicio());
-        cboxPago.setValue(SessionData.getTurno().getFormaPago());
+        //Validar luego el horario de verano eh invierno, ajustar horas al rango horario laboral
 
         dateFecha.setEditable(false); // evita que escriban a mano
 
@@ -73,18 +67,23 @@ public class EditarTurnoController {
                 cargarHorasDisponibles(newDate);
             }
         });
+
+        this.cboxLavado.getItems().setAll(TipoServicio.values());
+        this.cboxPago.getItems().setAll(FormaPago.values());
     }
 
     public void cancelar(ActionEvent actionEvent) throws IOException {
+        SessionData.limpiarTurno();
         SystemNavigation.cancelar();
     }
 
-    public void confirmar(ActionEvent actionEvent) throws IOException {
+    public void continuar(ActionEvent actionEvent) throws IOException {
+
         if(dateFecha.getValue() == null){
             SystemTools.createAlert(Alert.AlertType.ERROR,
-                    "Información",
-                    "Todos los campos son obligatorios",
-                    "El campo fecha esta vacio, por favor seleccione una fecha");
+                              "Información",
+                         "Todos los campos son obligatorios",
+                          "El campo fecha esta vacio, por favor seleccione una fecha");
 
         }else if(cboxHora.getValue() == null){
             SystemTools.createAlert(Alert.AlertType.ERROR,
@@ -105,14 +104,15 @@ public class EditarTurnoController {
                     "El campo servicio esta vacio, por favor selecionar un tipo de servicio");
 
         }else{
-            SessionData.getTurno().setFechaTurno(dateFecha.getValue());
-            SessionData.getTurno().setHoraTurno(LocalTime.of(13,0));
-            SessionData.getTurno().setTipoServicio((TipoServicio) cboxLavado.getValue());
-            SessionData.getTurno().setFormaPago((FormaPago) cboxPago.getValue());
-
-            SystemNavigation.anteriorPag(false);
+            turnoNew.setFechaTurno(dateFecha.getValue());
+            turnoNew.setHoraTurno(LocalTime.of(13,0));
+            turnoNew.setTipoServicio((TipoServicio) cboxLavado.getValue());
+            turnoNew.setFormaPago((FormaPago) cboxPago.getValue());
+            SessionData.setTurno(turnoNew);
+            SystemNavigation.avanzar("registro-turno-datos-turno","registro-turno-datos-cliente-vehiculo",true);
         }
     }
+
 
     private void cargarHorasDisponibles(LocalDate fecha) {
 
@@ -132,4 +132,6 @@ public class EditarTurnoController {
 
         cboxHora.getItems().addAll(horasLaborales);
     }
+
+
 }

@@ -60,7 +60,11 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="btnAltaVehiculo" mnemonicParsing="false" onAction="#altaVehiculo" prefHeight="30.0" text="Alta Vehiculo" />
+                        <Label>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
                      </children>
                   </VBox>
                </children>

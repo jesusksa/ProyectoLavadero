@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.RegistroTurnoController2">
+<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.RegistroTurnoConfirmacionController">
    <children>
       <VBox alignment="CENTER" layoutX="104.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -18,69 +18,150 @@
             </Label>
             <AnchorPane fx:id="pnTarjeta" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox alignment="CENTER" layoutX="96.0" prefHeight="315.0" prefWidth="489.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="0.0">
+                  <HBox alignment="CENTER" layoutX="96.0" prefHeight="315.0" prefWidth="489.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <VBox alignment="CENTER_LEFT" prefHeight="315.0" prefWidth="210.0" spacing="10.0">
+                        <VBox alignment="CENTER_LEFT" prefHeight="326.0" prefWidth="323.0" spacing="10.0">
                            <children>
-                              <Label fx:id="lbFecha" text="Fecha:">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbHora" text="Hora:">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbTipoServicio" text="Tipo de servicio:">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbFormaPago" text="Forma de Pago:">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbNombrecliente" text="Cliente:">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbDniCliente" text="Dni:">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbVehiculo" text="Tipo de vehiculo:">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbModelo" text="Modelo:">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbMatricula" text="Matricula:">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label text="FECHA:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbFecha">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label text="HORA:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbHora">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label text="TIPO DE SERVICIO:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbTipoServicio">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label text="FORMA DE PAGO:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbFormaPago">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label text="CLIENTE:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbNombrecliente">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label fx:id="lbDniCliente" text="DNI:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbDniCliente">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label text="TIPO DE VEHICULO:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbVehiculo">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label text="MODELO:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbModelo">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label text="MATRICULA:">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbMatricula">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="20.0">
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="30.0">
                            <children>
                               <Button fx:id="btnEditarTurno" mnemonicParsing="false" onAction="#editarTurno" prefHeight="40.0" prefWidth="100.0" text="Editar Turno" />
-                              <Button fx:id="btnEditarCliente" mnemonicParsing="false" onAction="#editarCliente2" prefHeight="40.0" prefWidth="100.0" text="Editar Cliente" />
-                              <Button fx:id="btnEditarVehiculo" mnemonicParsing="false" onAction="#editarVehiculo2" prefHeight="40.0" prefWidth="100.0" text="Editar Vehiculo" />
+                              <Button fx:id="btnEditarCliente" mnemonicParsing="false" onAction="#editarCliente" prefHeight="40.0" prefWidth="100.0" text="Editar Cliente" />
+                              <Button fx:id="btnEditarVehiculo" mnemonicParsing="false" onAction="#editarVehiculo" prefHeight="40.0" prefWidth="100.0" text="Editar Vehiculo" />
                            </children>
                         </VBox>
                      </children>
                   </HBox>
                </children>
             </AnchorPane>
-            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="473.0" spacing="20.0">
+            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="681.0" spacing="20.0">
                <children>
                   <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="40.0" prefWidth="100.0" text="Cancelar" />
                   <Button fx:id="btnConfirmar" mnemonicParsing="false" onAction="#confirmarTurno" prefHeight="40.0" prefWidth="100.0" text="Confirmar" />
