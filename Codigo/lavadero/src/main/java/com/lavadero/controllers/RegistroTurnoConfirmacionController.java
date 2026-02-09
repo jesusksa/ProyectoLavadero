@@ -63,6 +63,10 @@ public class RegistroTurnoConfirmacionController {
         DAOTurno daoTurno = new DAOTurno();
         daoTurno.agregar(SessionData.getTurno());
 
+        SessionData.limpiarTurno();
+        SessionData.limpiarCliente();
+        SessionData.limpiarVehiculo();
+
         SystemNavigation.inicio();
     }
 

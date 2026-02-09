@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="168.0" prefWidth="379.0" style="-fx-background-color: white; -fx-padding: 10; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #00000033, 8, 0, 0, 2);" stylesheets="@../Styles/tarjeta-turno.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.TurnoTarjetaController">
+<AnchorPane prefHeight="168.0" prefWidth="375.0" style="-fx-background-color: white; -fx-padding: 10; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #00000033, 8, 0, 0, 2);" stylesheets="@../Styles/tarjeta-turno.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.TurnoTarjetaController">
 
     <children>
 
@@ -37,6 +37,11 @@
                </font>
             </Label>
                <Label fx:id="lblEstado" text="ESTADO:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblFechaHora" text="FECHA Y HORA:">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

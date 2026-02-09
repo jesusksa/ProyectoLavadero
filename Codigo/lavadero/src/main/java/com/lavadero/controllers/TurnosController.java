@@ -34,7 +34,7 @@ public class TurnosController {
     @FXML
     public void initialize() throws IOException {
         DAOTurno daoTurno = new DAOTurno();
-        List<Turno> turnos = daoTurno.obtenerTodos();
+        List<Turno> turnos = daoTurno.obtenerTurnosVigentes();
 
         for(Turno turno: turnos){
             cargarTurno(turno);

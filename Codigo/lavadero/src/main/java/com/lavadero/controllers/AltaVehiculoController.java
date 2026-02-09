@@ -43,7 +43,8 @@ public class AltaVehiculoController {
         if(camposValidos()) {
             vehiculoNew.setTipoAuto(cboxTipoVehiculo.getValue());
             vehiculoNew.setModeloAuto(txtModelo.getText());
-            vehiculoNew.setPatente(txtPatente.getText());
+            String patente = txtPatente.getText().toUpperCase();
+            vehiculoNew.setPatente(patente);
             vehiculoNew.setTipoRelacion((TipoRelacion) cboxTipoAsociacion.getValue());
 
             SessionData.setVehiculo(vehiculoNew);

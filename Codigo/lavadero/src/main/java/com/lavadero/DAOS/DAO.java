@@ -13,7 +13,7 @@ public interface DAO<T> {
         try (Session session = sessionFactory.openSession()) {
             Transaction tx = session.beginTransaction();
 
-            session.save(entity);
+            session.saveOrUpdate(entity);
 
             tx.commit();
         }

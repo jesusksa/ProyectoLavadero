@@ -1,5 +1,6 @@
 package com.lavadero.controllers;
 
+import com.lavadero.DAOS.DAOTurno;
 import com.lavadero.model.Turno;
 import com.lavadero.util.SessionData;
 import com.lavadero.util.SystemTools;
@@ -29,11 +30,13 @@ public class InfoturnoController {
 
     @Setter
     @Getter
-    private Turno turno = SessionData.getTurno();
+    private Turno turno;
 
     private static Stage stageEstado;
 
     public void initialize(){
+        DAOTurno daoTurno = new DAOTurno();
+        turno = daoTurno.obtenerPorId(SessionData.getTurno().getIdTurno());
         SystemTools.setearLabel(lbCliente,lbCliente.getText().concat(" "+turno.getCliente().formatearNombre()));
         SystemTools.setearLabel(lbVehiculo,lbVehiculo.getText().concat(" "+turno.getVehiculo().getTipoAuto().toString()));
         SystemTools.setearLabel(lbContacto,lbContacto.getText().concat(" "+turno.getCliente().getNumeroContacto()));

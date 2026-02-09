@@ -105,7 +105,7 @@ public class RegistroTurnoDatosTurnoController {
 
         }else{
             turnoNew.setFechaTurno(dateFecha.getValue());
-            turnoNew.setHoraTurno(LocalTime.of(13,0));
+            turnoNew.setHoraTurno((LocalTime) cboxHora.getValue());
             turnoNew.setTipoServicio((TipoServicio) cboxLavado.getValue());
             turnoNew.setFormaPago((FormaPago) cboxPago.getValue());
             SessionData.setTurno(turnoNew);

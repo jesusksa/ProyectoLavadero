@@ -106,7 +106,7 @@ public class Turno {
             case LAVADO_COMPLETO:
                 return "Lavado Completo";
             case LAVADO_COMPLETO_MOTOR:
-                return "Lavado Completo más Motor";
+                return "Lavado Comp más Motor";
             default:
                 SystemTools.createAlert(Alert.AlertType.ERROR, "Error de formato", "Formato de dato invalido", "Por favor revise las datos ingresados");
                 return "";
@@ -149,4 +149,15 @@ public class Turno {
         }
     }
 
+    public String formatearFecha(){
+        return this.fechaTurno.getDayOfMonth() + "/" + this.fechaTurno.getMonthValue() + "/" + this.fechaTurno.getYear();
+    }
+
+    public String formatearHora(){
+        return this.horaTurno + "Hs";
+    }
+
+    public String formatearFechaHora() {
+        return this.fechaTurno.getDayOfMonth() + "/" + this.fechaTurno.getMonthValue() + " " + this.horaTurno.getHour() + "Hs";
+    }
 }

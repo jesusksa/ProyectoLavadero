@@ -21,9 +21,35 @@ public class DAOTurno implements DAO<Turno> {
     public List<Turno> obtenerTodos(){
         Session session = sessionFactory.openSession();
         String query = "SELECT t FROM turno t";
+        List<Turno> turnos = session.createQuery(query,Turno.class).getResultList();
+        session.close();
+        return turnos;
 
-        return session.createQuery(query,Turno.class).getResultList();
+    }
 
+    public Turno obtenerPorId(Long idTurno) {
+        Session session = sessionFactory.openSession();
+        String query = "SELECT DISTINCT t FROM turno t "+
+                       "LEFT JOIN FETCH t.cliente "+
+                       "LEFT JOIN FETCH t.vehiculo "+
+                       "LEFT JOIN FETCH t.empleados "+
+                       "LEFT JOIN FETCH t.usuario "+
+                       "WHERE t.idTurno =: idTurno ";
+        Turno turno = session.createQuery(query, Turno.class).setParameter("idTurno",idTurno).getSingleResultOrNull();
+        session.close();
+        return turno;
+    }
+
+
+    public List<Turno> obtenerTurnosVigentes(){
+        Session session = sessionFactory.openSession();
+        String query = "SELECT t FROM turno t WHERE (t.estado =: espera OR t.estado =: proceso) AND t.fechaTurno >=: fecha ORDER BY t.fechaTurno ASC, t.horaTurno ASC";
+        List<Turno> turnos = session.createQuery(query, Turno.class)
+                             .setParameter("espera", EstadoLavado.ESPERA).setParameter("proceso",EstadoLavado.PROCESO)
+                             .setParameter("fecha",LocalDate.now())
+                             .getResultList();
+        session.close();
+        return turnos;
     }
 
     public List<LocalTime> obtenerHorasNoDisponiblesPorDia(LocalDate fecha){

@@ -1,6 +1,5 @@
 package com.lavadero.controllers;
 
-import com.lavadero.App;
 import com.lavadero.model.Turno;
 import com.lavadero.util.SessionData;
 import com.lavadero.util.SystemNavigation;
@@ -18,6 +17,7 @@ public class TurnoTarjetaController {
     public Label lblVehiculo;
     public Label lblServicio;
     public Label lblEstado;
+    public Label lblFechaHora;
 
     @Setter
     @Getter
@@ -29,6 +29,7 @@ public class TurnoTarjetaController {
         SystemTools.setearLabel(lblVehiculo,lblVehiculo.getText().concat(" "+turno.getVehiculo().getTipoAuto()));
         SystemTools.setearLabel(lblServicio,lblServicio.getText().concat(" "+turno.formatearServicio()));
         SystemTools.setearLabel(lblEstado,lblEstado.getText().concat(" "+turno.formatearEstado()));
+        SystemTools.setearLabel(lblFechaHora,lblFechaHora.getText().concat(" "+turno.formatearFechaHora()));
     }
 
     public void masInformacion(ActionEvent actionEvent) throws IOException {
