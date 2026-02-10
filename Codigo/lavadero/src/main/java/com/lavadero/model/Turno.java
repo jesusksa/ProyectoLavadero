@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.lavadero.util.SystemTools;
 import jakarta.persistence.*;
@@ -160,4 +161,15 @@ public class Turno {
     public String formatearFechaHora() {
         return this.fechaTurno.getDayOfMonth() + "/" + this.fechaTurno.getMonthValue() + " " + this.horaTurno.getHour() + "Hs";
     }
+
+    public String formatearEmpleados() {
+        if (empleados == null || empleados.isEmpty()) {
+            return "Sin empleados asignados";
+        }
+
+        return empleados.stream()
+                .map(Empleado::formatearNombre)
+                .collect(Collectors.joining(" - "));
+    }
+
 }

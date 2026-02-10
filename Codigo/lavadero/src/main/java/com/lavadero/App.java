@@ -52,7 +52,11 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
-        //SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        //CargaDatos.cargar();
+        //cargar();
+    }
+
+    public static void cargar(){
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+        CargaDatos.cargar();
     }
 }

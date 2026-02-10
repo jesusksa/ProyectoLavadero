@@ -39,4 +39,8 @@ public class Empleado {
         this.apellidos = apellidos;
         this.dni = dni;
     }
+
+    public String formatearNombre(){
+        return this.nombres + " " + this.apellidos;
+    }
 }

@@ -16,4 +16,6 @@ module com.lavadero {
     opens com.lavadero.controllers to javafx.fxml, lombok;
     exports com.lavadero.DAOS;
     opens com.lavadero.DAOS to javafx.fxml, lombok;
+    exports com.lavadero.util;
+    opens com.lavadero.util to javafx.fxml, lombok;
 }
