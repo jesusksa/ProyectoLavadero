@@ -1,11 +1,14 @@
 package com.lavadero.DAOS;
 
 import com.lavadero.model.EstadoLavado;
+import com.lavadero.model.TipoAuto;
+import com.lavadero.model.TipoServicio;
 import com.lavadero.model.Turno;
 import com.lavadero.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -69,6 +72,67 @@ public class DAOTurno implements DAO<Turno> {
 
         session.close();
         return horas;
+    }
+
+    public List<Turno> obtenerTurnosFiltrados(String dni, String matricula, TipoServicio servicio, EstadoLavado estado, TipoAuto vehiculo, LocalDate fecha){
+        Session session = sessionFactory.openSession();
+        StringBuilder query = new StringBuilder("SELECT t FROM turno t WHERE 1=1 ");
+        if(!dni.isEmpty()){
+            query.append("AND t.cliente.dni =: dni ");
+        }
+        if(!matricula.isEmpty()){
+            query.append("AND t.vehiculo.patente =: matricula ");
+        }
+        if(servicio != null){
+            query.append("AND t.tipoServicio =: servicio ");
+        }
+        if(estado != null){
+            query.append("AND t.estado =: estado ");
+        }
+        if(vehiculo != null){
+            query.append("AND t.vehiculo.tipoAuto =: vehiculo ");
+        }
+        if(fecha != null){
+            query.append("AND t.fechaTurno =: fechaTurno ");
+        }
+
+        Query<Turno> turnos = session.createQuery(query.toString(), Turno.class);
+        if(!dni.isEmpty()){
+            turnos.setParameter("dni",dni);
+        }
+        if(!matricula.isEmpty()){
+            turnos.setParameter("matricula",matricula);
+        }
+        if(servicio != null){
+            turnos.setParameter("servicio",servicio);
+        }
+        if(estado != null){
+            turnos.setParameter("estado",estado);
+        }
+        if(vehiculo != null){
+            turnos.setParameter("vehiculo",vehiculo);
+        }
+        if(fecha != null){
+            turnos.setParameter("fechaTurno",fecha);
+        }
+
+        List<Turno> turnoslist = turnos.getResultList();
+        session.close();
+        return turnoslist;
+
+    }
+
+    public List<Turno> obtenerTurnosPorNombre(String nombreApe){
+        Session session = sessionFactory.openSession();
+        String query = "SELECT t from turno t "+
+                            "WHERE lower(t.cliente.nombres) LIKE :texto "+
+                            "OR lower(t.cliente.apellidos) LIKE :texto "+
+                            "ORDER BY t.fechaTurno ASC, t.horaTurno ASC";
+
+        List<Turno> turnos = session.createQuery(query, Turno.class).setParameter("texto","%" + nombreApe.toLowerCase() + "%").getResultList();
+
+        session.close();
+        return turnos;
     }
 
 }
