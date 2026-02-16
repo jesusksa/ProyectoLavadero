@@ -5,9 +5,11 @@ import com.lavadero.util.CargaDatos;
 import com.lavadero.util.HibernateUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import lombok.Getter;
 
@@ -34,10 +36,13 @@ public class App extends Application {
         Image icono = new Image(getClass().getResourceAsStream("/images/icono-ventana.png"));
         stage.getIcons().add(icono);
         stage.setScene(scene);
-        stage.setWidth(600);
-        stage.setHeight(500);
-        stage.setMinWidth(600);
-        stage.setMinHeight(500);
+
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX(screenBounds.getMinX());
+        stage.setY(screenBounds.getMinY());
+        stage.setWidth(screenBounds.getWidth());
+        stage.setHeight(screenBounds.getHeight());
+
         stage.show();
     }
 

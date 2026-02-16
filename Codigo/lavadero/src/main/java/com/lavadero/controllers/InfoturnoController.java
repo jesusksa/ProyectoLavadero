@@ -4,6 +4,7 @@ import com.lavadero.DAOS.DAOTurno;
 import com.lavadero.model.EstadoLavado;
 import com.lavadero.model.Turno;
 import com.lavadero.util.SessionData;
+import com.lavadero.util.SystemNavigation;
 import com.lavadero.util.SystemTools;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,6 +46,13 @@ public class InfoturnoController {
 
         limpiarLabels();
         cargarTurno();
+    }
+
+    public void editarDatosTurnos() throws IOException {
+        SessionData.setTurno(turno);
+        SessionData.setVehiculo(turno.getVehiculo());
+        SessionData.setCliente(turno.getCliente());
+        SystemNavigation.avanzar("info-turnos","editar-datos",true);
     }
 
     public void cambiarEstado(ActionEvent actionEvent) throws IOException {

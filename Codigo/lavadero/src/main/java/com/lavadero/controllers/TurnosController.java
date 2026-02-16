@@ -139,6 +139,7 @@ public class TurnosController {
                 SystemTools.createAlert(Alert.AlertType.ERROR,"Error de datos","No se encontro cliente asociado","Verifique los datos ingresados");
             }else{
                 filtro = true;
+                txtBusqueda.clear();
                 cargarTurnos();
             }
         }
