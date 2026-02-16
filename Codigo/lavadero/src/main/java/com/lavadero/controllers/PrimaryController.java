@@ -1,6 +1,7 @@
 package com.lavadero.controllers;
 
 import com.lavadero.App;
+import com.lavadero.model.TipoRol;
 import com.lavadero.util.SessionData;
 import com.lavadero.util.SystemNavigation;
 import com.lavadero.util.SystemTools;
@@ -44,7 +45,9 @@ public class PrimaryController {
             }
         });
 
-        cargarContenido(App.loadFXML("turnos"));
+        if(SessionData.getUsuarioLogueado().getRol() == TipoRol.OFICINISTA){
+            cargarContenido(App.loadFXML("turnos"));
+        }
 
         controlarVisibilidad();
 
@@ -54,8 +57,7 @@ public class PrimaryController {
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
 
         if (SystemTools.createAlertConfirm("Cerrar sesión","¿Seguro que desea abandonar la sesion iniciada?","")){
-            Scene scene = new Scene(loadFXML("sesion"));
-            App.getMainStage().setScene(scene);
+            App.setRoot("sesion");
         }
     }
 

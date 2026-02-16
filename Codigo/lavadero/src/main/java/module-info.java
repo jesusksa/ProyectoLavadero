@@ -6,6 +6,7 @@ module com.lavadero {
     requires jakarta.persistence;
     requires java.sql;
     requires java.naming;
+    requires jbcrypt;
 
 
     opens com.lavadero to javafx.fxml, lombok;

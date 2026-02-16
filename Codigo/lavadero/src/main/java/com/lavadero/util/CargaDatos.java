@@ -2,6 +2,7 @@ package com.lavadero.util;
 
 import com.lavadero.DAOS.*;
 import com.lavadero.model.*;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -65,10 +66,10 @@ public class CargaDatos {
         daoEmpelado.agregar(empelado4);
 
         //Usuarios
-        Usuario usuario1 = new Usuario("office","365kk",TipoRol.OFICINISTA);
-        Usuario usuario2 = new Usuario("offic2","365kk",TipoRol.OFICINISTA);
-        Usuario usuario3 = new Usuario("marcos15","jesus15",TipoRol.ADMINISTRATIVO);
-        Usuario usuario4 = new Usuario("admin","admin",TipoRol.ADMINISTRADOR);
+        Usuario usuario1 = new Usuario("office", BCrypt.hashpw("365kk", BCrypt.gensalt()),TipoRol.OFICINISTA);
+        Usuario usuario2 = new Usuario("offic2", BCrypt.hashpw("242314kk", BCrypt.gensalt()),TipoRol.OFICINISTA);
+        Usuario usuario3 = new Usuario("marcos15", BCrypt.hashpw("jesus15", BCrypt.gensalt()),TipoRol.ADMINISTRATIVO);
+        Usuario usuario4 = new Usuario("admin", BCrypt.hashpw("admin", BCrypt.gensalt()),TipoRol.ADMINISTRADOR);
 
         //Persistencia
         DAOUsuario daoUsuario = new DAOUsuario();

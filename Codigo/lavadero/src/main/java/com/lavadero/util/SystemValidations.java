@@ -1,7 +1,10 @@
 package com.lavadero.util;
 
 import com.lavadero.DAOS.DAOCliente;
+import com.lavadero.DAOS.DAOUsuario;
 import com.lavadero.DAOS.DAOVehiculo;
+
+import java.util.regex.Pattern;
 
 public class SystemValidations {
 
@@ -105,6 +108,22 @@ public class SystemValidations {
         DAOVehiculo daoVehiculo= new DAOVehiculo();
         if(daoVehiculo.obtenerVehiculoPorPatente(patente) != null){
             return "Un vehiculo con la misma patente ya esta registrado";
+        }
+        return null;
+    }
+
+    public static String validarNombreUsuario(String usuario){
+        if(usuario.length() < 5 || usuario.length() > 30){
+            return "La longitud de nombre de usuario ingresada no es adecuada.";
+        }
+
+        return null;
+    }
+
+    public static String validarContrasenia(String contrasenia){
+        String regex = "^(?=.*\\d).{10,}$";
+        if(Pattern.matches(regex, contrasenia)){
+            return "Formato de contraseña incorrecto. La contraseña debe tener una longitud mínima de 10 caracteres e incluir al menos un número.";
         }
         return null;
     }
