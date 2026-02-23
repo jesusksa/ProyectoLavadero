@@ -31,6 +31,16 @@ public class RegistroTurnoDatosTurnoController {
 
 
     public void initialize(){
+        if(SessionData.getTurno() != null){
+            dateFecha.setValue(SessionData.getTurno().getFechaTurno());
+            cboxHora.setValue(SessionData.getTurno().getHoraTurno());
+            cargarHorasDisponibles(SessionData.getTurno().getFechaTurno());
+            cboxLavado.setValue(SessionData.getTurno().getTipoServicio());
+            cboxPago.setValue(SessionData.getTurno().getFormaPago());
+        }
+
+        this.cboxLavado.getItems().setAll(TipoServicio.values());
+        this.cboxPago.getItems().setAll(FormaPago.values());
         //Validar luego el horario de verano eh invierno, ajustar horas al rango horario laboral
 
         dateFecha.setEditable(false); // evita que escriban a mano
@@ -68,8 +78,6 @@ public class RegistroTurnoDatosTurnoController {
             }
         });
 
-        this.cboxLavado.getItems().setAll(TipoServicio.values());
-        this.cboxPago.getItems().setAll(FormaPago.values());
     }
 
     public void cancelar(ActionEvent actionEvent) throws IOException {

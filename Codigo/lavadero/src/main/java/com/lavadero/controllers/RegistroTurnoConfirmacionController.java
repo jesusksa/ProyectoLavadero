@@ -70,13 +70,10 @@ public class RegistroTurnoConfirmacionController {
         SystemNavigation.inicio();
     }
 
-    public void editarCliente(ActionEvent actionEvent) throws IOException {
-        SystemNavigation.avanzar("registro-turno-confirmacion", "editar-cliente",true);
+    public void editarClienteVehiculo(ActionEvent actionEvent) throws IOException {
+        SystemNavigation.avanzar("registro-turno-confirmacion", "editar-cliente-vehiculo",true);
     }
 
-    public void editarVehiculo(ActionEvent actionEvent) throws IOException {
-        SystemNavigation.avanzar("registro-turno-confirmacion", "editar-vehiculo",true);
-    }
 
     public void editarTurno(ActionEvent actionEvent) throws IOException {
         SystemNavigation.avanzar("registro-turno-confirmacion", "editar-turno",true);

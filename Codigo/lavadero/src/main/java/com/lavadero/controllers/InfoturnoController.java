@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lombok.Getter;
@@ -34,6 +35,14 @@ public class InfoturnoController {
     public Label lbFormaPago;
     @FXML
     private Button btnEstado;
+    @FXML
+    private Button btnNotificacion;
+    @FXML
+    private Button btnEditarDatosTurnos;
+    @FXML
+    private VBox vboxCliente;
+    @FXML
+    private VBox vboxTurno;
 
     @Setter
     @Getter
@@ -42,8 +51,7 @@ public class InfoturnoController {
     private static Stage stageEstado;
 
     public void initialize(){
-
-
+        btnNotificacion.setDisable(true);
         limpiarLabels();
         cargarTurno();
     }
@@ -77,6 +85,32 @@ public class InfoturnoController {
     public void cargarTurno(){
         DAOTurno daoTurno = new DAOTurno();
         turno = daoTurno.obtenerPorId(SessionData.getTurno().getIdTurno());
+        switch (turno.getEstado()){
+            case ESPERA:
+                System.out.println("Espera");
+                vboxCliente.setStyle("-fx-background-color: #F9E900");
+                vboxTurno.setStyle("-fx-background-color: #F9E900");
+                break;
+            case PROCESO:
+                System.out.println("Proceso");
+                vboxCliente.setStyle("-fx-background-color: #037EAA");
+                vboxTurno.setStyle("-fx-background-color: #037EAA");
+                break;
+            case FINALIZADO:
+                System.out.println("Finlizado");
+                vboxCliente.setStyle("-fx-background-color: #4D8B31");
+                vboxTurno.setStyle("-fx-background-color: #4D8B31");
+                btnNotificacion.setDisable(false);
+                btnEstado.setDisable(true);
+                btnEditarDatosTurnos.setDisable(true);
+                break;
+            case CANCELADO:
+                System.out.println("Cancelado");
+                vboxCliente.setStyle("-fx-background-color: #F90000");
+                vboxTurno.setStyle("-fx-background-color: #F90000");
+                btnEstado.setDisable(true);
+                break;
+        }
         SystemTools.setearLabel(lbCliente,turno.getCliente().formatearNombre());
         SystemTools.setearLabel(lbVehiculo,turno.getVehiculo().getTipoAuto().toString());
         SystemTools.setearLabel(lbContacto,turno.getCliente().getNumeroContacto());
@@ -87,9 +121,6 @@ public class InfoturnoController {
         SystemTools.setearLabel(lbResponsables,turno.formatearEmpleados());
         SystemTools.setearLabel(lbServicio,turno.formatearServicio());
         SystemTools.setearLabel(lbFormaPago,turno.formatearPago());
-        if(turno.getEstado() == EstadoLavado.FINALIZADO || turno.getEstado() == EstadoLavado.CANCELADO){
-            btnEstado.setDisable(true);
-        }
     }
 
     public void limpiarLabels(){

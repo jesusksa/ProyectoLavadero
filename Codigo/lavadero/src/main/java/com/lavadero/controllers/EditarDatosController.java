@@ -64,6 +64,9 @@ public class EditarDatosController {
         DAOTurno daoTurno = new DAOTurno();
         daoTurno.actualizar(SessionData.getTurno());
 
+        SessionData.limpiarTurno();
+        SessionData.limpiarCliente();
+        SessionData.limpiarVehiculo();
 
         SystemNavigation.cancelar();
     }
@@ -73,12 +76,9 @@ public class EditarDatosController {
     }
 
     public void editarCliente(ActionEvent actionEvent) throws IOException {
-        SystemNavigation.avanzar("editar-datos", "editar-cliente",true);
+        SystemNavigation.avanzar("editar-datos", "editar-cliente-vehiculo",true);
     }
 
-    public void editarVehiculo(ActionEvent actionEvent) throws IOException {
-        SystemNavigation.avanzar("editar-datos", "editar-vehiculo",true);
-    }
 
     public void editarTurno(ActionEvent actionEvent) throws IOException {
         SystemNavigation.avanzar("editar-datos", "editar-turno",true);

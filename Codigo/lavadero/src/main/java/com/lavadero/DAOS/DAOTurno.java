@@ -46,7 +46,7 @@ public class DAOTurno implements DAO<Turno> {
 
     public List<Turno> obtenerTurnosVigentes(){
         Session session = sessionFactory.openSession();
-        String query = "SELECT t FROM turno t WHERE (t.estado =: espera OR t.estado =: proceso) AND t.fechaTurno >=: fecha AND t.horaTurno >=: hora ORDER BY t.fechaTurno ASC, t.horaTurno ASC";
+        String query = "SELECT t FROM turno t WHERE (t.estado =: espera OR t.estado =: proceso) AND (t.fechaTurno >: fecha OR (t.fechaTurno = :fecha AND t.horaTurno >= :hora)) ORDER BY t.fechaTurno ASC, t.horaTurno ASC";
         List<Turno> turnos = session.createQuery(query, Turno.class)
                              .setParameter("espera", EstadoLavado.ESPERA).setParameter("proceso",EstadoLavado.PROCESO)
                              .setParameter("fecha",LocalDate.now())
