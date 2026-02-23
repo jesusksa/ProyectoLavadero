@@ -64,10 +64,6 @@ public class EditarDatosController {
         DAOTurno daoTurno = new DAOTurno();
         daoTurno.actualizar(SessionData.getTurno());
 
-        SessionData.limpiarTurno();
-        SessionData.limpiarCliente();
-        SessionData.limpiarVehiculo();
-
         SystemNavigation.cancelar();
     }
 

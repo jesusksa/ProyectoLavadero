@@ -7,6 +7,7 @@ module com.lavadero {
     requires java.sql;
     requires java.naming;
     requires jbcrypt;
+    requires twilio;
 
 
     opens com.lavadero to javafx.fxml, lombok;

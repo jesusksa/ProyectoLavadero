@@ -37,7 +37,7 @@ public class AltaClienteController {
             clienteNew.setNombres(txtNombres.getText());
             clienteNew.setApellidos(txtApellidos.getText());
             clienteNew.setDni(Integer.valueOf(txtDNI.getText()));
-            clienteNew.setNumeroContacto(txtContacto.getText());
+            clienteNew.setNumeroContacto("+54"+txtContacto.getText());
             clienteNew.setDomicilio(txtDireccion.getText());
 
             SessionData.setCliente(clienteNew);
