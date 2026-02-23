@@ -10,24 +10,47 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane stylesheets="@../Styles/gestion-turnos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.TurnosController">
    <children>
-      <Button fx:id="btnRegistroTurno" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#registrarTurno" prefHeight="40.0" prefWidth="100.0" text="Registrar Turno" AnchorPane.leftAnchor="10.0" />
+      <Button fx:id="btnRegistroTurno" contentDisplay="RIGHT" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#registrarTurno" prefHeight="40.0" prefWidth="150.0" text="Registrar Turno" textFill="WHITE" AnchorPane.leftAnchor="10.0">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icono-mas.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <HBox layoutX="276.0" layoutY="14.0" prefHeight="40.0" prefWidth="411.0" spacing="5.0" AnchorPane.rightAnchor="10.0">
          <children>
-            <Button fx:id="btnBorrarFiltros" mnemonicParsing="false" onAction="#desacerFiltros" prefHeight="40.0" prefWidth="100.0" text="Borrar Filtros" />
-            <Button fx:id="btnFiltrar" mnemonicParsing="false" onAction="#filtrar" prefHeight="40.0" prefWidth="100.0" text="Filtros" />
-            <TextArea fx:id="txtBusqueda" prefHeight="40.0" prefWidth="150.0" />
-            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscarTurno" prefHeight="40.0" prefWidth="40.0">
+            <Button fx:id="btnBorrarFiltros" mnemonicParsing="false" onAction="#desacerFiltros" prefHeight="40.0" prefWidth="100.0" text="Borrar Filtros" textFill="WHITE" />
+            <Button fx:id="btnFiltrar" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#filtrar" prefHeight="40.0" prefWidth="100.0" text="Filtros" textFill="WHITE">
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/icono-busqueda.png" />
+                        <Image url="@../images/icono-filtro.png" />
                      </image>
                   </ImageView>
-               </graphic>
-            </Button>
+               </graphic></Button>
+            <HBox fx:id="hboxBusqueda" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextArea fx:id="txtBusqueda" prefHeight="40.0" prefWidth="150.0" promptText="Escriba aqui...">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscarTurno" prefHeight="39.0" prefWidth="50.0" textFill="TRANSPARENT">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icono-busqueda.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </HBox>
       <ScrollPane fx:id="scrollTurnos" layoutY="66.0" prefHeight="327.0" prefWidth="491.0" stylesheets="@../Styles/gestion-turnos.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="66.0">

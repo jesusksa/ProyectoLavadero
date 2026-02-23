@@ -1,0 +1,13 @@
+TextField, ComboBox, DatePicker{
+-fx-background-color: #FFFFFF;
+-fx-background-radius: 7px;
+}
+
+#btnFiltrar{
+-fx-background-color: #FFFFFF;
+-fx-background-radius: 10px;
+}
+
+#btnFiltrar:hover{
+-fx-background-color: #D9D9D9;
+}

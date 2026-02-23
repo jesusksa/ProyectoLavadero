@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.InfoturnoController">
+<AnchorPane stylesheets="@../Styles/info-turnos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.InfoturnoController">
    <children>
       <VBox alignment="CENTER" layoutX="250.0" layoutY="100.0" prefHeight="495.0" prefWidth="543.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -24,7 +24,7 @@
             </Label>
             <HBox alignment="TOP_CENTER" spacing="80.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="300.0" prefWidth="450.0" spacing="25.0" style="-fx-background-color: green;">
+                  <VBox fx:id="vboxCliente" alignment="CENTER" prefHeight="300.0" prefWidth="450.0" spacing="25.0">
                      <children>
                         <Label contentDisplay="RIGHT" text="Datos del Cliente">
                            <font>
@@ -40,8 +40,8 @@
                         </Label>
                         <GridPane vgap="20.0">
                           <columnConstraints>
-                            <ColumnConstraints halignment="LEFT" minWidth="120.0" prefWidth="100.0" />
-                             <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="40.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="LEFT" maxWidth="140.6666463216146" minWidth="120.0" prefWidth="140.6666463216146" />
+                             <ColumnConstraints halignment="LEFT" maxWidth="1.7976931348623157E308" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -60,7 +60,7 @@
                                     </ImageView>
                                  </graphic>
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                                  <GridPane.margin>
                                     <Insets left="10.0" />
@@ -68,7 +68,7 @@
                               </Label>
                               <Label text="Vehículo:" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -90,7 +90,7 @@
                                     </ImageView>
                                  </graphic>
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                                  <GridPane.margin>
                                     <Insets left="10.0" />
@@ -105,7 +105,7 @@
                                     </ImageView>
                                  </graphic>
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                                  <GridPane.margin>
                                     <Insets left="10.0" />
@@ -120,7 +120,7 @@
                                     </ImageView>
                                  </graphic>
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                                  <GridPane.margin>
                                     <Insets left="10.0" />
@@ -158,7 +158,7 @@
                         </GridPane>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="300.0" prefWidth="450.0" spacing="25.0" style="-fx-background-color: green;">
+                  <VBox fx:id="vboxTurno" alignment="CENTER" prefHeight="300.0" prefWidth="450.0" spacing="25.0">
                      <children>
                         <Label contentDisplay="RIGHT" text="Datos del Turno">
                            <graphic>
@@ -174,8 +174,8 @@
                         </Label>
                         <GridPane vgap="20.0">
                           <columnConstraints>
-                            <ColumnConstraints halignment="LEFT" minWidth="170.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="40.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="LEFT" minWidth="200.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="LEFT" maxWidth="1.7976931348623157E308" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -187,7 +187,7 @@
                            <children>
                               <Label text="Fecha:">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -202,7 +202,7 @@
                               </Label>
                               <Label text="Estado:" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -217,7 +217,7 @@
                               </Label>
                               <Label text="Responsables:" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -232,7 +232,7 @@
                               </Label>
                               <Label text="Tipo de Servicio:" GridPane.rowIndex="3">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -247,7 +247,7 @@
                               </Label>
                               <Label text="Forma de Pago:" GridPane.rowIndex="4">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -311,7 +311,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btnNotificaacion" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#notificarTurno" prefHeight="40.0" prefWidth="160.0" text="Enviar Notificación">
+                  <Button fx:id="btnNotificacion" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#notificarTurno" prefHeight="40.0" prefWidth="160.0" text="Enviar Notificación">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>

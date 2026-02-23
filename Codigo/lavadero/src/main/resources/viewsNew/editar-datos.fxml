@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.EditarDatosController">
+<AnchorPane stylesheets="@../Styles/registro-turno.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.EditarDatosController">
     <children>
         <VBox alignment="CENTER" layoutX="104.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -152,9 +152,8 @@
                                 </VBox>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="30.0">
                                     <children>
-                                        <Button fx:id="btnEditarTurno" mnemonicParsing="false" onAction="#editarTurno" prefHeight="40.0" prefWidth="100.0" text="Editar Turno" />
-                                        <Button fx:id="btnEditarCliente" mnemonicParsing="false" onAction="#editarCliente" prefHeight="40.0" prefWidth="100.0" text="Editar Cliente" />
-                                        <Button fx:id="btnEditarVehiculo" mnemonicParsing="false" onAction="#editarVehiculo" prefHeight="40.0" prefWidth="100.0" text="Editar Vehiculo" />
+                                        <Button fx:id="btnEditarTurno" mnemonicParsing="false" onAction="#editarTurno" prefHeight="40.0" prefWidth="135.0" text="Cambiar Datos Turno" />
+                                        <Button fx:id="btnEditarCliente" mnemonicParsing="false" onAction="#editarCliente" prefHeight="40.0" prefWidth="135.0" text="Cambair Datos Cliente" />
                                     </children>
                                 </VBox>
                             </children>
