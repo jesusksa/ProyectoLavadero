@@ -1,14 +1,13 @@
-#pnInfoCliente,#pnInfoTurno{
--fx-background-color: #00DB4A;
+#vboxCliente,#vboxTurno{
 -fx-background-radius: 20px;
 }
 
-#btnEstado{
+#btnEstado, #btnEditarDatosTurnos{
 -fx-background-color: #FFFFFF;
 -fx-background-radius: 20px;
 }
 
-#btnEstado:hover{
+#btnEstado:hover, #btnEditarDatosTurnos:hover{
 -fx-background-color: #E4E4E4;
 }
 

@@ -14,7 +14,7 @@ import javafx.util.StringConverter;
 import java.io.IOException;
 import java.util.List;
 
-public class RegistroTurnoClienteVehiculoController {
+public class EditarTurnoClienteVehiculoController {
     //Pantalla de cliente y vehiculo
     public TextArea txtCliente;
     public Label lbNombreCliente;
@@ -90,7 +90,7 @@ public class RegistroTurnoClienteVehiculoController {
     }
 
     public void registrarCliente(ActionEvent actionEvent) throws IOException {
-        SystemNavigation.avanzar("registro-turno-datos-cliente-vehiculo", "alta-cliente",true);
+        SystemNavigation.avanzar("editar-cliente-vehiculo", "alta-cliente",true);
     }
 
     public void editarCliente(ActionEvent actionEvent) throws IOException {
@@ -98,19 +98,19 @@ public class RegistroTurnoClienteVehiculoController {
             SystemTools.createAlert(Alert.AlertType.ERROR, "Error", "No se ah seleccionado ningun cliente", "Por favor debe buscar un cliente");
 
         }else{
-            SystemNavigation.avanzar("registro-turno-datos-cliente-vehiculo", "editar-cliente",true);
+            SystemNavigation.avanzar("editar-cliente-vehiculo", "editar-cliente",true);
         }
     }
 
     public void registrarVehiculo(ActionEvent actionEvent) throws IOException {
-        SystemNavigation.avanzar("registro-turno-datos-cliente-vehiculo", "alta-vehiculo",true);
+        SystemNavigation.avanzar("editar-cliente-vehiculo", "alta-vehiculo",true);
     }
 
     public void editarVehiculo(ActionEvent actionEvent) throws IOException {
         if(SessionData.getVehiculo() == null) {
-           SystemTools.createAlert(Alert.AlertType.ERROR, "Error", "No se ah seleccionado ningun vehiculo", "Por favor debe seleccionar un vehiculo");
+            SystemTools.createAlert(Alert.AlertType.ERROR, "Error", "No se ah seleccionado ningun vehiculo", "Por favor debe seleccionar un vehiculo");
         }else {
-            SystemNavigation.avanzar("registro-turno-datos-cliente-vehiculo", "editar-vehiculo", true);
+            SystemNavigation.avanzar("editar-cliente-vehiculo", "editar-vehiculo", true);
         }
     }
 
@@ -122,7 +122,7 @@ public class RegistroTurnoClienteVehiculoController {
             SystemTools.createAlert(Alert.AlertType.ERROR, "Error de datos", "Falta de datos", "Debe seleccionar o registrar un vehiculo para continuar");
 
         }else{
-            SystemNavigation.avanzar("registro-turno-datos-cliente-vehiculo","registro-turno-confirmacion",true);
+            SystemNavigation.cancelar();
         }
     }
 

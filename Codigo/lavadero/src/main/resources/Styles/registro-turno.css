@@ -1,0 +1,63 @@
+TextField, ChoiceBox, DatePicker{
+-fx-background-color: #FFFFFF;
+-fx-background-radius: 7px;
+}
+
+#btnCancelar{
+-fx-background-radius: 7px;
+-fx-background-color: #FF0000;
+}
+
+#btnCancelar:hover{
+-fx-background-color: #D21010;
+}
+
+#btnContinuar, #btnConfirmar{
+-fx-background-color: #00DB4A;
+-fx-background-radius: 7px;
+}
+
+#btnContinuar:hover, #btnConfirmar:hover{
+-fx-background-color: #0F8D3A;
+}
+
+
+/* VENTANA CLIENTE Y VEHICULOS */
+
+#pnTarjeta{
+-fx-background-color: #9AD0DE;
+-fx-background-radius: 10px;
+}
+
+#btnBuscarCliente{
+-fx-background-color: #00DB4A;
+-fx-background-radius: 15px;
+}
+
+#btnBuscarCliente:hover{
+-fx-background-color: #0F8D3A;
+}
+
+#paneTarjeta .label {
+-fx-background-color: #FFFFFF;
+}
+
+#btnAltaCliente, #btnEditarCliente, #btnAltaVehiculo, #btnEditarVehiculo, #btnEditarTurno{
+-fx-background-color: #FFFFFF;
+-fx-background-radius: 10px;
+}
+
+#btnAltaCliente: hover, #btnEditarCliente: hover, #btnAltaVehiculo: hover, #btnEditarVehiculo: hover, #btnEditarTurno:hover{
+-fx-background-color: #D9D9D9;
+}
+
+/* VENTANAS ALTA: CLIENTE; VEHICULO */
+
+#btnRegistrar{
+-fx-background-color: #00DB4A;
+-fx-background-radius: 7px;
+}
+
+#btnRegistrar:hover{
+-fx-background-color: #0F8D3A;
+}

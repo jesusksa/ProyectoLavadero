@@ -5,6 +5,9 @@
 
 #btnFiltrar{
 -fx-background-color: #4D8B31;
+-fx-border-width: 3px;
+-fx-border-radius: 7px;
+-fx-border-color:#FFFFFF;
 -fx-background-radius: 10px;
 -fx-font-family: "Inconsolata", serif;
 }
@@ -13,26 +16,47 @@
 -fx-background-color: #427929;
 }
 
-#btnRegTur{
+#btnRegistroTurno{
 -fx-border-width: 3px;
--fx-border-radius: 9px;
+-fx-border-radius: 8px;
 -fx-border-color:#FFFFFF;
 -fx-background-color: #0A1045;
 -fx-background-radius: 10px
 }
 
-#btnRegTur:hover{
+#btnRegistroTurno:hover{
 -fx-background-color: #1F255A;
 }
 
+#scrollTurnos{
+    -fx-background-radius: 10px;
+}
 
 #hboxBusqueda{
 -fx-background-color: #FFFFFF;
 -fx-background-radius: 10px;
 }
 
-#txtBuscar{
+#txtBusqueda{
 -fx-background-color: #FFFFFF;
 -fx-background-radius: 10px;
+-fx-border-radius: 7px;
 -fx-font-family: "Inconsolata", serif;
+}
+
+#btnBuscar{
+-fx-background-color: #FFFFFF;
+-fx-border-radius: 7px;
+}
+
+#btnBuscar:hover{
+-fx-background-color: #cec7c7;
+}
+
+#btnBorrarFiltros{
+-fx-border-width: 3px;
+-fx-border-radius: 7px;
+-fx-border-color:#FFFFFF;
+-fx-background-color: #4193AC;
+-fx-background-radius: 10px;
 }

@@ -30,4 +30,10 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Turno> turnos;
+
+    public Usuario(String nombreUsuario, String contraseniaUsuario, TipoRol rol) {
+        this.nombreUsuario = nombreUsuario;
+        this.contraseniaUsuario = contraseniaUsuario;
+        this.rol = rol;
+    }
 }

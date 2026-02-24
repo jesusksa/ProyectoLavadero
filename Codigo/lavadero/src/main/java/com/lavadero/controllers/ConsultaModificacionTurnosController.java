@@ -14,7 +14,7 @@ import lombok.Getter;
 import java.io.IOException;
 import java.util.Date;
 
-public class ConsultaModificacionTurnosController implements Navegable, Avanzable{
+public class ConsultaModificacionTurnosController{
 
     public MenuButton mbtnCuenta;
     @FXML
@@ -90,31 +90,8 @@ public class ConsultaModificacionTurnosController implements Navegable, Avanzabl
                 mbtnCuenta.getStyleClass().remove("pressed");
             }
         });
-        
-        BaseController.controlarVisibilidad(btnPrev, btnNext);
-    }
-
-    @Override
-    public void avanzar(String viewActual, String viewNueva) throws IOException {
 
     }
 
-    @Override
-    public void anteriorPag(ActionEvent actionEvent) throws IOException {
-        BaseController.anteriorPag(actionEvent);
-    }
 
-    @Override
-    public void home(ActionEvent actionEvent) throws IOException {
-        BaseController.home(actionEvent);
-    }
-
-    @Override
-    public void siguientePag(ActionEvent actionEvent) throws IOException {
-        BaseController.siguientePag(actionEvent);
-    }
-
-    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
-        BaseController.cerrarSesion(actionEvent);
-    }
 }

@@ -34,4 +34,13 @@ public class Empleado {
     @ManyToMany(mappedBy = "empleados")
     private List<Turno> turnos;
 
+    public Empleado(String nombres, String apellidos, int dni) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.dni = dni;
+    }
+
+    public String formatearNombre(){
+        return this.nombres + " " + this.apellidos;
+    }
 }

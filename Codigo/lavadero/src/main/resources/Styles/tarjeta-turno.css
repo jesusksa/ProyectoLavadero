@@ -1,0 +1,9 @@
+#btnInfo{
+    -fx-background-color: #57C4E5; /* Color inicia */
+    -fx-background-radius: 25px;  /* Radio de los bordes */
+    -fx-text-fill: white;
+}
+
+#btnInfo:hover{
+    -fx-background-color: #4EA3BC;
+}

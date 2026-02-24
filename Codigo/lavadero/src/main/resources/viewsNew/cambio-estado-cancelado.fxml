@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lavadero.controllers.CambioEstadoCanceladoController">
+   <children>
+      <VBox alignment="CENTER" layoutX="92.0" prefHeight="270.0" prefWidth="265.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Motivo de Cancelación">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtMotivoCancelacion" prefHeight="117.0" prefWidth="348.0" />
+            <Button fx:id="btnConfirmar" mnemonicParsing="false" onAction="#confirmarCancelacion" prefHeight="40.0" prefWidth="100.0" text="Confirmar" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
