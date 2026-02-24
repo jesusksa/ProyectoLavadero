@@ -4,7 +4,7 @@
 
         <!-- DB CONFIG -->
         <property name="hibernate.connection.driver_class">org.h2.Driver</property>
-        <property name="hibernate.connection.url">jdbc:h2:./data/lavadero</property>
+        <property name="hibernate.connection.url"></property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password"></property>
 
