@@ -15,7 +15,7 @@ import java.io.IOException;
 import static com.lavadero.App.loadFXML;
 
 
-public class PrincipalOficinistaController implements Avanzable {
+public class PrincipalOficinistaController {
     @Setter
     private static Stage stage;
     public Label titulo;
@@ -28,31 +28,15 @@ public class PrincipalOficinistaController implements Avanzable {
 
     @FXML
     public void initialize() {
-        // Listener para detectar cuando el menú se despliega
-        mbtnCuenta.showingProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
-                mbtnCuenta.getStyleClass().add("pressed");
-            } else {
-                mbtnCuenta.getStyleClass().remove("pressed");
-            }
-        });
     }
 
     public void botonGestionDeTurnos(ActionEvent actionEvent) throws IOException {
-        avanzar("", "gestion-turnos");
     }
 
     public void botonConsultaModificaionDatos(ActionEvent actionEvent) throws IOException {
-        avanzar("", "consulta-modificacion");
     }
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
-        BaseController.cerrarSesion(actionEvent);
     }
 
-    @Override
-    public void avanzar(String viewActual, String viewNueva) throws IOException {
-        Scene scene = new Scene(loadFXML(viewNueva));
-        App.getMainStage().setScene(scene);
-    }
 }
