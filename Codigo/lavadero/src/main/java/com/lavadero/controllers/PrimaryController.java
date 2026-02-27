@@ -13,14 +13,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.io.IOException;
-import java.util.Stack;
-
-import static com.lavadero.App.loadFXML;
 
 public class PrimaryController {
-    public AnchorPane pnFondo;
     public MenuButton mbtnCuenta;
     public AnchorPane apnContenido;
     @FXML
@@ -38,6 +33,7 @@ public class PrimaryController {
         instance = this;
         SystemNavigation.setPrimaryController(this);
         lblVersion.setText("Versión: " + VersionUtils.getVersion());
+        mbtnCuenta.setText(SessionData.getUsuarioLogueado().getNombreUsuario());
         mbtnCuenta.showingProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
                 mbtnCuenta.getStyleClass().add("pressed");

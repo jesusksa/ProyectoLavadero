@@ -5,6 +5,7 @@ import com.lavadero.model.EstadoLavado;
 import com.lavadero.model.TipoAuto;
 import com.lavadero.model.TipoServicio;
 import com.lavadero.model.Turno;
+import com.lavadero.util.SystemTools;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -25,7 +26,7 @@ public class FiltroTurnosController {
     @FXML
     public ComboBox<TipoAuto> cboxVehiculo;
     @FXML
-    public ComboBox<TipoServicio> cboxServicio;
+    public ComboBox cboxServicio;
     @FXML
     public DatePicker dtFecha;
     @FXML
@@ -35,7 +36,7 @@ public class FiltroTurnosController {
 
     public void initialize(){
         cboxEstado.getItems().setAll(EstadoLavado.values());
-        cboxServicio.getItems().setAll(TipoServicio.values());
+        cboxServicio.getItems().setAll(SystemTools.formatearTipoLavado());
         cboxVehiculo.getItems().setAll(TipoAuto.values());
     }
 
@@ -43,7 +44,7 @@ public class FiltroTurnosController {
         DAOTurno daoTurno = new DAOTurno();
         List<Turno> turnosFiltrados = daoTurno.obtenerTurnosFiltrados(txtDni.getText(),
                                         txtMatricula.getText(),
-                                        cboxServicio.getValue(),
+                                        SystemTools.formatearTipoLavado(cboxServicio.getValue().toString()),
                                         cboxEstado.getValue(),
                                         cboxVehiculo.getValue(),
                                         dtFecha.getValue());

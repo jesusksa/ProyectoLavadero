@@ -1,5 +1,5 @@
 package com.lavadero.model;
 
 public enum TipoAuto {
-    AUTOMOVIL, UTILITARIO, CAMION, CAMIONETA;
+    AUTOMOVIL, MOTOCICLETA, UTILITARIO, CAMION, CAMIONETA;
 }

@@ -39,6 +39,8 @@ public class EditarTurnoController {
         cargarHorasDisponibles(SessionData.getTurno().getFechaTurno());
         cboxLavado.setValue(SessionData.getTurno().getTipoServicio());
         cboxPago.setValue(SessionData.getTurno().getFormaPago());
+        cboxLavado.getItems().setAll(SystemTools.formatearTipoLavado());
+        cboxPago.getItems().setAll(SystemTools.formatearFormaPago());
 
         dateFecha.setEditable(false); // evita que escriban a mano
 
@@ -108,8 +110,8 @@ public class EditarTurnoController {
         }else{
             SessionData.getTurno().setFechaTurno(dateFecha.getValue());
             SessionData.getTurno().setHoraTurno((LocalTime) cboxHora.getValue());
-            SessionData.getTurno().setTipoServicio((TipoServicio) cboxLavado.getValue());
-            SessionData.getTurno().setFormaPago((FormaPago) cboxPago.getValue());
+            SessionData.getTurno().setTipoServicio(SystemTools.formatearTipoLavado(cboxLavado.getValue().toString()));
+            SessionData.getTurno().setFormaPago(SystemTools.formatearFormapago(cboxPago.getValue().toString()));
 
             SystemNavigation.anteriorPag(false);
         }
