@@ -67,5 +67,6 @@
             </VBox>
          </children>
       </VBox>
+      <Label fx:id="lblVersion" layoutX="942.0" layoutY="507.0" text="Label" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
    </children>
 </AnchorPane>
