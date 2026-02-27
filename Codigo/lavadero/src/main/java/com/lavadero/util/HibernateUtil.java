@@ -12,17 +12,19 @@ public class HibernateUtil {
         try {
             Configuration configuration = new Configuration().configure();
 
-            // 🔹 Ruta dinámica profesional en AppData
-            String userHome = System.getProperty("user.home");
-            String dbFolder = userHome + "\\AppData\\Local\\Lavadero";
+            // 🔹 Obtiene la carpeta donde está corriendo el programa
+            String currentDir = System.getProperty("user.dir");
 
-            // Crear carpeta si no existe
+            // Creamos una subcarpeta llamada 'data' para que no estén los archivos sueltos
+            String dbFolder = currentDir + File.separator + "database";
+
             File folder = new File(dbFolder);
             if (!folder.exists()) {
                 folder.mkdirs();
             }
 
-            String dbPath = dbFolder + "\\lavadero";
+            // Ruta final: ./database/lavadero
+            String dbPath = dbFolder + File.separator + "lavadero";
 
             configuration.setProperty(
                     "hibernate.connection.url",
