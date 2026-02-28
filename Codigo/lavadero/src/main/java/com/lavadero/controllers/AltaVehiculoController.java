@@ -43,7 +43,8 @@ public class AltaVehiculoController {
         if(camposValidos()) {
             vehiculoNew.setTipoAuto(cboxTipoVehiculo.getValue());
             vehiculoNew.setModeloAuto(txtModelo.getText());
-            String patente = txtPatente.getText().toUpperCase();
+            // 1. Normalizamos: Pasamos a mayúsculas y quitamos espacios externos
+            String patente = txtPatente.getText().toUpperCase().trim();
             vehiculoNew.setPatente(patente);
             vehiculoNew.setTipoRelacion((TipoRelacion) cboxTipoAsociacion.getValue());
 

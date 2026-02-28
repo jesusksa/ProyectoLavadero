@@ -5,12 +5,10 @@ import com.lavadero.model.EstadoLavado;
 import com.lavadero.model.TipoAuto;
 import com.lavadero.model.TipoServicio;
 import com.lavadero.model.Turno;
+import com.lavadero.util.SystemTools;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,7 +23,7 @@ public class FiltroTurnosController {
     @FXML
     public ComboBox<TipoAuto> cboxVehiculo;
     @FXML
-    public ComboBox<TipoServicio> cboxServicio;
+    private ComboBox<TipoServicio> cboxServicio;
     @FXML
     public DatePicker dtFecha;
     @FXML

@@ -31,16 +31,9 @@ public class RegistroTurnoDatosTurnoController {
 
 
     public void initialize(){
-        if(SessionData.getTurno() != null){
-            dateFecha.setValue(SessionData.getTurno().getFechaTurno());
-            cboxHora.setValue(SessionData.getTurno().getHoraTurno());
-            cargarHorasDisponibles(SessionData.getTurno().getFechaTurno());
-            cboxLavado.setValue(SessionData.getTurno().getTipoServicio());
-            cboxPago.setValue(SessionData.getTurno().getFormaPago());
-        }
 
-        this.cboxLavado.getItems().setAll(TipoServicio.values());
-        this.cboxPago.getItems().setAll(FormaPago.values());
+        this.cboxLavado.getItems().setAll(SystemTools.formatearTipoLavado());
+        this.cboxPago.getItems().setAll(SystemTools.formatearFormaPago());
         //Validar luego el horario de verano eh invierno, ajustar horas al rango horario laboral
 
         dateFecha.setEditable(false); // evita que escriban a mano
@@ -114,8 +107,8 @@ public class RegistroTurnoDatosTurnoController {
         }else{
             turnoNew.setFechaTurno(dateFecha.getValue());
             turnoNew.setHoraTurno((LocalTime) cboxHora.getValue());
-            turnoNew.setTipoServicio((TipoServicio) cboxLavado.getValue());
-            turnoNew.setFormaPago((FormaPago) cboxPago.getValue());
+            turnoNew.setTipoServicio(SystemTools.formatearTipoLavado(cboxLavado.getValue().toString()));
+            turnoNew.setFormaPago(SystemTools.formatearFormapago(cboxPago.getValue().toString()));
             SessionData.setTurno(turnoNew);
             SystemNavigation.avanzar("registro-turno-datos-turno","registro-turno-datos-cliente-vehiculo",true);
         }

@@ -47,24 +47,27 @@ public class EditarDatosController {
     }
 
     public void confirmarEdicionTurno(ActionEvent actionEvent) throws IOException {
-        SessionData.getVehiculo().setCliente(SessionData.getCliente());
-        SessionData.getCliente().setVehiculos(List.of(SessionData.getVehiculo()));
+        if (SystemTools.createAlertConfirm("Edición Datos Turno","Confirme la actualizacion de datos","")){
+            SessionData.getVehiculo().setCliente(SessionData.getCliente());
+            SessionData.getCliente().setVehiculos(List.of(SessionData.getVehiculo()));
 
-        DAOCliente daoCliente = new DAOCliente();
-        daoCliente.actualizar(SessionData.getCliente());
+            DAOCliente daoCliente = new DAOCliente();
+            daoCliente.actualizar(SessionData.getCliente());
 
-        DAOVehiculo daoVehiculo = new DAOVehiculo();
-        daoVehiculo.actualizar(SessionData.getVehiculo());
+            DAOVehiculo daoVehiculo = new DAOVehiculo();
+            daoVehiculo.actualizar(SessionData.getVehiculo());
 
 
-        SessionData.getTurno().setCliente(SessionData.getCliente());
-        SessionData.getTurno().setVehiculo(SessionData.getVehiculo());
-        SessionData.getTurno().setUsuario(SessionData.getUsuarioLogueado());
+            SessionData.getTurno().setCliente(SessionData.getCliente());
+            SessionData.getTurno().setVehiculo(SessionData.getVehiculo());
+            SessionData.getTurno().setUsuario(SessionData.getUsuarioLogueado());
 
-        DAOTurno daoTurno = new DAOTurno();
-        daoTurno.actualizar(SessionData.getTurno());
+            DAOTurno daoTurno = new DAOTurno();
+            daoTurno.actualizar(SessionData.getTurno());
 
-        SystemNavigation.cancelar();
+
+            SystemNavigation.cancelar();
+        }
     }
 
     public void cancelar(ActionEvent actionEvent) throws IOException {

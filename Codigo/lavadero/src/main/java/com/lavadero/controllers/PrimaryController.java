@@ -5,26 +5,21 @@ import com.lavadero.model.TipoRol;
 import com.lavadero.util.SessionData;
 import com.lavadero.util.SystemNavigation;
 import com.lavadero.util.SystemTools;
+import com.lavadero.util.VersionUtils;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.io.IOException;
-import java.util.Stack;
-
-import static com.lavadero.App.loadFXML;
 
 public class PrimaryController {
-    public AnchorPane pnFondo;
     public MenuButton mbtnCuenta;
     public AnchorPane apnContenido;
+    @FXML
+    private Label lblVersion;
 
     @Setter
     @Getter
@@ -37,6 +32,8 @@ public class PrimaryController {
     public void initialize() throws IOException {
         instance = this;
         SystemNavigation.setPrimaryController(this);
+        lblVersion.setText("Versión: " + VersionUtils.getVersion());
+        mbtnCuenta.setText(SessionData.getUsuarioLogueado().getNombreUsuario());
         mbtnCuenta.showingProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
                 mbtnCuenta.getStyleClass().add("pressed");

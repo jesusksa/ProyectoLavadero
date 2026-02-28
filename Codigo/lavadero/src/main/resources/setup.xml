@@ -2,7 +2,7 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\Usuario\Desktop\Lavadero-ressicap\lavadero-0.1.jar</jar>
+  <jar>C:\Users\Usuario\Desktop\Lavadero-ressicap\lavadero-1.0.jar</jar>
   <outfile>C:\Users\Usuario\Desktop\Lavadero-ressicap\Lavadero.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>

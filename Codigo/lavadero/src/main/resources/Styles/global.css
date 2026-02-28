@@ -15,7 +15,7 @@
 #mbtnCuenta{
 -fx-background-color: #F9E900;
 -fx-background-radius: 20px;
--fx-font-family: "Inconsolata", serif;
+
 }
 
 #mbtnCuenta:hover{
@@ -39,7 +39,6 @@
 -fx-background-color: #F9E900;
 -fx-pref-width: 150px;
 -fx-background-radius: 0px 0px 20px 20px;
--fx-font-size: 15px;
 }
 
 #mbtnCuenta .context-menu:hover{

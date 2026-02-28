@@ -2,11 +2,11 @@ package com.lavadero.controllers;
 
 import com.lavadero.App;
 import com.lavadero.DAOS.DAOUsuario;
-import com.lavadero.model.TipoRol;
 import com.lavadero.model.Usuario;
 import com.lavadero.util.SessionData;
 import com.lavadero.util.SystemTools;
 import com.lavadero.util.SystemValidations;
+import com.lavadero.util.VersionUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -24,12 +24,15 @@ public class LoginController {
     private PasswordField txtContrasenia;
     @FXML
     private ToggleButton btnMostrarContra;
+    @FXML
+    private Label lblVersion;
 
     private Usuario userLogin;
 
 
     public void initialize(){
         txtContraVisible.setVisible(false);
+        lblVersion.setText("Versión: " + VersionUtils.getVersion());
     }
     public void login(ActionEvent actionEvent) throws IOException {
         String nombreUsuario = txtNombreUsuario.getText();

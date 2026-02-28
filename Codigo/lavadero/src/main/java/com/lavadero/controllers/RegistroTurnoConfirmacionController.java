@@ -8,6 +8,7 @@ import com.lavadero.util.SessionData;
 import com.lavadero.util.SystemNavigation;
 import com.lavadero.util.SystemTools;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import org.hibernate.SessionEventListener;
 
@@ -67,6 +68,7 @@ public class RegistroTurnoConfirmacionController {
         SessionData.limpiarCliente();
         SessionData.limpiarVehiculo();
 
+        SystemTools.createAlert(Alert.AlertType.INFORMATION,"Registro Turno","Turno registrado correctamente","");
         SystemNavigation.inicio();
     }
 

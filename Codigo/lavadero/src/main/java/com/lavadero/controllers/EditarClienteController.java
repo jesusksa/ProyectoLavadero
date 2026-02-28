@@ -47,7 +47,7 @@ public class EditarClienteController {
             SessionData.getCliente().setNumeroContacto(txtContacto.getText());
             SessionData.getCliente().setDomicilio(txtDireccion.getText());
 
-            SystemTools.createAlert(Alert.AlertType.INFORMATION,"Alta Cliente","Cliente registrado correctamente","");
+            SystemTools.createAlert(Alert.AlertType.INFORMATION,"Edición Cliente","Cliente editado correctamente","");
             SystemNavigation.anteriorPag(false);
         }
     }
