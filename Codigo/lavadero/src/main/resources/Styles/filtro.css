@@ -1,4 +1,4 @@
-TextField, ComboBox, DatePicker{
+TextField, ComboBox, ChoiceBox, DatePicker{
 -fx-background-color: #FFFFFF;
 -fx-background-radius: 7px;
 }

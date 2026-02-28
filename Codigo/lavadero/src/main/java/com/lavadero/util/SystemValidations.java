@@ -96,19 +96,28 @@ public class SystemValidations {
     }
 
     public static String validarPatente(String patente) {
-
+        // 1. Normalizamos: Pasamos a mayúsculas y quitamos espacios externos
         patente = patente.toUpperCase().trim();
 
-        // Formatos comunes en Argentina:
-        // ABC123  |  AB123CD
-        if (!patente.matches("([A-Z]{3}\\d{3}|[A-Z]{2}\\d{3}[A-Z]{2})")) {
-            return "Formato de patente inválido";
+        // 2. Expresión Regular Mejorada:
+        // ([A-Z]{3}\s?\d{3}      -> LLL NNN o LLLNNN
+        // |                      -> O
+        // [A-Z]{2}\s?\d{3}\s?[A-Z]{2}) -> LL NNN LL o LLNNNLL
+        String regex = "^([A-Z]{3}\\s?\\d{3}|[A-Z]{2}\\s?\\d{3}\\s?[A-Z]{2})$";
+
+        if (!patente.matches(regex)) {
+            return "Formato de patente inválido (Ej: ABC123 o AB123CD)";
         }
 
-        DAOVehiculo daoVehiculo= new DAOVehiculo();
-        if(daoVehiculo.obtenerVehiculoPorPatente(patente) != null){
-            return "Un vehiculo con la misma patente ya esta registrado";
+        // 3. Recomendación: Quitar el espacio interno antes de consultar la BD
+        // Esto asegura que "KSA 114" y "KSA114" sean tratados como lo mismo
+        String patenteLimpia = patente.replace(" ", "");
+
+        DAOVehiculo daoVehiculo = new DAOVehiculo();
+        if (daoVehiculo.obtenerVehiculoPorPatente(patenteLimpia) != null) {
+            return "Un vehículo con la misma patente ya está registrado";
         }
+
         return null;
     }
 

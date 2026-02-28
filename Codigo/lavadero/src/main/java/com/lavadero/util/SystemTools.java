@@ -50,7 +50,7 @@ public class SystemTools {
                 return TipoServicio.LAVADO_COMUN;
             case "LAVADO COMPLETO":
                 return TipoServicio.LAVADO_COMPLETO;
-            case "LAVADO COMP + MOTOR":
+            case "LAVADO COMP MÁS MOTOR":
                 return TipoServicio.LAVADO_COMPLETO_MOTOR;
         }
         return null;
