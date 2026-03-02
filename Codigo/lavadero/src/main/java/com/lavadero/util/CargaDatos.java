@@ -124,7 +124,6 @@ public class CargaDatos {
         }
 
         // --- HOY ---
-        System.out.println("Hoy es: "+hoy.getDayOfWeek());
         daoTurno.agregar(new Turno(hoy, TipoServicio.LAVADO_COMUN, FormaPago.TARJETA_DEBITO, c11, userOficina, v9, LocalTime.of(8, 0)));
         daoTurno.agregar(new Turno(hoy, TipoServicio.LAVADO_COMUN, FormaPago.TARJETA_CREDITO, c10, userOficina, v8, LocalTime.of(8, 0)));
         daoTurno.agregar(new Turno(hoy, TipoServicio.LAVADO_COMPLETO_MOTOR, FormaPago.EFECTIVO, c6, userOficina, v4, LocalTime.of(9, 0)));
@@ -135,20 +134,17 @@ public class CargaDatos {
         daoTurno.agregar(new Turno(hoy, TipoServicio.LAVADO_COMPLETO_MOTOR, FormaPago.BILLETERA_VIRTUAL, c5, userOficina, v1, LocalTime.of(15, 0)));
 
         // --- MAÑANA ---
-        System.out.println("Mañana es: "+maniana.getDayOfWeek());
         daoTurno.agregar(new Turno(maniana, TipoServicio.LAVADO_COMUN, FormaPago.MERCADO_PAGO, c11, userOficina, v2, LocalTime.of(8, 0)));
         daoTurno.agregar(new Turno(maniana, TipoServicio.LAVADO_COMPLETO, FormaPago.TARJETA_CREDITO, c5, userOficina, v1, LocalTime.of(8, 0)));
         daoTurno.agregar(new Turno(maniana, TipoServicio.LAVADO_COMPLETO, FormaPago.TARJETA_CREDITO, c5, userOficina, v14, LocalTime.of(9, 0)));
         daoTurno.agregar(new Turno(maniana, TipoServicio.LAVADO_COMPLETO, FormaPago.TARJETA_DEBITO, c0, userOficina, v5, LocalTime.of(10, 0)));
 
         // --- PASADO MAÑANA ---
-        System.out.println("Pasado Mañana es: "+pManiana.getDayOfWeek());
         daoTurno.agregar(new Turno(pManiana, TipoServicio.LAVADO_COMPLETO, FormaPago.BILLETERA_VIRTUAL, c1, userOficina, v10, LocalTime.of(10, 0)));
         daoTurno.agregar(new Turno(pManiana, TipoServicio.LAVADO_COMUN, FormaPago.MERCADO_PAGO, c0, userOficina, v5, LocalTime.of(12, 0)));
         daoTurno.agregar(new Turno(pManiana, TipoServicio.LAVADO_COMPLETO_MOTOR, FormaPago.TARJETA_DEBITO, c11, userOficina, v3, LocalTime.of(15, 0)));
 
         // --- PASADO PASADO MAÑANA ---
-        System.out.println("Pasado Pasado Mañana es: "+ppManiana.getDayOfWeek());
         daoTurno.agregar(new Turno(ppManiana, TipoServicio.LAVADO_COMPLETO, FormaPago.TARJETA_DEBITO, c11, userOficina, v9, LocalTime.of(8, 0)));
         daoTurno.agregar(new Turno(ppManiana, TipoServicio.LAVADO_COMUN, FormaPago.MERCADO_PAGO, c3, userOficina, v12, LocalTime.of(9, 0)));
         daoTurno.agregar(new Turno(ppManiana, TipoServicio.LAVADO_COMPLETO_MOTOR, FormaPago.MERCADO_PAGO, c11, userOficina, v2, LocalTime.of(9, 0)));
