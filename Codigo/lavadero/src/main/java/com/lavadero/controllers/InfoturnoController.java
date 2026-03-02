@@ -110,17 +110,14 @@ public class InfoturnoController {
         turno = daoTurno.obtenerPorId(SessionData.getTurno().getIdTurno());
         switch (turno.getEstado()){
             case ESPERA:
-                System.out.println("Espera");
                 vboxCliente.setStyle("-fx-background-color: #F9E900");
                 vboxTurno.setStyle("-fx-background-color: #F9E900");
                 break;
             case PROCESO:
-                System.out.println("Proceso");
                 vboxCliente.setStyle("-fx-background-color: #037EAA");
                 vboxTurno.setStyle("-fx-background-color: #037EAA");
                 break;
             case FINALIZADO:
-                System.out.println("Finlizado");
                 vboxCliente.setStyle("-fx-background-color: #4D8B31");
                 vboxTurno.setStyle("-fx-background-color: #4D8B31");
                 btnNotificacion.setDisable(false);
@@ -128,7 +125,6 @@ public class InfoturnoController {
                 btnEditarDatosTurnos.setDisable(true);
                 break;
             case CANCELADO:
-                System.out.println("Cancelado");
                 vboxCliente.setStyle("-fx-background-color: #F90000");
                 vboxTurno.setStyle("-fx-background-color: #F90000");
                 btnEstado.setDisable(true);

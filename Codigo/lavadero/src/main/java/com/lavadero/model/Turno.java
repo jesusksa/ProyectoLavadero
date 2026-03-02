@@ -103,11 +103,11 @@ public class Turno {
     public String formatearServicio(){
         switch (this.tipoServicio){
             case LAVADO_COMUN:
-                return "Lavado Comun";
+                return "LAVADO COMUN";
             case LAVADO_COMPLETO:
-                return "Lavado Completo";
+                return "LAVADO COMPLETO";
             case LAVADO_COMPLETO_MOTOR:
-                return "Lavado Comp más Motor";
+                return "LAVADO COMP MÁS MOTOR";
             default:
                 SystemTools.createAlert(Alert.AlertType.ERROR, "Error de formato", "Formato de dato invalido", "Por favor revise las datos ingresados");
                 return "";
@@ -117,17 +117,17 @@ public class Turno {
     public String formatearPago(){
         switch (this.formaPago){
             case TARJETA_DEBITO:
-                return "Tarjeta de Debito";
+                return "TARJETA DE CREDITO";
             case TARJETA_CREDITO:
-                return "Tarjeta de Credito";
+                return "TARJETA DE DEBITO";
             case BILLETERA_VIRTUAL:
-                return "Billetera Virtual";
+                return "BILLETERA VIRTUAL";
             case MONEDA_EXTRANJERA:
-                return "Moneda Extranjera";
+                return "MONEDA EXTRANJERA";
             case MERCADO_PAGO:
-                return "Mercado Pago";
+                return "MERCADO PAGO";
             case EFECTIVO:
-                return "Efectivo";
+                return "EFECTIVO";
             default:
                 SystemTools.createAlert(Alert.AlertType.ERROR, "Error de formato", "Formato de dato invalido", "Por favor revise las datos ingresados");
                 return "";

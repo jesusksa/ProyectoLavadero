@@ -34,13 +34,15 @@ public class EditarTurnoController {
     private ChoiceBox cboxPago;
 
     public void initialize(){
+        cboxLavado.getItems().setAll(SystemTools.formatearTipoLavado());
+        cboxPago.getItems().setAll(SystemTools.formatearFormaPago());
+
         dateFecha.setValue(SessionData.getTurno().getFechaTurno());
         cboxHora.setValue(SessionData.getTurno().getHoraTurno());
         cargarHorasDisponibles(SessionData.getTurno().getFechaTurno());
-        cboxLavado.setValue(SessionData.getTurno().getTipoServicio());
-        cboxPago.setValue(SessionData.getTurno().getFormaPago());
-        cboxLavado.getItems().setAll(SystemTools.formatearTipoLavado());
-        cboxPago.getItems().setAll(SystemTools.formatearFormaPago());
+        cboxLavado.setValue(SessionData.getTurno().formatearServicio());
+        cboxPago.setValue(SessionData.getTurno().formatearPago());
+
 
         dateFecha.setEditable(false); // evita que escriban a mano
 
